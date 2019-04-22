@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include ('Database.php');
 
     if(isset($_COOKIE["type"]))
     {
@@ -11,9 +12,6 @@
     $password = "";
     $phone = "";
     $errors = array();
-
-    // connect to the database
-    $db = mysqli_connect('localhost', 'root', '', 'meetup');
 
     // REGISTER USER
     if (isset($_POST['reg_user'])) {

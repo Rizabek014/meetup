@@ -1,10 +1,8 @@
 <?php
-
     include ('Navbar.php');
+    include ('Database.php');
 
-    $db = mysqli_connect('localhost', 'root', '', 'meetup');
     $meetup = mysqli_query($db, "SELECT * FROM meetups");
-
     $image = mysqli_query($db, "SELECT * FROM image");
 ?>
 

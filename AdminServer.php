@@ -1,7 +1,7 @@
 <?php
-    session_start();
+    include ('Database.php');
 
-    $db = mysqli_connect('localhost', 'root', '', 'meetup');
+    session_start();
 
     $name = "";
     $description = "";
@@ -11,7 +11,6 @@
     $organizer_id= NULL;
     $meetup_id = NULL;
     $msg = "";
-
 
     if(isset($_POST['save']))
     {

@@ -1,6 +1,5 @@
 <?php
-    $db = mysqli_connect('localhost', 'root', '', 'meetup');
-
+    include ('Database.php');
 
     if(!isset($_COOKIE["type"]))
     {
@@ -14,7 +13,6 @@
         $user_name = $users['user_name'];
         $is_admin = $users['is_admin'];
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

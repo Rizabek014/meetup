@@ -1,9 +1,7 @@
 <?php
-
     include ('Server.php');
     include ('Navbar.php');
-
-    $db = mysqli_connect('localhost', 'root', '', 'meetup');
+    include ('Database.php');
 
     if(isset($_GET['user_edit']))
     {

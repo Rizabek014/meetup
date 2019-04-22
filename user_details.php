@@ -1,5 +1,6 @@
 <?php
-    $db = mysqli_connect('localhost', 'root', '', 'meetup');
+    include ('Database.php');
+
     if(isset($_COOKIE["type"]))
     {
         $user_id = $_COOKIE['type'];

@@ -1,5 +1,6 @@
 <?php
-    $db = mysqli_connect('localhost', 'root', '', 'meetup');
+    include ('Database.php');
+
     if(isset($_COOKIE["type"]))
     {
         $user_id = $_COOKIE['type'];
@@ -10,9 +11,7 @@
     }
 
     $meetup = mysqli_query($db, "SELECT * FROM meetups");
-
     $image = mysqli_query($db, "SELECT * FROM image");
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

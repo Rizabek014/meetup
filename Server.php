@@ -1,7 +1,7 @@
 <?php
-    session_start();
+    include ('Database.php');
 
-    $db = mysqli_connect('localhost', 'root', '', 'meetup');
+    session_start();
 
     $name = "";
     $description = "";
@@ -12,25 +12,24 @@
     $meetup_id = NULL;
     $msg = "";
 
+    if(isset($_POST['next']))
+        {
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $date = $_POST['date'];
+            $location = $_POST['location'];
+            $sphere = $_POST['sphere'];
+            $organizer_id = $_POST['organizer_id'];
+            //need to fix
+            $sql = "INSERT INTO meetups (name, description, date, location, sphere, organizer_id) 
+                      VALUES ('$name', '$description', '$date', '$location', '$sphere', '$organizer_id')";
 
-if(isset($_POST['next']))
-    {
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $date = $_POST['date'];
-        $location = $_POST['location'];
-        $sphere = $_POST['sphere'];
-        $organizer_id = $_POST['organizer_id'];
-        //need to fix
-        $sql = "INSERT INTO meetups (name, description, date, location, sphere, organizer_id) 
-                  VALUES ('$name', '$description', '$date', '$location', '$sphere', '$organizer_id')";
-
-        mysqli_query($db, $sql);
-        $meetup = mysqli_query($db, "SELECT meetup_id FROM meetups WHERE name = '$name' AND description = '$description'");
-        $meetupz = mysqli_fetch_array($meetup);
-        $meetup_id = $meetupz['meetup_id'];
-        header('location: add_image.php?next='.$meetup_id);
-    }
+            mysqli_query($db, $sql);
+            $meetup = mysqli_query($db, "SELECT meetup_id FROM meetups WHERE name = '$name' AND description = '$description'");
+            $meetupz = mysqli_fetch_array($meetup);
+            $meetup_id = $meetupz['meetup_id'];
+            header('location: add_image.php?next='.$meetup_id);
+        }
 
     if(isset($_POST['save']))
     {
