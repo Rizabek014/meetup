@@ -10,10 +10,41 @@
         $is_admin = $users['is_admin'];
     }
 
-    $meetup = mysqli_query($db, "SELECT * FROM meetups");
+    if(isset($_GET['meetup']))
+    {
+        $meetup_id = $_GET['meetup'];
 
-    $image = mysqli_query($db, "SELECT * FROM image");
+        $rec = mysqli_query($db, "SELECT * FROM meetups WHERE meetup_id = $meetup_id" );
+        $record = mysqli_fetch_array($rec);
 
+        $name = $record['name'];
+        $description = $record['description'];
+        $date = $record['date'];
+        $location = $record['location'];
+        $sphere = $record['sphere'];
+        $organizer_id = $record['organizer_id'];
+        $meetup_id = $record['meetup_id'];
+        $is_approved = $record['is_approved'];
+    }
+
+    $sql_image = "SELECT * FROM image WHERE meetup_id = $meetup_id";
+    $result_image = mysqli_query($db, $sql_image);
+
+    $sql_comment = "SELECT * FROM comment WHERE meetup_id = $meetup_id";
+    $result_comment = mysqli_query($db, $sql_comment);
+
+    $users = mysqli_query($db,"SELECT * FROM user ");
+    $user = mysqli_fetch_array($users);
+
+    $members = mysqli_query($db, "SELECT * FROM member WHERE meetup_id = $meetup_id");
+
+    $is_member = false;
+    $is_organizer = false;
+
+    foreach ($members as $member){
+        if($member['user_id'] == $user_id) $is_member = true;
+    }
+    if($organizer_id == $user_id) $is_organizer = true;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +99,7 @@
         <ul class="nav-menu">
           <li><a href="#venue">Photos from location</a></li>
           <li><a href="#hotels">Hotels</a></li>
-          <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
+          <li class="buy-tickets"><a href="user_details.php"><?= $user_name ?></a></li>
           <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
@@ -84,40 +115,91 @@
       <div class="container">
         <div class="section-header">
           <h2>Meetup Details</h2>
-          <p>Get detailed information about this event.</p>
         </div>
 
         <div class="row">
           <div class="col-md-6">
-            <img src="img/speakers/1.jpg" alt="Speaker 1" class="img-fluid">
+              <?php
+              while($row_img = mysqli_fetch_array($result_image))
+              {
+                  echo "<img src = 'images/".$row_img['path']."' class='img-fluid'>";
+              }
+              ?>
           </div>
 
           <div class="col-md-6">
             <div class="details">
-              <h2>Meetup Name</h2>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-              <h2>Meetup description.</h2> 
-              <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
- 
-              <p>Aboriosam inventore dolorem inventore nam est esse. Aperiam voluptatem nisi molestias laborum ut. Porro dignissimos eum. Tempore dolores minus unde est voluptatum incidunt ut aperiam.</p> 
-
-              <p>Et dolore blanditiis officiis non quod id possimus. Optio non commodi alias sint culpa sapiente nihil ipsa magnam. Qui eum alias provident omnis incidunt aut. Eius et officia corrupti omnis error vel quia omnis velit. In qui debitis autem aperiam voluptates unde sunt et facilis.</p>
-
+                <h2><?= $name ?></h2>
+                <p><?= $date ?></p>
+                <div class="social">
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-google-plus"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+                <p><?= $location ?></p>
+                <h2>Meetup description</h2>
+                <p><?= $description ?></p>
+                <h2>Organizer</h2>
+                <?= $user['user_name'] . "<br>";?>
             </div>
           </div>
-          
         </div>
-      </div>
+        <?php
+        if($is_organizer || $is_admin):?>
+            <a href="EditMeetup.php?edit=<?= $meetup_id ?>" class="edit_btn" >Edit</a>
+            <a href="AdminServer.php?del=<?= $meetup_id ?>" class="del_btn">Delete</a>
+            <?php if($is_admin && !$is_approved): ?>
+                <a href="AdminServer.php?approve=<?= $meetup_id ?>" class="edit_btn">Approve</a>
+            <?php endif;?>
+            <?php if($is_admin && $is_approved): ?>
+                <a href="AdminServer.php?disapprove=<?= $meetup_id ?>" class="edit_btn">Disapprove</a>
+            <?php endif;?>
 
+        <?php elseif ($is_member): ?>
+            <a href="Server.php?unjoin=<?= $user_id ?>&unjointo=<?= $meetup_id ?>" class="btn-primary">Unjoin</a>
+        <?php else: ?>
+            <a href="Server.php?join=<?= $user_id ?>&jointo=<?= $meetup_id ?>" class="btn-primary">Join</a>
+        <?php endif;?>
+      </div>
     </section>
 
+    <section id="speakers-details" class="wow fadeIn">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comments</h2>
+            </div>
+
+            <div class="row">
+                <form method = "post" action="Server.php">
+                    <input type = "hidden" name = "meetup_id" value="<?php echo $meetup_id;?>">
+                    <input type = "hidden" name = "user_id" value="<?php echo $user_id;?>">
+                    <div class="col-md-6">
+                        <div class="details">
+                            <?php
+                            while($row_comment = mysqli_fetch_array($result_comment))
+                            {
+                               foreach ($users as $user)
+                                {
+                                    if($user['user_id'] == $row_comment['user_id'])
+                                    {
+                                        echo $user['user_name']."<br>";
+                                        echo $row_comment['comment']."<br>";
+                                    }
+                                }
+                            }
+                            ?>
+
+                        </div>
+                    </div>
+                    <input type = "text" name = "comment">
+                    <button type="submit" name = "submit_comment" class = "btn">Submit</button>
+                </form>
+            </div>
+        </div>
+      </section>
   </main>
-    
+
     <!--==========================
       Venue Section
     ============================-->

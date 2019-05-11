@@ -17,7 +17,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Login</title>
+  <title>Create Meetup</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -90,7 +90,7 @@
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <input class="form-control" type="text" name="description" >
+                        <textarea class="form-control" rows="5" cols="50" name="description" ></textarea>
                     </div>
                     <div class="form-group">
                         <label>Date</label>

@@ -20,7 +20,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Login</title>
+  <title>Create Meetup</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -86,7 +86,7 @@
           <div class="col-md-6" style="height: 400px;">
             <div class="details" >
                 <div class="social"></div>
-                <form method="post" action = "Server.php">
+                <form method="post" action = "Server.php" enctype="multipart/form-data">
                     <input type = "hidden" name = "meetup_id" value="<?php echo $meetup_id ?>">
                     <input type = "hidden" name = "user_id" value="<?php echo $user_id ?>">
                     <div class="form-group" >

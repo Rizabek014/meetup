@@ -136,47 +136,36 @@
         </div>
 
         <div class="row">
-        <?php  
-              while ($row = mysqli_fetch_array($meetup)) {
-        ?>
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker">
-                <?php  
-        if ($row['is_approved'] == 0) {
-                foreach ($image as $images) {    
-            
-                    if ($images['meetup_id'] == $row['meetup_id']) {
-                        echo "<img class='img-fluid' src='images/" . $images['path'] . "'>";
-                    }
-                }
-                ?>
-                <div class="details">
-                <a href="user_details.php"><h3 class='clickable-row' data-href="MeetupDetails.php?detail=<?php echo $row['meetup_id']; ?>"><?php echo $row['name']; ?></h3></a>
-                <p><?php echo $row['location']; ?></p>
-                <div class="social">
-                  <a href=""><i class="fa fa-twitter"></i></a>
-                  <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
-                  <a href=""><i class="fa fa-linkedin"></i></a>
+            <?php
+                  while ($row = mysqli_fetch_array($meetup)):
+                      if ($row['is_approved'] == 1) :
+            ?>
+            <div class="col-lg-4 col-md-6">
+                <div class="speaker">
+                    <?php
+                        foreach ($image as $images) {
+                             if ($images['meetup_id'] == $row['meetup_id']) {
+                                 echo "<img class='img-fluid' src='images/" . $images['path'] . "'>";
+                             }
+                        }
+                    ?>
+                    <div class="details">
+                        <h3 class='clickable-row' data-href="meetup_details.php?meetup=<?php echo $row['meetup_id']; ?>"><?php echo $row['name']; ?></h3>
+                        <p><?php echo $row['location']; ?></p>
+                        <div class="social">
+                            <a href=""><i class="fa fa-twitter"></i></a>
+                            <a href=""><i class="fa fa-facebook"></i></a>
+                            <a href=""><i class="fa fa-google-plus"></i></a>
+                            <a href=""><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-                <?php
-            
-        }}
-                        ?>
- 
-<!--              <img src="img/speakers/1.jpg" alt="Speaker 1" class="img-fluid">-->
-              
-          </div>
+            <?php endif; endwhile;?>
         </div>
-
+      </div>
     </section>
 
-    
-
-    
 
     <!--==========================
       Gallery Section
@@ -543,6 +532,14 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-</body>
 
+</body>
 </html>
+
+<script>
+    jQuery(document).ready(function($) {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
+        });
+    });
+</script>

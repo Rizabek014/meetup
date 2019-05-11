@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<form method = "post" action = "Server.php">
+<form method = "post" action = "Server.php" enctype="multipart/form-data">
     <div class = "input-group">
         <label>Name: </label> <?php echo $user_name;?>
     </div>

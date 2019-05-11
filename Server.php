@@ -81,20 +81,20 @@
         header('location: index.php');
     }
 
-    if(isset($_GET['user']))
+    if(isset($_GET['join']))
     {
-        $user_id = $_GET['user'];
+        $user_id = $_GET['join'];
         $meetup_id = $_GET['jointo'];
         mysqli_query($db, "INSERT INTO member (user_id, meetup_id) VALUES ('$user_id', '$meetup_id')");
-        header('location: MeetupDetails.php?detail='.$meetup_id);
+        header('location: meetup_details.php?meetup='.$meetup_id);
     }
 
-    if(isset($_GET['users']))
+    if(isset($_GET['unjoin']))
     {
-        $user_id = $_GET['users'];
+        $user_id = $_GET['unjoin'];
         $meetup_id = $_GET['unjointo'];
         mysqli_query($db, "DELETE FROM member WHERE meetup_id = $meetup_id AND user_id = $user_id");
-        header('location: MeetupDetails.php?detail='.$meetup_id);
+        header('location: meetup_details.php?meetup='.$meetup_id);
     }
     if(isset($_POST['submit_comment']))
     {
@@ -105,7 +105,7 @@
         $sql = "INSERT INTO comment (user_id, meetup_id, comment) VALUES ('$user_id', '$meetup_id', '$comment')";
         mysqli_query($db, $sql);
         $_SESSION['message'] = "Saved!";
-        header('location: MeetupDetails.php?detail='.$meetup_id);
+        header('location: meetup_details.php?meetup='.$meetup_id);
     }
 
 
