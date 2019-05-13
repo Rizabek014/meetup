@@ -159,7 +159,7 @@
                 <h3>Organizer</h3>
                 <?= $organizer_name . "<br>";?>
 
-                <h6>List of joined people</h6>
+                <h6>List of Members</h6>
                 <?php
                 foreach ($members_name as $names)
                 {
