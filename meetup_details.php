@@ -40,10 +40,26 @@
 
     $is_member = false;
     $is_organizer = false;
+    $members_name = array();
 
-    foreach ($members as $member){
-        if($member['user_id'] == $user_id) $is_member = true;
+    foreach ($users as $user)
+    {
+        if($user['user_id'] == $organizer_id)
+        {
+            $organizer_name = $user['user_name'];
+        }
+
+        foreach ($members as $member)
+        {
+            if($user['user_id'] == $member['user_id'])
+            {
+                array_push($members_name, $user['user_name']);
+            }
+
+            if($member['user_id'] == $user_id) $is_member = true;
+        }
     }
+
     if($organizer_id == $user_id) $is_organizer = true;
 ?>
 <!DOCTYPE html>
@@ -140,14 +156,22 @@
                 <p><?= $location ?></p>
                 <h2>Meetup description</h2>
                 <p><?= $description ?></p>
-                <h2>Organizer</h2>
-                <?= $user['user_name'] . "<br>";?>
+                <h3>Organizer</h3>
+                <?= $organizer_name . "<br>";?>
+
+                <h6>List of joined people</h6>
+                <?php
+                foreach ($members_name as $names)
+                {
+                    echo $names." ";
+                }
+                ?>
             </div>
           </div>
         </div>
         <?php
         if($is_organizer || $is_admin):?>
-            <a href="EditMeetup.php?edit=<?= $meetup_id ?>" class="edit_btn" >Edit</a>
+            <a href="edit.php?edit=<?= $meetup_id ?>" class="edit_btn" >Edit</a>
             <a href="AdminServer.php?del=<?= $meetup_id ?>" class="del_btn">Delete</a>
             <?php if($is_admin && !$is_approved): ?>
                 <a href="AdminServer.php?approve=<?= $meetup_id ?>" class="edit_btn">Approve</a>

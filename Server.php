@@ -69,6 +69,19 @@
                         location = '$location', sphere = '$sphere', organizer_id = '$organizer_id' 
                         WHERE meetup_id = $meetup_id";
         mysqli_query($db, $sql);
+
+        $target = "images/".basename($_FILES['image']['name']);
+        $image = $_FILES['image']['name'];
+        $sql = "UPDATE image SET user_id = '$organizer_id', path = '$image' WHERE meetup_id = $meetup_id";
+
+        if(move_uploaded_file($_FILES['image']['tmp_name'], $target))
+        {
+            $msg = "Success";
+        }
+        else
+        {
+            $msg = "Error";
+        }
         $_SESSION['message'] = "Updated!";
         header('location: index.php');
     }

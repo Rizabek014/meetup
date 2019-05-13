@@ -65,7 +65,6 @@
     </div>
   </header><!-- #header -->
 
-        <input type="hidden" name="organizer_id" value="<?php echo $user_id?>">
   <main id="main" class="main-page">
 
     <!--==========================
@@ -84,6 +83,7 @@
             <div class="details" >
                 <div class="social"></div>
                 <form method="post" action = "Server.php">
+                    <input type="hidden" name="organizer_id" value="<?php echo $user_id?>">
                     <div class="form-group" >
                         <label>Name</label>
                         <input class="form-control" type="text" name="name">
