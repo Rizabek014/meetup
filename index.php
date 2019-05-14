@@ -69,14 +69,14 @@
           <li><a href="#supporters">Sponsors</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
-            <li><a href="add.php">Create meetup</a></li>
-            <?php if (!isset($_COOKIE["type"])): ?>
-             <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
+          <?php if (!isset($_COOKIE["type"])): ?>
+            <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
             <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
-            <?php else:?>
-          <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
-          <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
-            <?php endif ?>
+          <?php else:?>
+            <li><a href="add.php">Create meetup</a></li>
+            <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
+            <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
+          <?php endif ?>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -108,7 +108,7 @@
           </div>
           <div class="col-lg-9">
             <ul class="nav-menu nav-tabs">
-              <li class="nav-item menu-active"><a href="#about">#IT</a></li>
+              <li class="menu-active"><a href="#about">#IT</a></li>
               <li class="menu-active"><a href="#about">#hackathon</a></li>
               <li class="menu-active"><a href="#about">#marathon</a></li>
               <li class="menu-active"><a href="#about">#google</a></li>

@@ -10,7 +10,6 @@
         $user_name = $users['user_name'];
         $is_admin = $users['is_admin'];
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,7 +101,16 @@
                     </div>
                     <div class="form-group">
                         <label>Sphere</label>
-                        <input class="form-control" type="text" name="sphere" >
+                        <select class="form-control" name = "sphere">
+                            <option value="it">IT</option>
+                            <option value="hackaton">Hackaton</option>
+                            <option value="marathon">Marathon</option>
+                            <option value="sport">Sport</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="data science">Data Science</option>
+                            <option value="activities">Activities</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
 
                     <div class="text-center" style="margin:20px 0 10px 0;">

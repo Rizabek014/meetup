@@ -1,6 +1,7 @@
 <?php
     include ('Database.php');
-
+    $user_id = 0;
+    $is_admin = false;
     if(isset($_COOKIE["type"]))
     {
         $user_id = $_COOKIE['type'];
@@ -64,7 +65,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>TheEvent - Bootstrap Event Template</title>
@@ -115,8 +115,13 @@
         <ul class="nav-menu">
           <li><a href="#venue">Photos from location</a></li>
           <li><a href="#hotels">Hotels</a></li>
-          <li class="buy-tickets"><a href="user_details.php"><?= $user_name ?></a></li>
-          <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
+            <?php if (!isset($_COOKIE["type"])): ?>
+                <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
+                <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
+            <?php else:?>
+                <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
+                <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
+            <?php endif ?>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -179,10 +184,9 @@
             <?php if($is_admin && $is_approved): ?>
                 <a href="AdminServer.php?disapprove=<?= $meetup_id ?>" class="edit_btn">Disapprove</a>
             <?php endif;?>
-
-        <?php elseif ($is_member): ?>
+        <?php elseif ($is_member && isset($_COOKIE["type"])): ?>
             <a href="Server.php?unjoin=<?= $user_id ?>&unjointo=<?= $meetup_id ?>" class="btn-primary">Unjoin</a>
-        <?php else: ?>
+    <?php elseif (isset($_COOKIE["type"]) && !$is_member): ?>
             <a href="Server.php?join=<?= $user_id ?>&jointo=<?= $meetup_id ?>" class="btn-primary">Join</a>
         <?php endif;?>
       </div>
