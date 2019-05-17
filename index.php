@@ -1,6 +1,5 @@
 <?php
     include ('Database.php');
-
     if(isset($_COOKIE["type"]))
     {
         $user_id = $_COOKIE['type'];
@@ -8,6 +7,13 @@
         $users = mysqli_fetch_array($user);
         $user_name = $users['user_name'];
         $is_admin = $users['is_admin'];
+    }
+    $result = NULL;
+    if(isset($_POST['find']))
+    {
+        $search = $_POST['search_field'];
+        $sql = "SELECT * FROM meetups WHERE name LIKE '%". $search . "%' OR location LIKE '%". $search . "%'";
+        $result = mysqli_query($db,$sql);
     }
 
     $meetup = mysqli_query($db, "SELECT * FROM meetups");
@@ -63,20 +69,25 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="index.php">Home</a></li>
-          <li><a href="#about">Meetups</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#supporters">Sponsors</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <?php if (!isset($_COOKIE["type"])): ?>
-            <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
-            <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
-          <?php else:?>
-            <li><a href="add.php">Create meetup</a></li>
-            <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
-            <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
-          <?php endif ?>
+            <li class="menu-active"><a href="index.php">Home</a></li>
+            <li><a href="#about">Meetups</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#supporters">Sponsors</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><form method="post" action="index.php" id="searchform">
+                    <input type="text" name="search_field">
+                    <input type="submit" name="find" value="Search">
+                </form>
+            </li>
+            <?php if (!isset($_COOKIE["type"])): ?>
+                <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
+                <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
+            <?php else:?>
+                <li><a href="add.php">Create meetup</a></li>
+                <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
+                <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
+            <?php endif ?>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -108,7 +119,7 @@
           </div>
           <div class="col-lg-9">
             <ul class="nav-menu nav-tabs">
-              <li class="menu-active"><a href="#about">#IT</a></li>
+              <li class="menu-active" name = 'it'><a href="#about">#IT</a></li>
               <li class="menu-active"><a href="#about">#hackathon</a></li>
               <li class="menu-active"><a href="#about">#marathon</a></li>
               <li class="menu-active"><a href="#about">#google</a></li>
@@ -120,11 +131,42 @@
             </ul>
           </div>
         </div>
-          
       </div>
-        
+
     </section>
 
+    <section id="speakers" class="wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <?php
+                    if(isset($result)):
+                        while ($tuple = mysqli_fetch_array($result)):
+                            if($tuple['is_approved'] == 1):
+                ?>
+                <div class="col-lg-4 col-md-6">
+                    <div class="speaker">
+                        <?php
+                        foreach ($image as $images) {
+                            if ($images['meetup_id'] == $tuple['meetup_id']) {
+                                echo "<img class='img-fluid' src='images/" . $images['path'] . "'>";
+                            }
+                        }
+                        ?>
+                        <div class="details">
+                            <h3 class='clickable-row' data-href="meetup_details.php?meetup=<?php echo $tuple['meetup_id']; ?>"><?php echo $tuple['name']; ?></h3>
+                            <p><?php echo $tuple['location']; ?></p>
+                            <div class="social">
+                                <a href=""><i class="fa fa-twitter"></i></a>
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                                <a href=""><i class="fa fa-google-plus"></i></a>
+                                <a href=""><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; endwhile; endif; ?>
+            </div>
+    </section>
     <!--==========================
       Speakers Section
     ============================-->

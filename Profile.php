@@ -43,6 +43,7 @@
     <div class = "input-group">
         <a href="EditProfile.php?user_edit=<?php echo $user_id ?>" class="edit_btn" >Edit</a>
     </div>
+<?php var_dump($result);?>
 </form>
 </body>
 </html>

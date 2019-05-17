@@ -11,6 +11,7 @@
     $organizer_id= NULL;
     $meetup_id = NULL;
     $msg = "";
+    $result = "";
 
     if(isset($_POST['next']))
         {
@@ -179,6 +180,21 @@
             header('location: Profile.php?user_id=' . $user_id);
         }
     }
+    if(isset($_POST['submit_points']))
+    {
+        $new_points = $_POST['points'];
+        $meetup_id = $_POST['meetup_id'];
+        $member_id = $_POST['member_id'];
+
+        $current_point = mysqli_query($db,"SELECT points FROM meetups WHERE meetup_id = '$meetup_id'");
+        $current_points = mysqli_fetch_array($current_point);
+        $points = $current_points['points'] + $new_points;
+
+        mysqli_query($db,"UPDATE meetups SET points = '$points' WHERE meetup_id = '$meetup_id'");
+        mysqli_query($db,"UPDATE member SET is_rated = true WHERE member_id = '$member_id'");
+        header('location: meetup_details.php?meetup='.$meetup_id);
+    }
+
 
     mysqli_close($db);
 ?>

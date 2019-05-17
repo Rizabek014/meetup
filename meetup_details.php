@@ -1,7 +1,12 @@
 <?php
     include ('Database.php');
+
     $user_id = 0;
     $is_admin = false;
+    $is_member = false;
+    $is_organizer = false;
+    $members_name = array();
+
     if(isset($_COOKIE["type"]))
     {
         $user_id = $_COOKIE['type'];
@@ -39,10 +44,6 @@
 
     $members = mysqli_query($db, "SELECT * FROM member WHERE meetup_id = $meetup_id");
 
-    $is_member = false;
-    $is_organizer = false;
-    $members_name = array();
-
     foreach ($users as $user)
     {
         if($user['user_id'] == $organizer_id)
@@ -52,12 +53,14 @@
 
         foreach ($members as $member)
         {
-            if($user['user_id'] == $member['user_id'])
-            {
-                array_push($members_name, $user['user_name']);
-            }
+            if($user['user_id'] == $member['user_id']) array_push($members_name, $user['user_name']);
 
-            if($member['user_id'] == $user_id) $is_member = true;
+            if($member['user_id'] == $user_id)
+            {
+                $member_id = $member['member_id'];
+                $is_member = true;
+                $is_rated = $member['is_rated'];
+            }
         }
     }
 
@@ -174,8 +177,7 @@
             </div>
           </div>
         </div>
-        <?php
-        if($is_organizer || $is_admin):?>
+        <?php if($is_organizer || $is_admin):?>
             <a href="edit.php?edit=<?= $meetup_id ?>" class="edit_btn" >Edit</a>
             <a href="AdminServer.php?del=<?= $meetup_id ?>" class="del_btn">Delete</a>
             <?php if($is_admin && !$is_approved): ?>
@@ -186,8 +188,16 @@
             <?php endif;?>
         <?php elseif ($is_member && isset($_COOKIE["type"])): ?>
             <a href="Server.php?unjoin=<?= $user_id ?>&unjointo=<?= $meetup_id ?>" class="btn-primary">Unjoin</a>
-    <?php elseif (isset($_COOKIE["type"]) && !$is_member): ?>
+        <?php elseif (isset($_COOKIE["type"]) && !$is_member): ?>
             <a href="Server.php?join=<?= $user_id ?>&jointo=<?= $meetup_id ?>" class="btn-primary">Join</a>
+        <?php endif;?>
+        <?php if($is_member && !$is_rated): ?>
+            <form action="Server.php" method="post">
+                <input type = "hidden" name = "meetup_id" value = "<?php echo $meetup_id;?>">
+                <input type = "hidden" name = "member_id" value = "<?php echo $member_id;?>">
+                <input type = "range" name = "points" min = "0" max = "100">
+                <input type = "submit" name = "submit_points">
+            </form>
         <?php endif;?>
       </div>
     </section>
