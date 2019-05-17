@@ -1,20 +1,14 @@
 <?php
+    $GLOBALS['filename'] = 'meetups';
+
     include ('Database.php');
+    include ('nav.php');
 
     $user_id = 0;
     $is_admin = false;
     $is_member = false;
     $is_organizer = false;
     $members_name = array();
-
-    if(isset($_COOKIE["type"]))
-    {
-        $user_id = $_COOKIE['type'];
-        $user = mysqli_query($db, "SELECT * FROM user WHERE user_id = '$user_id'");
-        $users = mysqli_fetch_array($user);
-        $user_name = $users['user_name'];
-        $is_admin = $users['is_admin'];
-    }
 
     if(isset($_GET['meetup']))
     {
@@ -66,70 +60,6 @@
 
     if($organizer_id == $user_id) $is_organizer = true;
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>TheEvent - Bootstrap Event Template</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicons -->
-  <link href="img/favicon1.png" rel="icon">
-  <link href="img/apple_touch_icon1.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/venobox/venobox.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Theme Name: TheEvent
-    Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
-</head>
-
-<body>
-
-  <!--==========================
-    Header
-  ============================-->
-  <header id="header" class="header-fixed">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-          <h1><a href="index.php">Meet<span>UP</span></a></h1>
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="#venue">Photos from location</a></li>
-          <li><a href="#hotels">Hotels</a></li>
-            <?php if (!isset($_COOKIE["type"])): ?>
-                <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
-                <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
-            <?php else:?>
-                <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
-                <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
-            <?php endif ?>
-        </ul>
-      </nav><!-- #nav-menu-container -->
-    </div>
-  </header><!-- #header -->
-
   <main id="main" class="main-page">
 
     <!--==========================
