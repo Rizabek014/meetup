@@ -91,7 +91,7 @@
                     <input type = "hidden" name = "user_id" value="<?php echo $user_id ?>">
                     <div class="form-group" >
                         <label>Image</label>
-                        <input class="form-control" type="file" name="image">
+                        <input class="form-control" type="file" name="files[]" multiple>
                     </div>                    
                     <div class="text-center" style="margin:20px 0 10px 0;">
                         <button type="submit" class="btn" name="save">Save</button>
