@@ -4,8 +4,8 @@
     include ('Database.php');
     include ('nav.php');
 
-
     $result = NULL;
+
     if(isset($_POST['find']))
     {
         $search = $_POST['search_field'];
@@ -16,8 +16,6 @@
     $meetup = mysqli_query($db, "SELECT * FROM meetups");
     $image = mysqli_query($db, "SELECT * FROM image");
 
-
-    
 ?>
 
   <!--==========================

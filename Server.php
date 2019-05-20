@@ -65,10 +65,10 @@
         $organizer_id = mysqli_real_escape_string($db, $_POST['organizer_id']);
         $meetup_id = mysqli_real_escape_string($db, $_POST['meetup_id']);
         //need to fix
-        $sql = "UPDATE meetups SET 
-                        name = '$name', description = '$description', date = '$date', 
-                        location = '$location', sphere = '$sphere', organizer_id = '$organizer_id' 
-                        WHERE meetup_id = $meetup_id";
+        $sql = "UPDATE meetups 
+                SET name = '$name', description = '$description', date = '$date', 
+                    location = '$location', sphere = '$sphere', organizer_id = '$organizer_id' 
+                WHERE meetup_id = $meetup_id";
         mysqli_query($db, $sql);
 
         $target = "images/".basename($_FILES['image']['name']);
@@ -91,7 +91,10 @@
     {
         $meetup_id = $_GET['del'];
         mysqli_query($db, "DELETE FROM meetups WHERE meetup_id = $meetup_id");
-        $_SESSION['message'] = "Deleted!";
+        mysqli_query($db, "DELETE FROM image WHERE meetup_id = $meetup_id");
+        mysqli_query($db, "DELETE FROM comment WHERE meetup_id = $meetup_id");
+        mysqli_query($db, "DELETE FROM member WHERE meetup_id = $meetup_id");
+        mysqli_query($db, "DELETE FROM rating WHERE meetup_id = $meetup_id");
         header('location: index.php');
     }
 
@@ -100,6 +103,7 @@
         $user_id = $_GET['join'];
         $meetup_id = $_GET['jointo'];
         mysqli_query($db, "INSERT INTO member (user_id, meetup_id) VALUES ('$user_id', '$meetup_id')");
+        mysqli_query($db, "INSERT INTO rating (user_id, meetup_id) VALUES ('$user_id', '$meetup_id')");
         header('location: meetup_details.php?meetup='.$meetup_id);
     }
 
@@ -155,10 +159,10 @@
             if ($current_password === $password['password']) {
                 if ($new_password1 === $new_password2) {
                     $new_password1 = md5($new_password1);
-                    $sql = "UPDATE user SET 
-                                        user_name = '$user_name', email= '$email', phone = '$phone', 
-                                        address= '$address', logo = '$logo', password = '$new_password1' 
-                                        WHERE user_id = $user_id";
+                    $sql = "UPDATE user 
+                            SET user_name = '$user_name', email= '$email', phone = '$phone', 
+                                address= '$address', logo = '$logo', password = '$new_password1' 
+                            WHERE user_id = $user_id";
                     mysqli_query($db, $sql);
                     header('location: Profile.php?user_id=' . $user_id);
                 } else {
@@ -172,10 +176,9 @@
         }
         else
         {
-            $sql = "UPDATE user SET 
-                                user_name = '$user_name', email= '$email', phone = '$phone', 
-                                address= '$address', logo = '$logo'  
-                                WHERE user_id = $user_id";
+            $sql = "UPDATE user 
+                    SET user_name = '$user_name', email= '$email', phone = '$phone', address= '$address', logo = '$logo'  
+                    WHERE user_id = $user_id";
             mysqli_query($db, $sql);
             header('location: Profile.php?user_id=' . $user_id);
         }
@@ -184,14 +187,27 @@
     {
         $new_points = $_POST['points'];
         $meetup_id = $_POST['meetup_id'];
-        $member_id = $_POST['member_id'];
+        $user_id = $_POST['user_id'];
+        $rating =  mysqli_query($db, "SELECT * FROM rating WHERE meetup_id = $meetup_id AND user_id = $user_id");
+        $ratings = mysqli_fetch_array($rating);
+        $is_rated = isset($ratings);
 
-        $current_point = mysqli_query($db,"SELECT points FROM meetups WHERE meetup_id = '$meetup_id'");
-        $current_points = mysqli_fetch_array($current_point);
-        $points = $current_points['points'] + $new_points;
+        if($is_rated)
+            mysqli_query($db,"UPDATE rating SET point = '$new_points' 
+                                    WHERE meetup_id = '$meetup_id' AND user_id = '$user_id'");
+        else
+            mysqli_query($db,"INSERT INTO rating(meetup_id, user_id, point) 
+                                    VALUES ('$meetup_id', '$user_id', '$new_points')");
+
+        $current_rating = mysqli_query($db,"SELECT point FROM rating 
+                                                  WHERE meetup_id = '$meetup_id'");
+        $points = 0;
+        foreach ($current_rating as $current_points)
+        {
+            $points = $points + $current_points['point'];
+        }
 
         mysqli_query($db,"UPDATE meetups SET points = '$points' WHERE meetup_id = '$meetup_id'");
-        mysqli_query($db,"UPDATE member SET is_rated = true WHERE member_id = '$member_id'");
         header('location: meetup_details.php?meetup='.$meetup_id);
     }
 

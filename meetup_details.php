@@ -4,11 +4,11 @@
     include ('Database.php');
     include ('nav.php');
 
-    $user_id = 0;
     $is_admin = false;
     $is_member = false;
     $is_organizer = false;
     $members_name = array();
+    $is_logged_in = isset($_COOKIE["type"]);
 
     if(isset($_GET['meetup']))
     {
@@ -25,6 +25,7 @@
         $organizer_id = $record['organizer_id'];
         $meetup_id = $record['meetup_id'];
         $is_approved = $record['is_approved'];
+        $points = $record['points'];
     }
 
     $sql_image = "SELECT * FROM image WHERE meetup_id = $meetup_id";
@@ -51,9 +52,8 @@
 
             if($member['user_id'] == $user_id)
             {
-                $member_id = $member['member_id'];
                 $is_member = true;
-                $is_rated = $member['is_rated'];
+                $member_id = $member['member_id'];
             }
         }
     }
@@ -116,15 +116,17 @@
             <?php if($is_admin && $is_approved): ?>
                 <a href="AdminServer.php?disapprove=<?= $meetup_id ?>" class="edit_btn">Disapprove</a>
             <?php endif;?>
-        <?php elseif ($is_member && isset($_COOKIE["type"])): ?>
+        <?php elseif ($is_member && $is_logged_in): ?>
             <a href="Server.php?unjoin=<?= $user_id ?>&unjointo=<?= $meetup_id ?>" class="btn-primary">Unjoin</a>
-        <?php elseif (isset($_COOKIE["type"]) && !$is_member): ?>
+        <?php elseif ($is_logged_in && !$is_member): ?>
             <a href="Server.php?join=<?= $user_id ?>&jointo=<?= $meetup_id ?>" class="btn-primary">Join</a>
         <?php endif;?>
-        <?php if($is_member && !$is_rated): ?>
+          <p>Points: <?= $points?></p>
+        <?php if($is_member): ?>
             <form action="Server.php" method="post">
                 <input type = "hidden" name = "meetup_id" value = "<?php echo $meetup_id;?>">
-                <input type = "hidden" name = "member_id" value = "<?php echo $member_id;?>">
+                <input type = "hidden" name = "user_id" value = "<?php echo $user_id;?>">
+                <input type = "hidden" name = "is_rated" value = "<?php echo $is_rated;?>">
                 <input type = "range" name = "points" min = "0" max = "100">
                 <input type = "submit" name = "submit_points">
             </form>
