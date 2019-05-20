@@ -1554,6 +1554,30 @@ body.mobile-nav-active #mobile-nav-toggle {
     border: 1px solid #3c763d;
     margin-bottom: 20px;
 }
+
+
+.btn-search {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    border-radius: 0;
+    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: Transparent;
+    border: 2px solid Transparent;
+    border-radius: 40px;
+	}
+	.btn-search:link, .btn-search:visited {
+	  color: #fff;
+	}
+	.btn-search:active, .btn-search:hover {
+	  background: #f82249;
+	  color: #fff;
+	}
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/
