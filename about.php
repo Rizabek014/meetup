@@ -18,17 +18,17 @@
                       <div class="col-md-1"></div>
 
           <div class="col-md-5">
-            <img src="img/team/1.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid">
+            <img src="img/team/1.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid founders">
           </div>
 
         <div class="col-md-6">
             <div class="details">
               <h2>Apushev Yelaman</h2>
               <div class="social">
-                <a href="https://vk.com/apushev_yelaman"><i class="fa fa-vk"></i></a>
-                <a href="https://vk.com/apushev_yelaman"><i class="fa fa-facebook"></i></a>
-                <a href="https://vk.com/apushev_yelaman"><i class="fa fa-google-plus"></i></a>
-                <a href="https://vk.com/apushev_yelaman"><i class="fa fa-instagram"></i></a>
+                <a href="https://vk.com/apushev_yelaman" target="_blank"><i class="fa fa-vk"></i></a>
+                <a href="https://vk.com/apushev_yelaman" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://vk.com/apushev_yelaman" target="_blank"><i class="fa fa-google-plus"></i></a>
+                <a href="https://vk.com/apushev_yelaman" target="_blank"><i class="fa fa-instagram"></i></a>
               </div>
               <p>An enthusiastic individual who is seeking a placement position to enable skills of IT  development.</p>
  
@@ -43,17 +43,17 @@
         <div class="row">
             <div class="col-md-1"></div>
           <div class="col-md-5">
-            <img src="img/team/2.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid">
+            <img src="img/team/2.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid founders">
           </div>
 
             <div class="col-md-6">
             <div class="details">
               <h2>Kabzhanov Rizabek</h2>
               <div class="social">
-                <a href="https://vk.com/tumakatason"><i class="fa fa-vk"></i></a>
-                <a href="https://vk.com/tumakatason"><i class="fa fa-facebook"></i></a>
-                <a href="https://vk.com/tumakatason"><i class="fa fa-google-plus"></i></a>
-                <a href="https://vk.com/tumakatason"><i class="fa fa-instagram"></i></a>
+                <a href="https://vk.com/tumakatason" target="_blank"><i class="fa fa-vk"></i></a>
+                <a href="https://vk.com/tumakatason" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://vk.com/tumakatason" target="_blank"><i class="fa fa-google-plus"></i></a>
+                <a href="https://vk.com/tumakatason" target="_blank"><i class="fa fa-instagram"></i></a>
               </div>
               <p>An enthusiastic individual who is seeking a placement position to enable skills of IT  development.</p>
  
@@ -73,7 +73,7 @@
                   <div class="row">
                       <div class="col-md-1"></div>
           <div class="col-md-5">
-            <img src="img/team/3.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid">
+            <img src="img/team/3.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid founders">
           </div>
 
           
@@ -82,10 +82,10 @@
             <div class="details">
               <h2>Zharas Mergazy</h2>
               <div class="social">
-                <a href="https://vk.com/id185467790"><i class="fa fa-vk"></i></a>
-                <a href="https://vk.com/id185467790"><i class="fa fa-facebook"></i></a>
-                <a href="https://vk.com/id185467790"><i class="fa fa-google-plus"></i></a>
-                <a href="https://vk.com/id185467790"><i class="fa fa-instagram"></i></a>
+                <a href="https://vk.com/id185467790" target="_blank"><i class="fa fa-vk"></i></a>
+                <a href="https://vk.com/id185467790" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://vk.com/id185467790" target="_blank"><i class="fa fa-google-plus"></i></a>
+                <a href="https://vk.com/id185467790" target="_blank"><i class="fa fa-instagram"></i></a>
               </div>
               <p>An enthusiastic individual who is seeking a placement position to enable skills of IT  development.</p>
  

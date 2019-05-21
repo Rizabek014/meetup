@@ -34,10 +34,10 @@
                     </div>
                     <div class="form-group text-center">
                         <br>
-                        Date
+                        Choose
                         <br>
-                        <label style="margin: 10px 38px 10px 30px;">On Date</label> <input type="radio" name="choose" value="date">
-                        <label style="margin: 10px 38px 10px 30px;">Every week</label><input type="radio" name="choose" value="everyweek" style="margin-left: 20px;">
+                        <label style="margin: 10px 38px 10px 30px;">Exact Date</label> <input type="radio" name="choose" value="date">
+                        <label style="margin: 10px 38px 10px 30px;">Week days</label><input type="radio" name="choose" value="everyweek" style="margin-left: 20px;">
                         <div class="date">
                             <input class="form-control" type="date" name="date">
                         </div>

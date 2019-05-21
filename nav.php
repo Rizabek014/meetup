@@ -106,11 +106,11 @@
                       </div>
                       </form>
                   </li>
-                  <li class="menu-active"><a href="add.php">Create meetup</a></li>
                     <?php if (!isset($_COOKIE["type"])): ?>
                      <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
                     <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
+                    <li class="buy-tickets"><a href="add.php">Create meetup</a></li>
                   <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
                   <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
@@ -135,10 +135,10 @@
                     <?php if (!isset($_COOKIE["type"])): ?>
                      <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
                     <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
-                    <?php else:?>                    
+                    <?php else:?>
+                    <li class="buy-tickets"><a href="add.php">Create meetup</a></li>
                     <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
                     <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
-                    <li class="buy-tickets"><a href="add.php">Create meetup</a></li>
                     <?php endif ?>
                 </ul>
               </nav><!-- #nav-menu-container -->
@@ -146,6 +146,18 @@
           elseif($GLOBALS['filename'] == 'about'){ ?>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
+                    <li>
+                      <form method="post" action="meetup_search.php" id="searchform">
+                      <div class="container" style="margin-top:5px;">
+                        <div class="input-group">                            
+                            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" name="search_field" style="width:250px;"> 
+                              <span class="input-group-btn">
+                                <button class="btn btn-search" type="submit" name="find"><i class="fa fa-search fa-fw"></i> </button>
+                              </span>                            
+                        </div>
+                      </div>
+                      </form>
+                  </li>
                     <?php if (!isset($_COOKIE["type"])): ?>
                      <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
                     <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
