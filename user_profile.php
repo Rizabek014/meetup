@@ -26,9 +26,8 @@
     while($member_of = mysqli_fetch_array($member))
     {
         $meetup_id = $member_of['meetup_id'];
-        $meetup = mysqli_query($db, "SELECT name,sphere FROM meetups WHERE meetup_id = '$meetup_id'");
+        $meetup = mysqli_query($db, "SELECT * FROM meetups WHERE meetup_id = '$meetup_id'");
         $meetups = mysqli_fetch_array($meetup);
-        array_push($meetup_name, $meetups['name']);
         array_push($meetup_sphere, $meetups['sphere']);
     }
 
@@ -74,7 +73,12 @@
                 </div>
                 <div class="form-group">
                     <label>List of name of joined meetups:</label>
-                    <?php foreach ($meetup_name as $name) echo $name; ?>
+                    <?php
+                        foreach ($meetup as $row)
+                        {
+                            echo "<a href='meetup_details.php?meetup=". $row['meetup_id']."'> ".$row['name']. "</a>";
+                        }
+                    ?>
                 </div>
                 <form method="post" action="Server.php">
                     <input type="hidden" name = "newsletter" value="<?= $email ?>">
