@@ -242,6 +242,20 @@
         header('location: meetup_details.php?meetup='.$meetup_id);
     }
 
+    if(isset($_POST['send-email']))
+    {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+        $to = 'apushev.ye@gmail.com';
+        $headers = 'From: '. $name . "\r\n" .
+                    'Reply-To: '. $email . "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
+
+        mail($to, $subject, $message, $headers);
+        header('location: index.php');
+    }
 
     mysqli_close($db);
 ?>
