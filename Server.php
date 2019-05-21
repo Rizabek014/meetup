@@ -166,7 +166,8 @@
         $current_password = mysqli_real_escape_string($db, $_POST['current_password']);
         $new_password1 = mysqli_real_escape_string($db, $_POST['new_password1']);
         $new_password2 = mysqli_real_escape_string($db, $_POST['new_password2']);
-
+        $logotype = $_POST['logo'];
+        $image = $_POST['image'];
         $target = "profiles/".basename($_FILES['logo']['name']);
         $logo = $_FILES['logo']['name'];
 
@@ -181,7 +182,7 @@
 
         $record = mysqli_query($db, "SELECT * FROM user WHERE user_id = '$user_id'");
         $password = mysqli_fetch_array($record);
-
+        if($_FILES['logo']['size'] == 0) $logo = $image;
         if(!empty($current_password) && !empty($new_password1)) {
             $current_password = md5($current_password);
 
