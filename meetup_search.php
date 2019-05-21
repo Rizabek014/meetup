@@ -6,18 +6,18 @@
 
 
     $result = NULL;
+
     if(isset($_POST['find']))
     {
         $search = $_POST['search_field'];
         $sql = "SELECT * FROM meetups WHERE name LIKE '%". $search . "%' OR location LIKE '%". $search . "%'";
         $result = mysqli_query($db,$sql);
+        $results = mysqli_fetch_array($result);
     }
 
     $meetup = mysqli_query($db, "SELECT * FROM meetups");
     $image = mysqli_query($db, "SELECT * FROM image");
 
-
-    
 ?>
 <main id="main" class="main-page">
 
@@ -28,9 +28,8 @@
             </div>
             <div class="row">
                 <?php
-                    if(isset($result)):
-                        while ($tuple = mysqli_fetch_array($result)):
-                            if($tuple['is_approved'] == 1):
+                     while ($tuple = mysqli_fetch_array($result)):
+                        if($tuple['is_approved'] == 1):
                 ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="speaker">
@@ -56,7 +55,9 @@
                         </div>
                     </div>
                 </div>
-                <?php endif; endwhile; endif; ?>
+                <?php endif; endwhile; if(is_null($results)):?>
+                    <p>There is no search result</p>
+                <?php endif;?>
             </div>
         </div>
     </section>
@@ -64,3 +65,10 @@
 <?php include ('footer.php'); ?>
 </body>
 </html>
+<script>
+    jQuery(document).ready(function($) {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
+        });
+    });
+</script>
