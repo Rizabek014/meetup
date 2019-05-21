@@ -114,19 +114,25 @@
           elseif($GLOBALS['filename'] == 'profile'){ ?>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                  <li class="menu-active"><a href="index.php">Home</a></li>
-                  <li><a href="#about">Meetups</a></li>
-                  <li><a href="#gallery">Gallery</a></li>
-                  <li><a href="#supporters">Sponsors</a></li>
-                  <li><a href="#faq">FAQ</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                    <li><a href="add.php">Create meetup</a></li>
+                  <li>
+                      <form method="post" action="index.php" id="searchform">
+                      <div class="container" style="margin-top:5px;">
+                        <div class="input-group">                            
+                            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" name="search_field" style="width:250px;"> 
+                              <span class="input-group-btn">
+                                <button class="btn btn-search" type="submit" name="find"><i class="fa fa-search fa-fw"></i> </button>
+                              </span>                            
+                        </div>
+                      </div>
+                      </form>
+                  </li>
                     <?php if (!isset($_COOKIE["type"])): ?>
                      <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
                     <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
-                    <?php else:?>
-                  <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
-                  <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
+                    <?php else:?>                    
+                    <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
+                    <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
+                    <li class="buy-tickets"><a href="add.php">Create meetup</a></li>
                     <?php endif ?>
                 </ul>
               </nav><!-- #nav-menu-container -->

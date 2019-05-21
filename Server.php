@@ -1,6 +1,6 @@
 <?php
     include ('Database.php');
-
+    session_start();
     $name = "";
     $description = "";
     $date = "";
@@ -193,14 +193,14 @@
                                 address= '$address', logo = '$logo', password = '$new_password1' 
                             WHERE user_id = $user_id";
                     mysqli_query($db, $sql);
-                    header('location: Profile.php?user_id=' . $user_id);
+                    header('location: user_profile.php?user_id=' . $user_id);
                 } else {
                     $_SESSION['message'] = "The two passwords do not match";
-                    header('location: EditProfile.php?user_edit=' . $user_id);
+                    header('location: user_profile.php?user_edit=' . $user_id);        
                 }
             } else {
-                $_SESSION['message'] = "Current password is incorrect";
-                header('location: EditProfile.php?user_edit=' . $user_id);
+                $_SESSION['message'] = 'Current password is incorrect';
+                header('location: user_profile.php?user_edit=' . $user_id);
             }
         }
         else
@@ -209,7 +209,7 @@
                     SET user_name = '$user_name', email= '$email', phone = '$phone', address= '$address', logo = '$logo'  
                     WHERE user_id = $user_id";
             mysqli_query($db, $sql);
-            header('location: Profile.php?user_id=' . $user_id);
+            header('location: user_profile.php?user_id=' . $user_id);
         }
     }
     if(isset($_POST['submit_points']))
