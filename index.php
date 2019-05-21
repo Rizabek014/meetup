@@ -8,7 +8,6 @@
 
     $meetup = mysqli_query($db, "SELECT * FROM meetups");
     $image = mysqli_query($db, "SELECT * FROM image");
-
 ?>
 
   <!--==========================
@@ -287,6 +286,8 @@
           <div class="form-row justify-content-center">
             <div class="col-auto">
               <input type="text" class="form-control" placeholder="Enter your Email" name = "newsletter">
+              <input type="hidden" name = "header" value="location: index.php">
+              <input type="hidden" name = "newsletter_sphere" value="nothing">
             </div>
             <div class="col-auto">
               <button type="submit" name="submit_newsletter">Subscribe</button>

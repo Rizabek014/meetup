@@ -259,17 +259,25 @@
     if(isset($_POST['submit_newsletter']))
     {
         $email = $_POST['newsletter'];
+        $sphere = $_POST['newsletter_sphere'];
+        $header = $_POST['header'];
         $email_check = "SELECT email FROM newsletter WHERE email = '$email'";
         $result = mysqli_query($db,$email_check);
         $is_exist = mysqli_fetch_assoc($result);
 
         if(!$is_exist)
         {
-            $sql = "INSERT INTO newsletter (email) VALUES ('$email')";
+            $sql = "INSERT INTO newsletter (email,sphere) VALUES ('$email','$sphere')";
             mysqli_query($db, $sql);
         }
-        header('location: index.php');
+        header($header);
     }
 
+    if(isset($_POST['delete_newsletter']))
+    {
+        $newsletter_id = $_POST['newsletter_id'];
+        mysqli_query($db, "DELETE FROM newsletter WHERE newsletter_id = $newsletter_id");
+        header('location: user_profile.php');
+    }
     mysqli_close($db);
 ?>
