@@ -2,10 +2,6 @@
     session_start();
     include ('Database.php');
 
-    if(isset($_COOKIE["type"]))
-    {
-        header('location: index.php');
-    }
     // initializing variables
     $user_name = "";
     $email = "";

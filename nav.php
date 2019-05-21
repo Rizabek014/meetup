@@ -84,7 +84,7 @@
                      <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
                     <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>                    
-                    <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
+                    <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
                     <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <li class="buy-tickets"><a href="add.php">Create meetup</a></li>
                     <?php endif ?>
@@ -105,7 +105,27 @@
                      <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
                     <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
-                  <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
+                  <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
+                  <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
+                    <?php endif ?>
+                </ul>
+              </nav><!-- #nav-menu-container -->
+          <?php } 
+          elseif($GLOBALS['filename'] == 'profile'){ ?>
+              <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                  <li class="menu-active"><a href="index.php">Home</a></li>
+                  <li><a href="#about">Meetups</a></li>
+                  <li><a href="#gallery">Gallery</a></li>
+                  <li><a href="#supporters">Sponsors</a></li>
+                  <li><a href="#faq">FAQ</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                    <li><a href="add.php">Create meetup</a></li>
+                    <?php if (!isset($_COOKIE["type"])): ?>
+                     <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
+                    <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
+                    <?php else:?>
+                  <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
                   <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
                 </ul>
@@ -118,7 +138,7 @@
                      <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
                     <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
-                  <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
+                  <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
                   <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
                 </ul>
@@ -133,7 +153,7 @@
                         <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
                         <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
-                        <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
+                        <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
                 </ul>
