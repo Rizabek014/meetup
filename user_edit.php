@@ -81,9 +81,10 @@ if(isset($_COOKIE["type"]))
                             <div class="text-center" style="margin:20px 0 10px 0;">
                                 <button type="submit" name = "user_update" class = "btn">Save</button>
                             </div>
+                        </form>
                     </div>
                 </div>
-                </form>
+                
             </div>
         </div>
     </section>

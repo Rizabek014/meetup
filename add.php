@@ -5,7 +5,6 @@
     include ('Database.php');
     include ('nav.php');
 ?>
-<body>
   <main id="main" class="main-page">
 
     <!--==========================
@@ -20,7 +19,7 @@
 
         <div class="row" >
           <div class="col-md-3"></div>
-          <div class="col-md-6" style="height: 600px;">
+          <div class="col-md-6" style="height: 700px;">
             <div class="details" >
                 <div class="social"></div>
                 <form method="post" action = "Server.php">
@@ -33,21 +32,25 @@
                         <label>Description</label>
                         <textarea class="form-control" rows="5" cols="50" name="description" ></textarea>
                     </div>
-                    <div class="form-group">
-                        <label>Date</label>
-                        <br><input type="radio" name="choose" value="date">on Date
-                        <br><input type="radio" name="choose" value="everyweek">Every week
+                    <div class="form-group text-center">
+                        <br>
+                        Date
+                        <br>
+                        <label style="margin: 10px 38px 10px 30px;">On Date</label> <input type="radio" name="choose" value="date">
+                        <label style="margin: 10px 38px 10px 30px;">Every week</label><input type="radio" name="choose" value="everyweek" style="margin-left: 20px;">
                         <div class="date">
                             <input class="form-control" type="date" name="date">
                         </div>
                         <div class="week">
-                            <input type="checkbox" name="date" value="Monday"> Monday
-                            <input type="checkbox" name="date" value="Tuesday"> Tuesday
-                            <input type="checkbox" name="date" value="Wendesday"> Wednesday
-                            <input type="checkbox" name="date" value="Thursday"> Thursday
-                            <input type="checkbox" name="date" value="Friday"> Friday
-                            <input type="checkbox" name="date" value="Saturday"> Saturday
-                            <br><input type="checkbox" name="date" value="Sunday"> Sunday
+                            <hr>
+                            <input type="checkbox" name="date" value="Monday"> <label>Monday</label>
+                            <input type="checkbox" name="date" value="Tuesday"> <label>Tuesday</label>
+                            <input type="checkbox" name="date" value="Wendesday"> <label>Wednesday</label>
+                            <input type="checkbox" name="date" value="Thursday"> <label>Thursday</label><br>
+                            <input type="checkbox" name="date" value="Friday"> <label>Friday</label>
+                            <input type="checkbox" name="date" value="Saturday"> <label>Saturday</label>
+                            <input type="checkbox" name="date" value="Sunday"> <label>Sunday</label>
+                            <hr>
                         </div>
                     </div>
                     <div class="form-group">

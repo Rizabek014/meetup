@@ -66,7 +66,7 @@
 
         <div class="row" >
           <div class="col-md-3"></div>
-          <div class="col-md-6" style="height: 590px;">
+          <div class="col-md-6" style="height: 650px;">
             <div class="details" >
                 <div class="social"></div>
                 <form id="form" method="post" action="sign_in.php">
