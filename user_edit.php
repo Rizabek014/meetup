@@ -24,8 +24,8 @@ if(isset($_COOKIE["type"]))
     <section id="speakers-details" class="wow fadeIn">
         <div class="container">
             <div class="section-header">
-                <h2>Sign Up</h2>
-                <p>Join our awesome community.</p>
+                <h2>User profile</h2>
+                <p>Enter the most reliable information, so we can stay in touch.</p>
             </div>
 
             <div class="row" >
@@ -59,6 +59,7 @@ if(isset($_COOKIE["type"]))
                                 <label>Address</label>
                                 <input class="form-control" type="text" name="address" placeholder="Enter your address" value="<?= $address; ?>">
                             </div>
+                            <label>Add Avatar</label><br>
                             <input type = "file" name = "logo">
                             <input type="hidden" name = "image" value="<?= $image; ?>">
                             <div class="text-center" style="margin:20px 0 10px 0;">

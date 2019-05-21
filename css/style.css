@@ -54,6 +54,14 @@ h6 {
   visibility: hidden;
 }
 
+/* Avatar*/
+#avatar{
+  vertical-align: middle;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
 /* Prelaoder */
 
 #preloader {
