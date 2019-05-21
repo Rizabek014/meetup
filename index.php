@@ -5,6 +5,7 @@
     include ('nav.php');
 
     $result = NULL;
+    $is_logged_in = isset($_COOKIE["type"]);
 
     if(isset($_POST['find']))
     {
@@ -319,7 +320,7 @@
       </div>
 
     </section>
-
+    <?php if(!$is_logged_in):?>
     <!--==========================
       Subscribe Section
     ============================-->
@@ -329,21 +330,20 @@
           <h2>Newsletter</h2>
           <p>Subscribe to our newsletter which will send you wonderfull news about meetups.</p>
         </div>
-
-        <form method="POST" action="#">
+        <form action="Server.php" method="post">
           <div class="form-row justify-content-center">
             <div class="col-auto">
-              <input type="text" class="form-control" placeholder="Enter your Email">
+              <input type="text" class="form-control" placeholder="Enter your Email" name = "newsletter">
             </div>
             <div class="col-auto">
-              <button type="submit">Subscribe</button>
+              <button type="submit" name="submit_newsletter">Subscribe</button>
             </div>
           </div>
         </form>
 
       </div>
     </section>
-      
+    <?php endif; ?>
 
     <!--==========================
       Contact Section

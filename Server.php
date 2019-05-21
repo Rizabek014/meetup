@@ -1,8 +1,6 @@
 <?php
     include ('Database.php');
 
-    session_start();
-
     $name = "";
     $description = "";
     $date = "";
@@ -254,6 +252,21 @@
                     'X-Mailer: PHP/' . phpversion();
 
         mail($to, $subject, $message, $headers);
+        header('location: index.php');
+    }
+
+    if(isset($_POST['submit_newsletter']))
+    {
+        $email = $_POST['newsletter'];
+        $email_check = "SELECT email FROM newsletter WHERE email = '$email'";
+        $result = mysqli_query($db,$email_check);
+        $is_exist = mysqli_fetch_assoc($result);
+
+        if(!$is_exist)
+        {
+            $sql = "INSERT INTO newsletter (email) VALUES ('$email')";
+            mysqli_query($db, $sql);
+        }
         header('location: index.php');
     }
 
