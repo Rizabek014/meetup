@@ -69,7 +69,7 @@
                   <li><a href="#faq">FAQ</a></li>
                   <li><a href="#contact">Contact</a></li>
                   <li>
-                      <form method="post" action="index.php" id="searchform">
+                      <form method="post" action="meetup_search.php" id="searchform">
                       <div class="container" style="margin-top:5px;">
                         <div class="input-group">                            
                             <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" name="search_field" style="width:100px;"> 

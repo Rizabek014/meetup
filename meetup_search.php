@@ -11,7 +11,6 @@
         $search = $_POST['search_field'];
         $sql = "SELECT * FROM meetups WHERE name LIKE '%". $search . "%' OR location LIKE '%". $search . "%'";
         $result = mysqli_query($db,$sql);
-        $GLOBALS['result']=mysqli_query($db,$sql);
     }
 
     $meetup = mysqli_query($db, "SELECT * FROM meetups");
@@ -20,9 +19,13 @@
 
     
 ?>
-<main id="main">
+<main id="main" class="main-page">
+
     <section id="speakers" class="wow fadeInUp">
         <div class="container">
+            <div class="section-header">
+                <h2>Search Results</h2>
+            </div>
             <div class="row">
                 <?php
                     if(isset($result)):
@@ -57,49 +60,7 @@
             </div>
         </div>
     </section>
-    <!--==========================
-      Speakers Section
-    ============================-->
-    <section id="speakers" class="wow fadeInUp">
-      <div class="container">
-        <div class="section-header">
-          <h2>Explore Meetups</h2>
-          <p>Here are some of our events</p>
-        </div>
-
-        <div class="row">
-            <?php
-                  while ($row = mysqli_fetch_array($meetup)):
-                      if ($row['is_approved'] == 1) :
-            ?>
-            <div class="col-lg-4 col-md-6">
-                <div class="speaker">
-                    <?php
-                    $check = true;
-                        foreach ($image as $images) {
-                             if ($images['meetup_id'] == $row['meetup_id'] && $check) {
-                                 $check = false;
-                                 echo "<img class='img-fluid' src='images/" . $images['file_name'] . "'>";
-                             }
-                        }
-                    ?>
-                    <div class="details">
-                        <h3 class='clickable-row' data-href="meetup_details.php?meetup=<?php echo $row['meetup_id']; ?>"><?php echo $row['name']; ?></h3>
-                        <p><?php echo $row['location']; ?></p>
-                        <div class="social">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-google-plus"></i></a>
-                            <a href=""><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php endif; endwhile;?>
-        </div>
-      </div>
-    </section>
-        </main>
+</main>
     <?php include ('footer.php'); ?>
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
