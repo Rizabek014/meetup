@@ -171,7 +171,9 @@
           elseif($GLOBALS['filename'] == 'meetups'){ ?>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                  <li><a href="#venue">Photos from location</a></li>
+                  <li class="menu-active"><a href="#meetup_details">Meetup details</a></li>
+                  <li><a href="#comments">Comments</a></li>
+                  <li><a href="#venue">Gallery</a></li>
                   <li><a href="#hotels">Hotels</a></li>
                     <?php if (!isset($_COOKIE["type"])): ?>
                         <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>

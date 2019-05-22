@@ -65,88 +65,98 @@
     <!--==========================
       Speaker Details Section
     ============================-->
+    <div id="meetup_details">
     <section id="speakers-details" class="wow fadeIn">
       <div class="container">
         <div class="section-header">
-          <h2>Meetup Details</h2>
+          <h2><?= $name ?></h2>
         </div>
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-5">
               <?php
               while($row_img = mysqli_fetch_array($result_image))
               {
                   echo "<img src = 'images/".$row_img['file_name']."' class='img-fluid'>";
                   break;
               }
-              ?>
-          </div>
-
-          <div class="col-md-6">
-            <div class="details">
-                <h2><?= $name ?></h2>
-                <p><?= $date ?></p>
-                <div class="social">
+              ?><br><br>
+              <div class="details text-center">
+                  <h4 style="display:inline-block; margin-right:20px;"><?= $date ?></h4>
+                  <div style="display:inline-block; position:relative;"  class="social">
                     <a href=""><i class="fa fa-twitter"></i></a>
                     <a href=""><i class="fa fa-facebook"></i></a>
                     <a href=""><i class="fa fa-google-plus"></i></a>
                     <a href=""><i class="fa fa-linkedin"></i></a>
+                      
                 </div>
-                <p><?= $location ?></p>
+              </div>
+              <div class="details">
+                  <div class="details">
+                      <h4><b>List of Members:</b><br><?php foreach ($members_name as $names){ echo $names."<br>";}?></h4>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-7">
+            <div class="details">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h4><b>Organizer:</b><?= " " . $organizer_name;?></h4>
+                        <h4><b>Location:</b> <?= $location ?></h4>
+                    </div>
+                    <div class="col-md-7">
+                        <?php if($is_organizer || $is_admin):?>
+                        <a href="edit.php?edit=<?= $meetup_id ?>" class="edit_btn" >Edit</a>
+                        <a href="AdminServer.php?del=<?= $meetup_id ?>" class="del_btn">Delete</a>
+                        <?php if($is_admin && !$is_approved): ?>
+                        <a href="AdminServer.php?approve=<?= $meetup_id ?>" class="edit_btn">Approve</a>
+                        <?php endif;?>
+                        <?php if($is_admin && $is_approved): ?>
+                        <a href="AdminServer.php?disapprove=<?= $meetup_id ?>" class="edit_btn">Disapprove</a>
+                        <?php endif;?>
+                        <?php elseif ($is_member && $is_logged_in): ?>
+                        <input onclick="location.href='Server.php?unjoin=<?= $user_id ?>&unjointo=<?= $meetup_id ?>'" type="button" class="btn" value="Unjoin" style="float:right;">
+                        <?php elseif ($is_logged_in && !$is_member): ?>
+                        <input onclick="location.href='Server.php?join=<?= $user_id ?>&jointo=<?= $meetup_id ?>'" type="button" class="btn" value="Join" style="float:right;">
+                        <?php endif;?>
+                        <h4><b>Points:</b><?=" " . $points?></h4>
+                        <?php if($is_member): ?>
+                        <form action="Server.php" method="post" class="text-center">
+                            <input type = "hidden" name = "meetup_id" value = "<?php echo $meetup_id;?>">
+                            <input type = "hidden" name = "user_id" value = "<?php echo $user_id;?>">
+                            <input type = "hidden" name = "is_rated" value = "<?php echo $is_rated;?>">
+                            <h4 style="float:left;"><b>Your rate:</b></h4>
+                            <input type = "range" name = "points" min = "0" max = "100">
+                            <input type = "submit" name = "submit_points" class="btn" style="float:right;">
+                        </form>
+                  <?php endif;?>
+                    </div>
+                </div>                
+                
+                  
                 <h2>Meetup description</h2>
                 <p><?= $description ?></p>
-                <h3>Organizer</h3>
-                <?= $organizer_name . "<br>";?>
-
-                <h6>List of Members</h6>
-                <?php
-                foreach ($members_name as $names)
-                {
-                    echo $names." ";
-                }
-                ?>
+              </div>
             </div>
           </div>
-        </div>
-        <?php if($is_organizer || $is_admin):?>
-            <a href="edit.php?edit=<?= $meetup_id ?>" class="edit_btn" >Edit</a>
-            <a href="AdminServer.php?del=<?= $meetup_id ?>" class="del_btn">Delete</a>
-            <?php if($is_admin && !$is_approved): ?>
-                <a href="AdminServer.php?approve=<?= $meetup_id ?>" class="edit_btn">Approve</a>
-            <?php endif;?>
-            <?php if($is_admin && $is_approved): ?>
-                <a href="AdminServer.php?disapprove=<?= $meetup_id ?>" class="edit_btn">Disapprove</a>
-            <?php endif;?>
-        <?php elseif ($is_member && $is_logged_in): ?>
-            <a href="Server.php?unjoin=<?= $user_id ?>&unjointo=<?= $meetup_id ?>" class="btn-primary">Unjoin</a>
-        <?php elseif ($is_logged_in && !$is_member): ?>
-            <a href="Server.php?join=<?= $user_id ?>&jointo=<?= $meetup_id ?>" class="btn-primary">Join</a>
-        <?php endif;?>
-          <p>Points: <?= $points?></p>
-        <?php if($is_member): ?>
-            <form action="Server.php" method="post">
-                <input type = "hidden" name = "meetup_id" value = "<?php echo $meetup_id;?>">
-                <input type = "hidden" name = "user_id" value = "<?php echo $user_id;?>">
-                <input type = "hidden" name = "is_rated" value = "<?php echo $is_rated;?>">
-                <input type = "range" name = "points" min = "0" max = "100">
-                <input type = "submit" name = "submit_points">
-            </form>
-        <?php endif;?>
-      </div>
+        </div>        
     </section>
-
-    <section id="speakers-details" class="wow fadeIn">
-        <div class="container">
+    </div>
+      
+    <div id="comments">
+    <section id="speakers-details" class="section-with-bg wow fadeIn">
+        <div  class="container">
             <div class="section-header">
                 <h2>Comments</h2>
             </div>
 
             <div class="row">
-                <form method = "post" action="Server.php">
+                <form method = "post" action="Server.php" style="margin: 0 auto;">
                     <input type = "hidden" name = "meetup_id" value="<?php echo $meetup_id;?>">
                     <input type = "hidden" name = "user_id" value="<?php echo $user_id;?>">
-                    <div class="col-md-6">
-                        <div class="details">
+
+                            
                             <?php
                             while($row_comment = mysqli_fetch_array($result_comment))
                             {
@@ -154,27 +164,25 @@
                                 {
                                     if($user['user_id'] == $row_comment['user_id'])
                                     {
-                                        echo $user['user_name']."<br>";
-                                        echo $row_comment['comment']."<br>";
+                                        echo "<h5><b>".$user['user_name'].":</b>".$row_comment['comment']."</h5><br>";
                                     }
                                 }
                             }
                             ?>
 
-                        </div>
-                    </div>
                     <input type = "text" name = "comment">
                     <button type="submit" name = "submit_comment" class = "btn">Submit</button>
                 </form>
             </div>
         </div>
       </section>
+      </div>
   </main>
 
     <!--==========================
       Venue Section
     ============================-->
-    <section id="venue" class="section-with-bg wow fadeInUp">
+    <section id="venue" class=" wow fadeInUp">
 
       <div class="container-fluid">
 
@@ -219,7 +227,7 @@
     <!--==========================
       Hotels Section
     ============================-->
-    <section id="hotels" class="wow fadeInUp">
+    <section id="hotels" class="section-with-bg wow fadeInUp">
 
       <div class="container">
         <div class="section-header">
