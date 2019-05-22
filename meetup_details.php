@@ -4,7 +4,6 @@
     include ('Database.php');
     include ('nav.php');
 
-    $is_admin = false;
     $is_member = false;
     $is_organizer = false;
     $members_name = array();
@@ -61,7 +60,6 @@
     if($organizer_id == $user_id) $is_organizer = true;
 ?>
   <main id="main" class="main-page">
-
     <!--==========================
       Speaker Details Section
     ============================-->
