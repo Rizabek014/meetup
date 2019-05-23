@@ -11,6 +11,15 @@
     $msg = "";
     $result = "";
 
+    function getDatetimeNow()
+    {
+        $tz_object = new DateTimeZone('Asia/Almaty');
+
+        $datetime = new DateTime();
+        $datetime->setTimezone($tz_object);
+        return $datetime->format('Y\-m\-d\ H:i:s');
+    }
+
     if(isset($_POST['next']))
         {
             $name = $_POST['name'];
@@ -19,9 +28,10 @@
             $location = $_POST['location'];
             $sphere = $_POST['sphere'];
             $organizer_id = $_POST['organizer_id'];
-            //need to fix
-            $sql = "INSERT INTO meetups (name, description, date, location, sphere, organizer_id) 
-                      VALUES ('$name', '$description', '$date', '$location', '$sphere', '$organizer_id')";
+            $created_at = getDatetimeNow();
+
+            $sql = "INSERT INTO meetups (name, description, date, location, sphere, organizer_id, created_at) 
+                    VALUES ('$name', '$description', '$date', '$location', '$sphere', '$organizer_id', '$created_at')";
 
             mysqli_query($db, $sql);
             $meetup = mysqli_query($db, "SELECT meetup_id FROM meetups WHERE name = '$name' AND description = '$description'");
@@ -93,10 +103,11 @@
         $sphere = mysqli_real_escape_string($db, $_POST['sphere']);
         $organizer_id = mysqli_real_escape_string($db, $_POST['organizer_id']);
         $meetup_id = mysqli_real_escape_string($db, $_POST['meetup_id']);
+        $updated_at = getDatetimeNow();
         //need to fix
         $sql = "UPDATE meetups 
                 SET name = '$name', description = '$description', date = '$date', 
-                    location = '$location', sphere = '$sphere', organizer_id = '$organizer_id' 
+                    location = '$location', sphere = '$sphere', organizer_id = '$organizer_id', updated_at = '$updated_at' 
                 WHERE meetup_id = $meetup_id";
         mysqli_query($db, $sql);
 
@@ -148,8 +159,8 @@
         $comment = $_POST['comment'];
         $meetup_id = $_POST['meetup_id'];
         $user_id = $_POST['user_id'];
-
-        $sql = "INSERT INTO comment (user_id, meetup_id, comment) VALUES ('$user_id', '$meetup_id', '$comment')";
+        $created_at = getDatetimeNow();
+        $sql = "INSERT INTO comment (user_id, meetup_id, comment, created_at) VALUES ('$user_id', '$meetup_id', '$comment', '$created_at')";
         mysqli_query($db, $sql);
         $_SESSION['message'] = "Saved!";
         header('location: meetup_details.php?meetup='.$meetup_id);
@@ -170,6 +181,7 @@
         $image = $_POST['image'];
         $target = "profiles/".basename($_FILES['logo']['name']);
         $logo = $_FILES['logo']['name'];
+        $updated_at = getDatetimeNow();
 
         if(move_uploaded_file($_FILES['logo']['tmp_name'], $target))
         {
@@ -191,7 +203,7 @@
                     $new_password1 = md5($new_password1);
                     $sql = "UPDATE user 
                             SET user_name = '$user_name', email= '$email', phone = '$phone', 
-                                address= '$address', logo = '$logo', password = '$new_password1' 
+                                address= '$address', logo = '$logo', password = '$new_password1', created_at = '$created_at' 
                             WHERE user_id = $user_id";
                     mysqli_query($db, $sql);
                     header('location: user_profile.php?user_id=' . $user_id);
@@ -207,7 +219,7 @@
         else
         {
             $sql = "UPDATE user 
-                    SET user_name = '$user_name', email= '$email', phone = '$phone', address= '$address', logo = '$logo'  
+                    SET user_name = '$user_name', email= '$email', phone = '$phone', address= '$address', logo = '$logo', updated_at = '$updated_at'  
                     WHERE user_id = $user_id";
             mysqli_query($db, $sql);
             header('location: user_profile.php?user_id=' . $user_id);

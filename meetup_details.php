@@ -153,23 +153,22 @@
                 <form method = "post" action="Server.php" style="margin: 0 auto;">
                     <input type = "hidden" name = "meetup_id" value="<?php echo $meetup_id;?>">
                     <input type = "hidden" name = "user_id" value="<?php echo $user_id;?>">
-
-                            
-                            <?php
-                            while($row_comment = mysqli_fetch_array($result_comment))
+                    <?php
+                        while($row_comment = mysqli_fetch_array($result_comment))
+                        {
+                            foreach ($users as $user)
                             {
-                               foreach ($users as $user)
+                                if($user['user_id'] == $row_comment['user_id'])
                                 {
-                                    if($user['user_id'] == $row_comment['user_id'])
-                                    {
-                                        echo "<h5><b>".$user['user_name'].":</b>".$row_comment['comment']."</h5><br>";
-                                    }
+                                    echo "<h5><b>".$user['user_name'].":</b>".$row_comment['comment']."</h5><br>";
                                 }
                             }
-                            ?>
-
+                        }
+                        if($is_logged_in):
+                    ?>
                     <input type = "text" name = "comment">
                     <button type="submit" name = "submit_comment" class = "btn">Submit</button>
+                    <?php endif;?>
                 </form>
             </div>
         </div>

@@ -16,7 +16,7 @@
         $phone = $users['phone'];
         $is_admin = $users['is_admin'];
     }
-
+    $meetup = array();
     $meetup_name = array();
     $meetup_sphere = array();
     $member = mysqli_query($db, "SELECT meetup_id FROM member WHERE user_id = '$user_id'");

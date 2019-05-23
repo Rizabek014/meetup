@@ -51,8 +51,10 @@
         if (count($errors) == 0) {
             $password = md5($password_1);//encrypt the password before saving in the database
 
-            $query = "INSERT INTO user (user_name, email, password, phone) 
-                  VALUES('$user_name', '$email', '$password', '$phone')";
+            $insertValuesSQL .= "('".$user_name."', '".$email."', '".$password."', '".$phone."', NOW()),";
+            $insertValuesSQL = trim($insertValuesSQL,',');
+            $query = "INSERT INTO user (user_name, email, password, phone, created_at) 
+                      VALUES $insertValuesSQL";
             mysqli_query($db, $query);
             $query = "SELECT * FROM user WHERE user_name = '$user_name'";
             $results = mysqli_query($db, $query);
