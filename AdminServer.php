@@ -71,7 +71,7 @@
         $meetup_id = $_GET['del'];
         mysqli_query($db, "DELETE FROM meetups WHERE meetup_id = $meetup_id");
         $_SESSION['message'] = "Deleted!";
-        header('location: AdminPage.php');
+        header('location: index.php');
     }
 
     if(isset($_GET['approve']))
@@ -79,14 +79,14 @@
         $meetup_id = $_GET['approve'];
         $is_approved = true;
         mysqli_query($db, "UPDATE meetups SET is_approved = true WHERE meetup_id = $meetup_id");
-        header('location: AdminPage.php');
+        header('location: meetup_details.php?meetup='.$meetup_id);
     }
 
     if(isset($_GET['disapprove']))
     {
         $meetup_id = $_GET['disapprove'];
         mysqli_query($db, "UPDATE meetups SET is_approved = false WHERE meetup_id = $meetup_id");
-        header('location: AdminPage.php');
+        header('location: meetup_details.php?meetup='.$meetup_id);
     }
 
     if(isset($_POST['submit_comment']))

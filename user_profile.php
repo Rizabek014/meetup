@@ -44,7 +44,11 @@
      <div class="container">
         <div class="section-header">
           <h2>User Profile</h2>
-          <p>Enter the most reliable information, so we can stay in touch.</p>
+          <?php if($is_admin): ?>
+                <p><a href="AdminPage.php">Admin</a></p>
+          <?php else:?>
+                <p>Enter the most reliable information, so we can stay in touch.</p>
+          <?php endif;?>
         </div>
         <div class="row" >
             <div class="col-md-5">
