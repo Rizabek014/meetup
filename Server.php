@@ -57,7 +57,6 @@
                 // File upload path
                 $fileName = basename($_FILES['files']['name'][$key]);
                 $targetFilePath = $targetDir . $fileName;
-
                 // Check whether file type is valid
                 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
                 if(in_array($fileType, $allowTypes)){
@@ -72,11 +71,10 @@
                     $errorUploadType .= $_FILES['files']['name'][$key].', ';
                 }
             }
-
             if(!empty($insertValuesSQL)){
                 $insertValuesSQL = trim($insertValuesSQL,',');
                 // Insert image file name into database
-                $insert = mysqli_query($db,"INSERT INTO image (file_name, meetup_id, user_id, uploaded_on) VALUES $insertValuesSQL");
+                $insert = mysqli_query($db,"INSERT INTO image (file_name, meetup_id, user_id, created_at) VALUES $insertValuesSQL");
                 if($insert){
                     $errorUpload = !empty($errorUpload)?'Upload Error: '.$errorUpload:'';
                     $errorUploadType = !empty($errorUploadType)?'File Type Error: '.$errorUploadType:'';
@@ -89,10 +87,8 @@
         }else{
             $statusMsg = 'Please select a file to upload.';
         }
-
         // Display status message
         echo $statusMsg;
-
         header('location: index.php');
     }
 
