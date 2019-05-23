@@ -68,6 +68,7 @@
       <div class="container">
         <div class="section-header">
           <h2><?= $name ?></h2>
+          <p><?php if(!$is_approved)echo "Waiting for approvement"; ?></p>
         </div>
 
         <div class="row">

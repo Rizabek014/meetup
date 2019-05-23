@@ -54,16 +54,16 @@
                         else 
                             echo "<img src = 'profiles/avatar.png' id='avatar'><br>
                             You don't have profile photo"
-                    ?>                
+                    ?>
                     <div class="form-group" style="margin-top:30px;">
-                        <label>List of name of joined meetups:</label>
-                        <?php
-                            if(empty($meetup_array)) echo '0';
-                            foreach ($meetup_array as $row)
-                            {
-                                echo "<a href='meetup_details.php?meetup=". $row['meetup_id']."'> ".$row['name']. "</a>,";
-                            }
-                        ?>
+                        <?php if(!empty($meetup_array)): ?>
+                            <label>List of name of joined meetups:</label>
+                            <?php
+                                foreach ($meetup_array as $row)
+                                {
+                                    echo "<a href='meetup_details.php?meetup=". $row['meetup_id']."'> ".$row['name']. "</a>,";
+                                }
+                            endif;?>
                     </div>
                     <form method="post" action="Server.php">
                         <input type="hidden" name = "newsletter" value="<?= $email ?>">
@@ -106,6 +106,9 @@
                 </div>
                 <div style="margin: 0 0 10px 0;">
                     <button type="submit" name = "user_update" class = "btn btn-danger" onclick="location.href='user_edit.php?user_edit=<?php echo $user_id ?>'">Edit Profile</button>
+                </div>
+                <div style="margin: 0 0 10px 0;">
+                    <button type="submit" name = "user_update" class = "btn btn-danger" onclick="location.href='meetup_list.php?user_id=<?php echo $user_id ?>'">My Meetups</button>
                 </div>
                 
             </div>
