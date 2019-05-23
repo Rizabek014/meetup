@@ -30,8 +30,12 @@
             $organizer_id = $_POST['organizer_id'];
             $created_at = getDatetimeNow();
 
+            foreach ($date as $selected)
+            {
+                $dates .= " ".$selected;
+            }
             $sql = "INSERT INTO meetups (name, description, date, location, sphere, organizer_id, created_at) 
-                    VALUES ('$name', '$description', '$date', '$location', '$sphere', '$organizer_id', '$created_at')";
+                    VALUES ('$name', '$description', '$dates', '$location', '$sphere', '$organizer_id', '$created_at')";
 
             mysqli_query($db, $sql);
             $meetup = mysqli_query($db, "SELECT meetup_id FROM meetups WHERE name = '$name' AND description = '$description'");

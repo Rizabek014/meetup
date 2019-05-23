@@ -43,13 +43,13 @@
                         </div>
                         <div class="week">
                             <hr>
-                            <input type="checkbox" name="date" value="Monday"> <label>Monday</label>
-                            <input type="checkbox" name="date" value="Tuesday"> <label>Tuesday</label>
-                            <input type="checkbox" name="date" value="Wendesday"> <label>Wednesday</label>
-                            <input type="checkbox" name="date" value="Thursday"> <label>Thursday</label><br>
-                            <input type="checkbox" name="date" value="Friday"> <label>Friday</label>
-                            <input type="checkbox" name="date" value="Saturday"> <label>Saturday</label>
-                            <input type="checkbox" name="date" value="Sunday"> <label>Sunday</label>
+                            <input type="checkbox" name="date[]" value="Monday"> <label>Monday</label>
+                            <input type="checkbox" name="date[]" value="Tuesday"> <label>Tuesday</label>
+                            <input type="checkbox" name="date[]" value="Wendesday"> <label>Wednesday</label>
+                            <input type="checkbox" name="date[]" value="Thursday"> <label>Thursday</label><br>
+                            <input type="checkbox" name="date[]" value="Friday"> <label>Friday</label>
+                            <input type="checkbox" name="date[]" value="Saturday"> <label>Saturday</label>
+                            <input type="checkbox" name="date[]" value="Sunday"> <label>Sunday</label>
                             <hr>
                         </div>
                     </div>
