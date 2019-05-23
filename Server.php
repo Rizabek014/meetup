@@ -154,6 +154,7 @@
         mysqli_query($db, "DELETE FROM member WHERE meetup_id = $meetup_id AND user_id = $user_id");
         header('location: meetup_details.php?meetup='.$meetup_id);
     }
+
     if(isset($_POST['submit_comment']))
     {
         $comment = $_POST['comment'];
@@ -166,6 +167,13 @@
         header('location: meetup_details.php?meetup='.$meetup_id);
     }
 
+    if(isset($_POST['delete_comment']))
+    {
+        $comment_id = $_POST['comment_id'];
+        $meetup_id = $_POST['meetup_id'];
+        mysqli_query($db, "DELETE FROM comment WHERE comment_id = $comment_id");
+        header('location: meetup_details.php?meetup='.$meetup_id);
+    }
 
     if(isset($_POST['user_update']))
     {

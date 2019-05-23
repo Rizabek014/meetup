@@ -131,9 +131,9 @@
                         </form>
                   <?php endif;?>
                     </div>
-                </div>                
-                
-                  
+                </div>
+
+
                 <h2>Meetup description</h2>
                 <p><?= $description ?></p>
               </div>
@@ -162,13 +162,19 @@
                                 if($user['user_id'] == $row_comment['user_id'])
                                 {
                                     echo "<h5><b>".$user['user_name'].":</b>".$row_comment['comment']."</h5><br>";
+
+                                    if($user_id == $row_comment['user_id'])
+                                    {
+                                        echo "<input type = 'hidden' name = 'comment_id' value = '".$row_comment['comment_id']."'>";
+                                        echo "<button type = 'submit' name = 'delete_comment' class='btn btn-danger btn-sm'>Delete comment</button>";
+                                    }
                                 }
                             }
                         }
                         if($is_logged_in):
                     ?>
-                    <input type = "text" name = "comment">
-                    <button type="submit" name = "submit_comment" class = "btn">Submit</button>
+                    <input type = "text" name = "comment" id = "comment_field">
+                    <button type="submit" name = "submit_comment" class = "btn btn-success">Submit</button>
                     <?php endif;?>
                 </form>
             </div>
@@ -294,3 +300,20 @@
 </body>
 
 </html>
+
+<script>
+    function edit_button() {
+        var field = document.getElementById("edit_field");
+        var comment = document.getElementById("comment_field");
+        var edit_button = document.getElementById("edit_button");
+        if (field.style.display === "none") {
+            field.style.display = "block";
+            comment.style.display = "none";
+            edit_button.innerHTML = "cancel";
+        } else {
+            field.style.display = "none";
+            comment.style.display = "block";
+            edit_button.innerHTML = "edit";
+        }
+    }
+</script>
