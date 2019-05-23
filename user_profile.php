@@ -17,6 +17,7 @@
         $is_admin = $users['is_admin'];
     }
     $meetup = array();
+    $meetup_array = array();
     $meetup_name = array();
     $meetup_sphere = array();
     $member = mysqli_query($db, "SELECT meetup_id FROM member WHERE user_id = '$user_id'");
@@ -29,6 +30,7 @@
         $meetup = mysqli_query($db, "SELECT * FROM meetups WHERE meetup_id = '$meetup_id'");
         $meetups = mysqli_fetch_array($meetup);
         array_push($meetup_sphere, $meetups['sphere']);
+        array_push($meetup_array, $meetups);
     }
 
     $spheres = array_count_values($meetup_sphere);
@@ -56,9 +58,10 @@
                     <div class="form-group" style="margin-top:30px;">
                         <label>List of name of joined meetups:</label>
                         <?php
-                            foreach ($meetup as $row)
+                            if(empty($meetup_array)) echo '0';
+                            foreach ($meetup_array as $row)
                             {
-                                echo "<br><a href='meetup_details.php?meetup=". $row['meetup_id']."'> ".$row['name']. "</a>";
+                                echo "<a href='meetup_details.php?meetup=". $row['meetup_id']."'> ".$row['name']. "</a>,";
                             }
                         ?>
                     </div>
