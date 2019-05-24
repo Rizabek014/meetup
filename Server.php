@@ -233,6 +233,14 @@
             header('location: user_profile.php?user_id=' . $user_id);
         }
     }
+
+    if(isset($_GET['user_delete']))
+    {
+        $user_id = $_GET['user_delete'];
+        mysqli_query($db, "DELETE FROM user WHERE user_id = $user_id");
+        header('location: Logout.php');
+    }
+
     if(isset($_POST['submit_points']))
     {
         $new_points = $_POST['points'];
