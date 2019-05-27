@@ -22,6 +22,7 @@
         $description = $record['description'];
         $date = $record['date'];
         $location = $record['location'];
+        $address = $record['address'];
         $sphere = $record['sphere'];
         $organizer_id = $record['organizer_id'];
         $meetup_id= $record['meetup_id'];
@@ -96,7 +97,7 @@
 
             <div class="row" >
                 <div class="col-md-3"></div>
-                <div class="col-md-6" style="height: 600px;">
+                <div class="col-md-6" style="height: 750px;">
                     <div class="details" >
                         <div class="social"></div>
                         <form method="post" action = "Server.php" enctype="multipart/form-data">
@@ -117,6 +118,10 @@
                             <div class="form-group">
                                 <label>Location</label>
                                 <input class="form-control" type="text" name="location" value="<?php echo $location;?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input class="form-control" type="text" name="address" value="<?php echo $address;?>">
                             </div>
                             <div class="form-group">
                                 <label>Sphere</label>

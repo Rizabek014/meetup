@@ -7,7 +7,7 @@
     if(isset($_POST['find']))
     {
         $search = $_POST['search_field'];
-        $sql = "SELECT * FROM meetups WHERE name LIKE '%". $search . "%' OR location LIKE '%". $search . "%'";
+        $sql = "SELECT * FROM meetups WHERE name LIKE '%". $search . "%' OR location LIKE '%". $search . "%' OR address LIKE '%". $search . "%'";
         $result = mysqli_query($db,$sql);
     }
     $meetup = mysqli_query($db, "SELECT * FROM meetups");

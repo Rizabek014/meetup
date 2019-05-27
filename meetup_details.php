@@ -20,6 +20,7 @@
         $description = $record['description'];
         $date = $record['date'];
         $location = $record['location'];
+        $address = $record['address'];
         $sphere = $record['sphere'];
         $organizer_id = $record['organizer_id'];
         $meetup_id = $record['meetup_id'];
@@ -102,7 +103,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <h4><b>Organizer:</b><?= " " . $organizer_name;?></h4>
-                        <h4><b>Location:</b> <?= $location ?></h4>
+                        <h4><b>Location:</b> <?= $location.', '.$address ?></h4>
                     </div>
                     <div class="col-md-7">
                         <?php if($is_organizer || $is_admin):?>

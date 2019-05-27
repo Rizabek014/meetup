@@ -5,6 +5,7 @@
     $description = "";
     $date = "";
     $location = "";
+    $address = "";
     $sphere = "";
     $organizer_id= NULL;
     $meetup_id = NULL;
@@ -26,6 +27,7 @@
             $description = $_POST['description'];
             $date = $_POST['date'];
             $location = $_POST['location'];
+            $address = $_POST['address'];
             $sphere = $_POST['sphere'];
             $organizer_id = $_POST['organizer_id'];
             $created_at = getDatetimeNow();
@@ -34,8 +36,8 @@
             {
                 $dates .= " ".$selected;
             }
-            $sql = "INSERT INTO meetups (name, description, date, location, sphere, organizer_id, created_at) 
-                    VALUES ('$name', '$description', '$dates', '$location', '$sphere', '$organizer_id', '$created_at')";
+            $sql = "INSERT INTO meetups (name, description, date, location, address, sphere, organizer_id, created_at) 
+                    VALUES ('$name', '$description', '$dates', '$location', '$address', '$sphere', '$organizer_id', '$created_at')";
 
             mysqli_query($db, $sql);
             $meetup = mysqli_query($db, "SELECT meetup_id FROM meetups WHERE name = '$name' AND description = '$description'");
@@ -100,6 +102,7 @@
         $description = mysqli_real_escape_string($db, $_POST['description']);
         $date = mysqli_real_escape_string($db, $_POST['date']);
         $location = mysqli_real_escape_string($db, $_POST['location']);
+        $address = mysqli_real_escape_string($db, $_POST['address']);
         $sphere = mysqli_real_escape_string($db, $_POST['sphere']);
         $organizer_id = mysqli_real_escape_string($db, $_POST['organizer_id']);
         $meetup_id = mysqli_real_escape_string($db, $_POST['meetup_id']);
@@ -107,7 +110,7 @@
         //need to fix
         $sql = "UPDATE meetups 
                 SET name = '$name', description = '$description', date = '$date', 
-                    location = '$location', sphere = '$sphere', organizer_id = '$organizer_id', updated_at = '$updated_at' 
+                    location = '$location', address = '$address', sphere = '$sphere', organizer_id = '$organizer_id', updated_at = '$updated_at' 
                 WHERE meetup_id = $meetup_id";
         mysqli_query($db, $sql);
 
