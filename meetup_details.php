@@ -7,6 +7,7 @@
     $is_member = false;
     $is_organizer = false;
     $members_name = array();
+    $members_logo = array();
     $is_logged_in = isset($_COOKIE["type"]);
 
     if(isset($_GET['meetup']))
@@ -48,7 +49,14 @@
 
         foreach ($members as $member)
         {
-            if($user['user_id'] == $member['user_id']) array_push($members_name, $user['user_name']);
+            if($user['user_id'] == $member['user_id'])
+            {
+                if(empty($user['logo'])) array_push($members_logo, 'avatar.png');
+                else array_push($members_logo, $user['logo']);
+
+                array_push($members_name, $user['user_name']);
+            }
+
 
             if($member['user_id'] == $user_id)
             {
@@ -93,7 +101,7 @@
               </div>
               <div class="details">
                   <div class="details">
-                      <h4><b>List of Members:</b><br><?php foreach ($members_name as $names){ echo $names."<br>";}?></h4>
+                      <h4><b>List of Members:</b><br><?php foreach (array_combine($members_logo, $members_name) as $logo => $names){ echo "<img src = 'profiles/". $logo ."' class='img-fluid'>"." ".$names."<br>";}?></h4>
                   </div>
               </div>
           </div>
