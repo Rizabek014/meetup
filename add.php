@@ -60,6 +60,7 @@
                     <div class="form-group">
                         <label>Sphere</label>
                         <select class="form-control" name = "sphere">
+                            <option value="" selected disabled hidden>Choose here</option>
                             <option value="it">IT</option>
                             <option value="hackaton">Hackaton</option>
                             <option value="marathon">Marathon</option>
