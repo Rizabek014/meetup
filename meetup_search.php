@@ -1,17 +1,24 @@
 <?php
-$GLOBALS['filename'] = 'meetup_search';
+    $GLOBALS['filename'] = 'meetup_search';
 
-include ('Database.php');
-include ('nav.php');
-$result = NULL;
-if(isset($_POST['find']))
-{
-    $search = $_POST['search_field'];
-    $sql = "SELECT * FROM meetups WHERE name LIKE '%". $search . "%' OR location LIKE '%". $search . "%'";
-    $result = mysqli_query($db,$sql);
-}
-$meetup = mysqli_query($db, "SELECT * FROM meetups");
-$image = mysqli_query($db, "SELECT * FROM image");
+    include ('Database.php');
+    include ('nav.php');
+    $result = NULL;
+    if(isset($_POST['find']))
+    {
+        $search = $_POST['search_field'];
+        $sql = "SELECT * FROM meetups WHERE name LIKE '%". $search . "%' OR location LIKE '%". $search . "%'";
+        $result = mysqli_query($db,$sql);
+    }
+    $meetup = mysqli_query($db, "SELECT * FROM meetups");
+    $image = mysqli_query($db, "SELECT * FROM image");
+
+    if(isset($_POST['sphere_search']))
+    {
+        $sphere = $_POST['sphere'];
+        $sql = "SELECT * FROM meetups WHERE sphere = '$sphere'";
+        $result = mysqli_query($db,$sql);
+    }
 
 ?>
 <main id="main" class="main-page">
@@ -21,6 +28,24 @@ $image = mysqli_query($db, "SELECT * FROM image");
             <div class="section-header">
                 <h2>Search Results</h2>
             </div>
+            <form action="meetup_search.php" method="post">
+                <div class="form-group">
+                    <label>Sphere</label>
+                    <select class="form-control" name = "sphere">
+                        <option value="it">IT</option>
+                        <option value="hackaton">Hackaton</option>
+                        <option value="marathon">Marathon</option>
+                        <option value="sport">Sport</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="data science">Data Science</option>
+                        <option value="activities">Activities</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="text-center" style="margin:20px 0 10px 0;">
+                    <button type="submit" class="btn" name="sphere_search">Search</button>
+                </div>
+            </form>
             <div class="row">
                 <?php
                 if(isset($result)):
