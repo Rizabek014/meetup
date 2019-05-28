@@ -4,6 +4,7 @@
     $name = "";
     $description = "";
     $date = "";
+    $time = "";
     $location = "";
     $address = "";
     $sphere = "";
@@ -26,6 +27,7 @@
             $name = $_POST['name'];
             $description = $_POST['description'];
             $date = $_POST['date'];
+            $time = $_POST['time'];
             $location = $_POST['location'];
             $address = $_POST['address'];
             $sphere = $_POST['sphere'];
@@ -36,8 +38,8 @@
             {
                 $dates .= " ".$selected;
             }
-            $sql = "INSERT INTO meetups (name, description, date, location, address, sphere, organizer_id, created_at) 
-                    VALUES ('$name', '$description', '$dates', '$location', '$address', '$sphere', '$organizer_id', '$created_at')";
+            $sql = "INSERT INTO meetups (name, description, date, time, location, address, sphere, organizer_id, created_at) 
+                    VALUES ('$name', '$description', '$dates', '$time', '$location', '$address', '$sphere', '$organizer_id', '$created_at')";
 
             mysqli_query($db, $sql);
             $meetup = mysqli_query($db, "SELECT meetup_id FROM meetups WHERE name = '$name' AND description = '$description'");
@@ -101,6 +103,7 @@
         $name = mysqli_real_escape_string($db, $_POST['name']);
         $description = mysqli_real_escape_string($db, $_POST['description']);
         $date = mysqli_real_escape_string($db, $_POST['date']);
+        $time = mysqli_real_escape_string($db, $_POST['time']);
         $location = mysqli_real_escape_string($db, $_POST['location']);
         $address = mysqli_real_escape_string($db, $_POST['address']);
         $sphere = mysqli_real_escape_string($db, $_POST['sphere']);
@@ -109,7 +112,7 @@
         $updated_at = getDatetimeNow();
         //need to fix
         $sql = "UPDATE meetups 
-                SET name = '$name', description = '$description', date = '$date', 
+                SET name = '$name', description = '$description', date = '$date', time = '$time',
                     location = '$location', address = '$address', sphere = '$sphere', organizer_id = '$organizer_id', updated_at = '$updated_at' 
                 WHERE meetup_id = $meetup_id";
         mysqli_query($db, $sql);
@@ -134,10 +137,6 @@
     {
         $meetup_id = $_GET['del'];
         mysqli_query($db, "DELETE FROM meetups WHERE meetup_id = $meetup_id");
-        mysqli_query($db, "DELETE FROM image WHERE meetup_id = $meetup_id");
-        mysqli_query($db, "DELETE FROM comment WHERE meetup_id = $meetup_id");
-        mysqli_query($db, "DELETE FROM member WHERE meetup_id = $meetup_id");
-        mysqli_query($db, "DELETE FROM rating WHERE meetup_id = $meetup_id");
         header('location: index.php');
     }
 

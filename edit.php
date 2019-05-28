@@ -21,6 +21,7 @@
         $name = $record['name'];
         $description = $record['description'];
         $date = $record['date'];
+        $time = $record['time'];
         $location = $record['location'];
         $address = $record['address'];
         $sphere = $record['sphere'];
@@ -97,7 +98,7 @@
 
             <div class="row" >
                 <div class="col-md-3"></div>
-                <div class="col-md-6" style="height: 750px;">
+                <div class="col-md-6" style="height: 865px;">
                     <div class="details" >
                         <div class="social"></div>
                         <form method="post" action = "Server.php" enctype="multipart/form-data">
@@ -105,27 +106,31 @@
                             <input type="hidden" name="organizer_id" value="<?php echo $organizer_id;?>">
                             <div class="form-group" >
                                 <label>Name</label>
-                                <input class="form-control" type="text" name="name" value="<?php echo $name;?>">
+                                <input class="form-control" type="text" name="name" value="<?php echo $name;?>" required>
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea class="form-control" rows="5" cols="50" name="description" ><?php echo $description;?></textarea>
+                                <textarea class="form-control" rows="5" cols="50" name="description" required ><?php echo $description;?></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Date</label>
-                                <input class="form-control" type="date" name="date" value="<?php echo $date;?>">
+                                <input class="form-control" type="date" name="date" value="<?php echo $date;?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Time</label>
+                                <input class="form-control" type="time" name="time" value="<?php echo $time;?>" required>
                             </div>
                             <div class="form-group">
                                 <label>Location</label>
-                                <input class="form-control" type="text" name="location" value="<?php echo $location;?>">
+                                <input class="form-control" type="text" name="location" value="<?php echo $location;?>" required>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <input class="form-control" type="text" name="address" value="<?php echo $address;?>">
+                                <input class="form-control" type="text" name="address" value="<?php echo $address;?>" required>
                             </div>
                             <div class="form-group">
                                 <label>Sphere</label>
-                                <input class="form-control" type="text" name="sphere" value="<?php echo $sphere;?>">
+                                <input class="form-control" type="text" name="sphere" value="<?php echo $sphere;?>" required>
                             </div>
 
                             <div class="form-group" >

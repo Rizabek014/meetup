@@ -19,7 +19,7 @@
 
         <div class="row" >
           <div class="col-md-3"></div>
-          <div class="col-md-6" style="height: 760px;">
+          <div class="col-md-6" style="height: 865px;">
             <div class="details" >
                 <div class="social"></div>
                 <form method="post" action = "Server.php">
@@ -39,7 +39,7 @@
                         <label style="margin: 10px 38px 10px 30px;">Exact Date</label> <input type="radio" name="choose" value="date" required>
                         <label style="margin: 10px 38px 10px 30px;">Week days</label><input type="radio" name="choose" value="everyweek" style="margin-left: 20px;">
                         <div class="date">
-                            <input class="form-control" type="date" name="date">
+                            <input class="form-control" type="date" name="date[]">
                         </div>
                         <div class="week">
                             <hr>
@@ -51,6 +51,11 @@
                             <input type="checkbox" name="date[]" value="Saturday"> <label>Saturday</label>
                             <input type="checkbox" name="date[]" value="Sunday"> <label>Sunday</label>
                             <hr>
+                        </div>
+                        <br>
+                        <div class="time">
+                            <label>Time</label>
+                            <input class="form-control" type="time" name="time" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -100,12 +105,13 @@
 </html>
 <script>
     $('input[name="choose"]').click(function(e) {
-        if(e.target.value === 'date') $('.date').show();
+        if(e.target.value === 'date') { $('.date').show(); $('.time').show();}
         else $('.date').hide();
-        if(e.target.value === 'everyweek') $('.week').show();
+        if(e.target.value === 'everyweek') {$('.week').show(); $('.time').show();}
         else $('.week').hide();
-    })
+    });
 
     $('.date').hide();
     $('.week').hide();
+    $('.time').hide();
 </script>
