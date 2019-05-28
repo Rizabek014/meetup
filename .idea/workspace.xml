@@ -4,8 +4,7 @@
     <list default="true" id="c71d1440-7dfa-4f60-b0d5-a0e83fd96491" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server.php" beforeDir="false" afterPath="$PROJECT_DIR$/Server.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetup_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/meetup_details.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="add.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+            <state relative-caret-position="-181">
+              <caret line="43" column="42" lean-forward="true" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#section#0;n#main#0;n#!!top" expanded="true" />
               </folding>
@@ -49,7 +48,7 @@
       <file leaf-file-name="meetup_search.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meetup_search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1368">
+            <state relative-caret-position="18">
               <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
             </state>
           </provider>
@@ -76,8 +75,8 @@
       <file leaf-file-name="meetup_details.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meetup_details.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1656">
-              <caret line="92" column="80" selection-start-line="92" selection-start-column="76" selection-end-line="92" selection-end-column="80" />
+            <state relative-caret-position="107">
+              <caret line="93" column="91" selection-start-line="93" selection-start-column="91" selection-end-line="93" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -85,8 +84,8 @@
       <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="132" column="124" selection-start-line="132" selection-start-column="124" selection-end-line="132" selection-end-column="124" />
+            <state relative-caret-position="231">
+              <caret line="121" column="34" lean-forward="true" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -94,8 +93,8 @@
       <file leaf-file-name="Server.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            <state relative-caret-position="-18">
+              <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -178,10 +177,10 @@
         <option value="$PROJECT_DIR$/AdminServer.php" />
         <option value="$PROJECT_DIR$/Navbar.php" />
         <option value="$PROJECT_DIR$/user_profile.php" />
-        <option value="$PROJECT_DIR$/meetup_details.php" />
         <option value="$PROJECT_DIR$/edit.php" />
-        <option value="$PROJECT_DIR$/Server.php" />
         <option value="$PROJECT_DIR$/add.php" />
+        <option value="$PROJECT_DIR$/meetup_details.php" />
+        <option value="$PROJECT_DIR$/Server.php" />
       </list>
     </option>
   </component>
@@ -366,12 +365,12 @@
       <workItem from="1558680868963" duration="1963000" />
       <workItem from="1558770573461" duration="1209000" />
       <workItem from="1558971850192" duration="8233000" />
-      <workItem from="1559055661679" duration="5985000" />
+      <workItem from="1559055661679" duration="7853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247011000" />
+    <option name="totallyTimeSpent" value="248879000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -384,6 +383,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33736762" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -391,10 +391,10 @@
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50075644" side_tool="true" weight="0.32994923" />
       <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.32994923" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32994923" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.32994923" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" visible="true" weight="0.32994923" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -591,13 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meetup_search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.php" />
     <entry file="file://$PROJECT_DIR$/trash.php" />
     <entry file="file://$PROJECT_DIR$/style.css">
@@ -632,34 +625,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meetup_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="92" column="80" selection-start-line="92" selection-start-column="76" selection-end-line="92" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="132" column="124" selection-start-line="132" selection-start-column="124" selection-end-line="132" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+        <state relative-caret-position="-181">
+          <caret line="43" column="42" lean-forward="true" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#section#0;n#main#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="121" column="34" lean-forward="true" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meetup_search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meetup_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="93" column="91" selection-start-line="93" selection-start-column="91" selection-end-line="93" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Server.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        <state relative-caret-position="-18">
+          <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
         </state>
       </provider>
     </entry>

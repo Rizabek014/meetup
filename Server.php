@@ -38,6 +38,7 @@
             {
                 $dates .= " ".$selected;
             }
+
             $sql = "INSERT INTO meetups (name, description, date, time, location, address, sphere, organizer_id, created_at) 
                     VALUES ('$name', '$description', '$dates', '$time', '$location', '$address', '$sphere', '$organizer_id', '$created_at')";
 

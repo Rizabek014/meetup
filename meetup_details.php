@@ -20,6 +20,7 @@
         $name = $record['name'];
         $description = $record['description'];
         $date = $record['date'];
+        $time = $record['time'];
         $location = $record['location'];
         $address = $record['address'];
         $sphere = $record['sphere'];
@@ -90,7 +91,7 @@
               }
               ?><br><br>
               <div class="details text-center">
-                  <h4 style="display:inline-block; margin-right:20px;"><?= $date ?></h4>
+                  <h4 style="display:inline-block; margin-right:20px;"><?= $date.' <br> '. $time?></h4>
                   <div style="display:inline-block; position:relative;"  class="social">
                     <a href=""><i class="fa fa-twitter"></i></a>
                     <a href=""><i class="fa fa-facebook"></i></a>
