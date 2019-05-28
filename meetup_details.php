@@ -91,7 +91,7 @@
               }
               ?><br><br>
               <div class="details text-center">
-                  <h4 style="display:inline-block; margin-right:20px;"><?= $date.' <br> '. $time?></h4>
+                  <h4 style="display:inline-block; margin-right:20px;"><?= $date.',  '. $time?></h4>
                   <div style="display:inline-block; position:relative;"  class="social">
                     <a href=""><i class="fa fa-twitter"></i></a>
                     <a href=""><i class="fa fa-facebook"></i></a>
