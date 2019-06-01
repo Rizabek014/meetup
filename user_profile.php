@@ -3,14 +3,10 @@
     session_start();
     include ('Database.php');
     include("nav.php");
+    include('today_is_meetup.php');
 
-    $meetup = array();
     $meetup_array = array();
-    $meetup_name = array();
     $meetup_sphere = array();
-    $meetup_date = array();
-    $is_date = false;
-    $date = '';
 
     if(isset($_COOKIE["type"]))
     {
@@ -42,8 +38,6 @@
         $meetups = mysqli_fetch_array($meetup);
         array_push($meetup_sphere, $meetups['sphere']);
         array_push($meetup_array, $meetups);
-        array_push($meetup_date, date('Y-m-d',strtotime($meetups['date'])));
-
     }
 
     if(!isset($_COOKIE["type"])) header('location: index.php');
@@ -68,9 +62,8 @@
         </div>
          <?php if($is_warned) echo '<span class="alert-warning"> you are warned </span>' ?>
          <?php
-            foreach ($meetup_array as $row) {
-                if(date('Y-m-d',strtotime($row['date'])) == $dating)
-                    echo "<span class = 'alert-warning'><a href='meetup_details.php?meetup=". $row['meetup_id']."'> Today is meetup</a></span>";
+            if($is_date){
+                echo "<span class = 'alert-warning'><a href='meetup_details.php?meetup=". $today_meetup_id."'> Today is meetup</a></span>";
             }
          ?>
         <div class="row" >
