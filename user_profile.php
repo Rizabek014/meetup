@@ -15,6 +15,7 @@
         $image = $users['logo'];
         $phone = $users['phone'];
         $is_admin = $users['is_admin'];
+        $is_warned = $users['is_warned'];
     }
     $meetup = array();
     $meetup_array = array();
@@ -50,6 +51,7 @@
                 <p>Enter the most reliable information, so we can stay in touch.</p>
           <?php endif;?>
         </div>
+         <?php if($is_warned) echo '<span class="alert-warning"> you are warned </span>' ?>
         <div class="row" >
             <div class="col-md-5">
                 <div class="text-center">

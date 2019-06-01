@@ -33,6 +33,7 @@
             <a href="index.php" class = "navbar-brand" >Meetup</a>
         </div>
         <ul class = "nav navbar-nav navbar-right">
+            <li><a href = "users_list.php"> List of users</a></li>
             <li><a href = "user_profile.php?user_id=<?php echo $user_id ?>"><?php echo "Admin ".$user_name?></a></li>
             <li><a href = "Logout.php"> Log out</a></li>
         </ul>
