@@ -9,6 +9,7 @@
         $user_name = $users['user_name'];
         $is_admin = $users['is_admin'];
     }
+
     if(!isset($_COOKIE["type"]) || !$is_admin) header('location: index.php');
 
     $meetup = mysqli_query($db, "SELECT * FROM meetups");

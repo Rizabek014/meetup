@@ -4,6 +4,14 @@
     include ('Database.php');
     include("nav.php");
 
+    $meetup = array();
+    $meetup_array = array();
+    $meetup_name = array();
+    $meetup_sphere = array();
+    $meetup_date = array();
+    $is_date = false;
+    $date = '';
+
     if(isset($_COOKIE["type"]))
     {
         $user_id = $_COOKIE['type'];
@@ -17,10 +25,12 @@
         $is_admin = $users['is_admin'];
         $is_warned = $users['is_warned'];
     }
-    $meetup = array();
-    $meetup_array = array();
-    $meetup_name = array();
-    $meetup_sphere = array();
+
+    $tz_object = new DateTimeZone('Asia/Almaty');
+    $datetime = new DateTime();
+    $datetime->setTimezone($tz_object);
+    $dating = $datetime->format('Y\-m\-d');
+
     $member = mysqli_query($db, "SELECT meetup_id FROM member WHERE user_id = '$user_id'");
     $newsletter = mysqli_query($db, "SELECT newsletter_id FROM newsletter WHERE email = '$email'");
     $is_subscribed = mysqli_fetch_array($newsletter);
@@ -32,9 +42,12 @@
         $meetups = mysqli_fetch_array($meetup);
         array_push($meetup_sphere, $meetups['sphere']);
         array_push($meetup_array, $meetups);
+        array_push($meetup_date, date('Y-m-d',strtotime($meetups['date'])));
+
     }
 
     if(!isset($_COOKIE["type"])) header('location: index.php');
+
 
     $spheres = array_count_values($meetup_sphere);
     $sphere = array_search(max($spheres), $spheres);
@@ -54,6 +67,12 @@
           <?php endif;?>
         </div>
          <?php if($is_warned) echo '<span class="alert-warning"> you are warned </span>' ?>
+         <?php
+            foreach ($meetup_array as $row) {
+                if(date('Y-m-d',strtotime($row['date'])) == $dating)
+                    echo "<span class = 'alert-warning'><a href='meetup_details.php?meetup=". $row['meetup_id']."'> Today is meetup</a></span>";
+            }
+         ?>
         <div class="row" >
             <div class="col-md-5">
                 <div class="text-center">
