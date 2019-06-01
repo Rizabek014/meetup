@@ -67,7 +67,6 @@
                   <li class="menu-active"><a href="index.php">Home</a></li>
                   <li><a href="#about">Meetups</a></li>
                   <li><a href="#gallery">Gallery</a></li>
-                  <li><a href="#supporters">Sponsors</a></li>
                   <li><a href="#faq">FAQ</a></li>
                   <li><a href="#contact">Contact</a></li>
                   <li>
