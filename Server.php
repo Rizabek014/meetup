@@ -154,7 +154,8 @@
     {
         $user_id = $_GET['unjoin'];
         $meetup_id = $_GET['unjointo'];
-        mysqli_query($db, "DELETE FROM member WHERE meetup_id = $meetup_id AND user_id = $user_id");
+        mysqli_query($db, "DELETE FROM member WHERE meetup_id = $meetup_id AND user_id = $user_id");                                
+        mysqli_query($db, "DELETE FROM rating WHERE meetup_id = '$meetup_id' AND user_id = '$user_id'");
         header('location: meetup_details.php?meetup='.$meetup_id);
     }
 

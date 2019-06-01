@@ -70,7 +70,7 @@
             <div class="col-md-5">
                 <div class="text-center">
                     <?php 
-                        if(!empty($image)) echo "<img class='img-fluid' src='profiles/" . $image. "'>"; 
+                        if(!empty($image)) echo "<img class='img-fluid' id='avatar' src='profiles/" . $image. "'>"; 
                         else 
                             echo "<img src = 'profiles/avatar.png' id='avatar'><br>
                             You don't have profile photo"
