@@ -34,6 +34,8 @@
         array_push($meetup_array, $meetups);
     }
 
+    if(!isset($_COOKIE["type"])) header('location: index.php');
+
     $spheres = array_count_values($meetup_sphere);
     $sphere = array_search(max($spheres), $spheres);
 ?>
