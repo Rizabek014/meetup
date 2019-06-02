@@ -71,17 +71,27 @@ h6 {
     display: block;
     overflow: hidden;
 }
-
-.badge {
-  position: absolute;
+.notification{
+      text-decoration: none;
+      padding: 15px 26px;
+      position: relative;
+      display: inline-block;
+}
+.notification .badge {
+    position: absolute;
   top: -10px;
   right: -10px;
   padding: 5px 10px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #f82249;
   color: white;
 }
-
+@media only screen and (max-width: 911px) {
+  .notification .badge {
+    position: relative;
+        background-color: #f82249;
+  }
+}
 .border-left{
     border-left:1px solid grey;
     margin-bottom: -15px;
@@ -344,7 +354,7 @@ h6 {
 
 .nav-menu li.buy-tickets a {
   color: #fff;
-  background: #f82249;
+  background: none;
   padding: 7px 22px;
   border-radius: 50px;
   border: 2px solid #f82249;
@@ -355,9 +365,8 @@ h6 {
   line-height: 1;
   font-size: 13px;
 }
-
 .nav-menu li.buy-tickets a:hover {
-  background: none;
+  background: #f82249;
 }
 
 .nav-menu li.buy-tickets:hover a:before,

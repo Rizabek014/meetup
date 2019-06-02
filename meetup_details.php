@@ -149,24 +149,19 @@
     </div>
 <section id="speakers-details" class="section-with-bg wow fadeIn">
       <div class="container">      
-        <div class="row text-center">
+        <div class="row text-center" id="menu">
             <div class="col-md-4"><button id="hidden_button" onclick="show('list_of_members')"><h4><b>List of members</b></h4></button></div>
             <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('Gallery')"><h4><b>Gallery</b></h4></button></div>
             <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('discussion')"><h4><b>Discussion</b></h4></button></div>
         </div><hr>
         <div id = "list_of_members" style="display: block" >
             <div class="text-center">
-                <div class="list-group">    
-                  <a href="user_profile.php" class="list-group-item disabled"><span class="pull-left ">
-                    <?php foreach ( $members_name as $logo => $names){ echo "<img src = 'profiles/". $members_logo[$logo] ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";}?>
-                  </a>
-                  <a href="#" class="list-group-item">Second item</a>
-                  <a href="#" class="list-group-item">Third item</a>
-
-            </div>
-            </div>
+                <div class="list-group">
+                    <?php foreach ( $members_name as $logo => $names){ echo "<a href='' class='list-group-item'><span class='pull-left'><img src = 'profiles/". $members_logo[$logo] ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";}?></a>
                 </div>
             </div>
+        </div>
+    </div>
           <div id = "Gallery" style="display: none" >    
             <!--==========================
               Venue Section
