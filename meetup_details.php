@@ -100,12 +100,6 @@
                       
                 </div>
               </div>
-              <div class="details">
-                  
-                  <div class="details">
-                      <h4><b>List of Members:</b></h4><br><?php foreach (array_combine($members_logo, $members_name) as $logo => $names){ echo "<img src = 'profiles/". $logo ."' class='img-fluid' id='avatar_small'><h6>"." ".$names."</h6>";}?>
-                  </div>
-              </div>
           </div>
 
           <div class="col-md-7">
@@ -153,56 +147,38 @@
         </div>        
     </section>
     </div>
-      
-    <div id="comments">
-      <section id="speakers-details" class="section-with-bg wow fadeIn">
+<section id="speakers-details" class="section-with-bg wow fadeIn">
+      <div class="container">      
         <div class="row text-center">
-            <div class="col-md-4"><button id="hidden_button" onclick="show('list_of_members')"><h4><b>List of members</b></h4></button></div><hr>
-            <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('Gallery')"><h4><b>Gallery</b></h4></button></div><hr>
+            <div class="col-md-4"><button id="hidden_button" onclick="show('list_of_members')"><h4><b>List of members</b></h4></button></div>
+            <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('Gallery')"><h4><b>Gallery</b></h4></button></div>
             <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('discussion')"><h4><b>Discussion</b></h4></button></div>
-        </div>
+        </div><hr>
         <div id = "list_of_members" style="display: block" >
-                <div class="w3-container">
-                    <h2>Avatar List</h2>
-                    <p>You can combine w3-ul and the w3-bar classes to create an avatar list:</p>
-                    <ul class="w3-ul w3-card-4">
-                        <li class="w3-bar">
-                            <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-                            <img src="profiles/ava.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-                            <div class="w3-bar-item">
-                                <span class="w3-large">Mike</span><br>
-                                <span>Web Designer</span>
-                            </div>
-                        </li>                    
-                        <li class="w3-bar">
-                            <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-                            <img src="profiles/ava.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-                            <div class="w3-bar-item">
-                                <span class="w3-large">Jill</span><br>
-                                <span>Support</span>
-                            </div>
-                        </li>
-                        <li class="w3-bar">
-                            <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-                            <img src="profiles/ava.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-                            <div class="w3-bar-item">
-                                <span class="w3-large">Jane</span><br>
-                                <span>Accountant</span>
-                            </div>
-                        </li>
-                    </ul>
+            
+            <div class="text-center">
+                <div class="list-group">    
+                    
+                  <a href="user_profile.php" class="list-group-item disabled"><span class="pull-left ">
+                    <?php foreach (array_combine($members_logo, $members_name) as $logo => $names){ echo "<img src = 'profiles/". $logo ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";}?>
+                  </a>
+                  <a href="#" class="list-group-item">Second item</a>
+                  <a href="#" class="list-group-item">Third item</a>
+
             </div>
-          </div>
+            </div>
+                </div>
+            </div>
           <div id = "Gallery" style="display: none" >    
             <!--==========================
               Venue Section
             ============================-->
-            <section id="venue" class="  ">
+            <section id="speakers" class="  ">
               <div class="container-fluid venue-gallery-container">
-                <div class="row no-gutters">
+                <div class="row">
                     <?php while($row_img = mysqli_fetch_array($result_image)): ?>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="venue-gallery">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="speaker">
                                 <a href="images/<?=$row_img['file_name']?>" class="venobox" data-gall="venue-gallery">
                                      <img src ="images/<?=$row_img['file_name']?>"  class="img-fluid">
                                 </a>
@@ -250,11 +226,11 @@
                         </div>
                     </div>
                 </section>
-            </div>
+              </div>
           </div>
-      </section>
     </div>
-  </main>
+      </section>
+</main>
 
 
 
