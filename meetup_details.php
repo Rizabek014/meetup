@@ -4,6 +4,7 @@
     include ('Database.php');
     include ('nav.php');
 
+    $index = 0;
     $is_member = false;
     $is_organizer = false;
     $members_name = array();
@@ -52,9 +53,9 @@
         {
             if($user['user_id'] == $member['user_id'])
             {
-                if(empty($user['logo'])) array_push($members_logo, 'avatar.png');
-                else array_push($members_logo, $user['logo']);
-
+                if(empty($user['logo'])) $members_logo[$index] = 'avatar.png';
+                else $members_logo[$index] == $user['logo'];
+                $index++;
                 array_push($members_name, $user['user_name']);
             }
 
@@ -138,7 +139,7 @@
                     </div>
                 </div>
 
-
+<?php foreach (array_combine($members_logo, $members_name) as $logo => $names) echo $names.' '.$logo?>
                 <h2>Meetup description</h2>
                 <p><?= $description ?></p>
               </div>
@@ -160,7 +161,7 @@
                 <div class="list-group">    
                     
                   <a href="user_profile.php" class="list-group-item disabled"><span class="pull-left ">
-                    <?php foreach (array_combine($members_logo, $members_name) as $logo => $names){ echo "<img src = 'profiles/". $logo ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";}?>
+                    <?php foreach ( $members_name as $logo => $names){ echo "<img src = 'profiles/". $members_logo[$logo] ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";}?>
                   </a>
                   <a href="#" class="list-group-item">Second item</a>
                   <a href="#" class="list-group-item">Third item</a>
