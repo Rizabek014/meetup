@@ -2,6 +2,7 @@
     $db = mysqli_connect('localhost', 'root', '', 'meetup');
     $user_id = 0;
     $is_admin = false;
+    include ('today_is_meetup.php');
 
     if(isset($_COOKIE["type"]))
     {
@@ -86,7 +87,11 @@
                         <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
                         <li class="buy-tickets"><a href="add.php">Create meetup</a></li>
-                        <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
+                        <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?><span class="badge">         <?php
+            if($is_date){
+                echo "<span class = 'alert-warning'><a href='meetup_details.php?meetup=". $today_meetup_id."'> Today is meetup</a></span>";
+            }
+         ?></span></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
                 </ul>

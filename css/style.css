@@ -72,6 +72,16 @@ h6 {
     overflow: hidden;
 }
 
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+
 .border-left{
     border-left:1px solid grey;
     margin-bottom: -15px;
