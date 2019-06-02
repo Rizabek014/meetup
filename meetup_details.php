@@ -75,7 +75,7 @@
       Speaker Details Section
     ============================-->
     <div id="meetup_details">
-    <section id="speakers-details" class="wow fadeIn">
+    <section id="speakers-details" class="section-with-bg wow fadeIn">
       <div class="container">
         <div class="section-header">
           <h2><?= $name ?></h2>
@@ -147,27 +147,57 @@
         </div>        
     </section>
     </div>
-<section id="speakers-details" class="section-with-bg wow fadeIn">
+      <div id="menu"></div>
+<section id="speakers-details" class=" wow fadeIn">
       <div class="container">      
-        <div class="row text-center" id="menu">
-            <div class="col-md-4"><button id="hidden_button" onclick="show('list_of_members')"><h4><b>List of members</b></h4></button></div>
-            <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('Gallery')"><h4><b>Gallery</b></h4></button></div>
-            <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('discussion')"><h4><b>Discussion</b></h4></button></div>
+        <div class="row text-center" >
+            <div class="col-md-4"><button id="hidden_button" onclick="show('list_of_members')"><h4 id="1"><b>List of members</b></h4></button></div>
+            <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('Gallery')"><h4 id="2"><b>Gallery</b></h4></button></div>
+            <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('discussion')"><h4 id="3"><b>Discussion</b></h4></button></div>
         </div><hr>
+          
         <div id = "list_of_members" style="display: block" >
             <div class="text-center">
-                <div class="list-group">
-                    <?php foreach ( $members_name as $logo => $names){ echo "<a href='' class='list-group-item'><span class='pull-left'><img src = 'profiles/". $members_logo[$logo] ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";}?></a>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4><b>Organizer:</b><?= " " . $organizer_name;?></h4>
+                        <h4><b>Location:</b> <?= $location.', '.$address ?></h4>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="list-group">
+                            <?php if (is_array($members_name)):
+                                    foreach ( $members_name as $logo => $names){ echo "<a href='' class='list-group-item'><span class='pull-left'><img src = 'profiles/". $members_logo[$logo] ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";
+                                                                               echo 1; }
+                            
+    elseif (empty($members_name)):
+        echo $members_name;
+                
+endif;?></a>
+                        <a class='list-group-item'><b><h4></h4></b>
+                            <?php if ($is_member && $is_logged_in): ?>
+                            <input onclick="location.href='Server.php?unjoin=<?= $user_id ?>&unjointo=<?= $meetup_id ?>'" type="button" class="btn" value="Unjoin" style="float:center;">
+                            <?php elseif ($is_logged_in && !$is_member): ?>
+                            <input onclick="location.href='Server.php?join=<?= $user_id ?>&jointo=<?= $meetup_id ?>'" type="button" class="btn" value="Join" style="float:center;">
+                            <?php endif;?></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+      
           <div id = "Gallery" style="display: none" >    
             <!--==========================
               Venue Section
             ============================-->
             <section id="speakers" class="  ">
               <div class="container-fluid venue-gallery-container">
+                <div class="container">
+                    <div class="section-header">
+                      <h2>Gallery</h2>
+                      <p>Check our gallery from the recent events</p>
+                    </div>
+                </div>
                 <div class="row">
                     <?php while($row_img = mysqli_fetch_array($result_image)): ?>
                         <div class="col-md-6 col-lg-4">
@@ -181,48 +211,88 @@
                 </div>
               </div>
             </section>
-          </div>
+              
+            <section id="gallery" class="section-with-bg wow fadeInUp">
+                <div class="container">
+                    <div class="section-header">
+                      <h2>Gallery</h2>
+                      <p>Check our gallery from the recent events</p>
+                    </div>
+                </div>
+                <div class="owl-carousel gallery-carousel">
+                    <?php while($row_img = mysqli_fetch_array($result_image)): ?>
+                    <a href="images/<?=$row_img['file_name']?>" class="venobox" data-gall="gallery-carousel">
+                        <img src ="images/<?=$row_img['file_name']?>"  class="img-fluid">
+                    </a>
+                    <?php endwhile;?>
+                </div>
+              </section>
+      </div>
+
+
+      
+      
           <div id = "discussion" style="display: none" >   
             <div id="comments">
-                <section id="speakers-details">
+                <section id="speakers-details" class="section-with-bg">
                     <div  class="container-fluid">
                         <div class="section-header">
                             <h2>Comments</h2>
-                        </div>
-                        
-                        <div class="row">
-                            <form method = "post" action="Server.php" style="margin: 0 auto;">
-                                <input type = "hidden" name = "meetup_id" value="<?php echo $meetup_id;?>">
-                                <input type = "hidden" name = "user_id" value="<?php echo $user_id;?>">
-                                <?php
-                                while($row_comment = mysqli_fetch_array($result_comment))
-                                {
-                                    foreach ($users as $user)
-                                    {
-                                        if($user['user_id'] == $row_comment['user_id'])
+                        </div>                        
+                        <div class="row"><div class="col-md-3"></div>
+                            <div class="col-md-6 col-md-offset-2 col-sm-12">
+                    <div class="comment-wrapper">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Comment panel
+                            </div>
+                            <div class="panel-body">
+                                <form method = "post" action="Server.php" style="margin: 0 auto;">
+                                    <input type = "hidden" name = "meetup_id" value="<?php echo $meetup_id;?>">
+                                    <input type = "hidden" name = "user_id" value="<?php echo $user_id;?>">                         <div class="clearfix"></div>
+                                    <textarea class="form-control" placeholder="write a comment..." rows="3" name = "comment" id = "comment_field"></textarea>
+                                        <br><button type="submit" name = "submit_comment" class="btn btn-info pull-right">Post</button>            <br><br>
+                                    <hr>
+                                    
+                                    <ul class="media-list"> 
+                                        <?php
+                                    while($row_comment = mysqli_fetch_array($result_comment))
+                                    {  
+                                        foreach ($users as $user)
                                         {
-                                            echo "<h5><b>".$user['user_name'].":</b>".$row_comment['comment']."</h5><br>";   
-                                            if($user_id == $row_comment['user_id'])
+                                            if($user['user_id'] == $row_comment['user_id'])
                                             {
-                                                echo "<input type = 'hidden' name = 'comment_id' value = '".$row_comment['comment_id']."'>";
-                                                echo "<button type = 'submit' name = 'delete_comment' class='btn btn-danger btn-sm'>Delete comment</button>";
+                                                echo "<li class='media'><span class='pull-left'><img src='profiles/avatar.png' id='avatar_small'></span><div class='media-body'><span class='text-muted pull-right'>";?><?php if($user_id == $row_comment['user_id'])
+                                                {
+                                                    echo "<input type = 'hidden' name = 'comment_id' value = '".$row_comment['comment_id']."'>";
+                                                    echo "<button type = 'submit' name = 'delete_comment' class='btn btn-danger btn-sm'>Delete comment</button>";
+                                                }
+                                                echo "
+                                            </span>
+                                            <strong class='text-success'>".$user['user_name'].":</strong><br><small class='text-muted'>30 min ago</small><p style='width:100%;'>".$row_comment['comment']."</p>";   
+                                                
                                             }
+                                            echo "</li>";
                                         }
                                     }
-                                }
-                                if($is_logged_in):
-                                ?>
-                                <input type = "text" name = "comment" id = "comment_field">
-                                <button type="submit" name = "submit_comment" class = "btn btn-success">Submit</button>
-                                <?php endif;?>
-                            </form>
+                                    if($is_logged_in):
+                                    ?>
+                                    </ul>
+                                        
+                                    <?php endif;?>
+                                </form>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
                         </div>
                     </div>
                 </section>
+                
+              
               </div>
           </div>
-    </div>
-      </section>
+
 </main>
 
 
@@ -254,15 +324,24 @@
         var list_Element = [document.getElementById(lists[0]),document.getElementById(lists[1]),document.getElementById(lists[2])]
         if(elementId===lists[0]){
             field.style.display = "block";
+            document.getElementById('1').style.textDecoration = "underline";
+            document.getElementById('2').style.textDecoration = "";
+            document.getElementById('3').style.textDecoration = "";
             list_Element[1].style.display = "none";
             list_Element[2].style.display = "none";
         }
         if(elementId===lists[1]){
+            document.getElementById('1').style.textDecoration = "";
+            document.getElementById('2').style.textDecoration = "underline";
+            document.getElementById('3').style.textDecoration = "";
             field.style.display = "block";
             list_Element[0].style.display = "none";
             list_Element[2].style.display = "none";
         }            
         if(elementId===lists[2]){
+            document.getElementById('1').style.textDecoration = "";
+            document.getElementById('2').style.textDecoration = "";
+            document.getElementById('3').style.textDecoration = "underline";
             field.style.display = "block";
             list_Element[0].style.display = "none";
             list_Element[1].style.display = "none";

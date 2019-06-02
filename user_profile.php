@@ -125,10 +125,10 @@
                     <?php endif;?>
                 </div>
                 <div style="margin: 0 0 10px 0;">
-                    <button type="submit" name = "my_meetups" class = "btn btn-danger" onclick="location.href='meetup_list.php?user_id=<?php echo $user_id ?>'">My Meetups</button>
+                    <button type="submit" name = "my_meetups" class = "btn" onclick="location.href='meetup_list.php?user_id=<?php echo $user_id ?>'">My Meetups</button>
                 </div>
                 <div style="margin: 0 0 10px 0;">
-                    <button type="submit" name = "user_update" class = "btn btn-danger" onclick="location.href='user_edit.php?user_edit=<?php echo $user_id ?>'">Edit Profile</button>
+                    <button type="submit" name = "user_update" class = "btn" onclick="location.href='user_edit.php?user_edit=<?php echo $user_id ?>'">Edit Profile</button>
                 </div>
                 <div style="margin: 0 0 10px 0;">
                     <button type="submit" name = "user_delete" class = "btn btn-danger" onclick="location.href='Server.php?user_delete=<?php echo $user_id ?>'">Delete</button>
