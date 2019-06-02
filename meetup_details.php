@@ -162,36 +162,35 @@
             <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('discussion')"><h4><b>Discussion</b></h4></button></div>
         </div>
         <div id = "list_of_members" style="display: block" >
-            <div class="w3-container">
-                <h2>Avatar List</h2>
-                <p>You can combine w3-ul and the w3-bar classes to create an avatar list:</p>
-                <ul class="w3-ul w3-card-4">
-                    <li class="w3-bar">
-                        <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-                        <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-                        <div class="w3-bar-item">
-                            <span class="w3-large">Mike</span><br>
-                            <span>Web Designer</span>
-                        </div>
-                    </li>
-                    
-                    <li class="w3-bar">
-                        <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-                        <img src="img_avatar5.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-                        <div class="w3-bar-item">
-                            <span class="w3-large">Jill</span><br>
-                            <span>Support</span>
-                        </div>
-                    </li>
-                    <li class="w3-bar">
-                        <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-                        <img src="img_avatar6.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-                        <div class="w3-bar-item">
-                            <span class="w3-large">Jane</span><br>
-                            <span>Accountant</span>
-                        </div>
-                    </li>
-                </ul>
+                <div class="w3-container">
+                    <h2>Avatar List</h2>
+                    <p>You can combine w3-ul and the w3-bar classes to create an avatar list:</p>
+                    <ul class="w3-ul w3-card-4">
+                        <li class="w3-bar">
+                            <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+                            <img src="profiles/ava.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+                            <div class="w3-bar-item">
+                                <span class="w3-large">Mike</span><br>
+                                <span>Web Designer</span>
+                            </div>
+                        </li>                    
+                        <li class="w3-bar">
+                            <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+                            <img src="profiles/ava.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+                            <div class="w3-bar-item">
+                                <span class="w3-large">Jill</span><br>
+                                <span>Support</span>
+                            </div>
+                        </li>
+                        <li class="w3-bar">
+                            <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+                            <img src="profiles/ava.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+                            <div class="w3-bar-item">
+                                <span class="w3-large">Jane</span><br>
+                                <span>Accountant</span>
+                            </div>
+                        </li>
+                    </ul>
             </div>
           </div>
           <div id = "Gallery" style="display: none" >    
@@ -199,31 +198,6 @@
               Venue Section
             ============================-->
             <section id="venue" class="  ">
-
-              <div class="container-fluid">
-
-                <div class="section-header">
-                  <h2>Event Venue</h2>
-                  <p>Event venue location info and gallery</p>
-                </div>
-
-                <div class="row no-gutters">
-                  <div class="col-lg-6 venue-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0" allowfullscreen></iframe>
-                  </div>
-
-                  <div class="col-lg-6 venue-info">
-                    <div class="row justify-content-center">
-                      <div class="col-11 col-lg-8">
-                        <h3>Downtown Conference Center, New York</h3>
-                        <p>Iste nobis eum sapiente sunt enim dolores labore accusantium autem. Cumque beatae ipsam. Est quae sit qui voluptatem corporis velit. Qui maxime accusamus possimus. Consequatur sequi et ea suscipit enim nesciunt quia velit.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
               <div class="container-fluid venue-gallery-container">
                 <div class="row no-gutters">
                     <?php while($row_img = mysqli_fetch_array($result_image)): ?>
@@ -237,10 +211,9 @@
                     <?php endwhile;?>
                 </div>
               </div>
-
             </section>
           </div>
-        <div id = "discussion" style="display: none" >   
+          <div id = "discussion" style="display: none" >   
             <div id="comments">
                 <section id="speakers-details">
                     <div  class="container-fluid">
@@ -279,41 +252,6 @@
                 </section>
             </div>
           </div>
-          
-          <div  class="container" style="display:none">
-            <div class="section-header">
-                <h2>Comments</h2>
-            </div>
-
-            <div class="row">
-                <form method = "post" action="Server.php" style="margin: 0 auto;">
-                    <input type = "hidden" name = "meetup_id" value="<?php echo $meetup_id;?>">
-                    <input type = "hidden" name = "user_id" value="<?php echo $user_id;?>">
-                    <?php
-                        while($row_comment = mysqli_fetch_array($result_comment))
-                        {
-                            foreach ($users as $user)
-                            {
-                                if($user['user_id'] == $row_comment['user_id'])
-                                {
-                                    echo "<h5><b>".$user['user_name'].":</b>".$row_comment['comment']."</h5><br>";
-
-                                    if($user_id == $row_comment['user_id'])
-                                    {
-                                        echo "<input type = 'hidden' name = 'comment_id' value = '".$row_comment['comment_id']."'>";
-                                        echo "<button type = 'submit' name = 'delete_comment' class='btn btn-danger btn-sm'>Delete comment</button>";
-                                    }
-                                }
-                            }
-                        }
-                        if($is_logged_in):
-                    ?>
-                    <input type = "text" name = "comment" id = "comment_field">
-                    <button type="submit" name = "submit_comment" class = "btn btn-success">Submit</button>
-                    <?php endif;?>
-                </form>
-            </div>
-        </div>
       </section>
     </div>
   </main>
@@ -322,8 +260,8 @@
 
 
 <?php include ('footer.php'); ?>
-</body>
 
+</body>
 </html>
 
 <script>
