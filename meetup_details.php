@@ -155,10 +155,8 @@
             <div class="col-md-4 border-left"><button id="hidden_button" onclick="show('discussion')"><h4><b>Discussion</b></h4></button></div>
         </div><hr>
         <div id = "list_of_members" style="display: block" >
-            
             <div class="text-center">
                 <div class="list-group">    
-                    
                   <a href="user_profile.php" class="list-group-item disabled"><span class="pull-left ">
                     <?php foreach (array_combine($members_logo, $members_name) as $logo => $names){ echo "<img src = 'profiles/". $logo ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";}?>
                   </a>

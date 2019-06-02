@@ -1,5 +1,4 @@
 <?php
-    $GLOBALS['filename'] = 'profile';
     include ('Database.php');
 
     $meetup_array = array();
