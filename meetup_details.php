@@ -54,7 +54,7 @@
             if($user['user_id'] == $member['user_id'])
             {
                 if(empty($user['logo'])) $members_logo[$index] = 'avatar.png';
-                else $members_logo[$index] == $user['logo'];
+                else $members_logo[$index] = $user['logo'];
                 $index++;
                 array_push($members_name, $user['user_name']);
             }
