@@ -54,7 +54,7 @@
             if($user['user_id'] == $member['user_id'])
             {
                 if(empty($user['logo'])) $members_logo[$index] = 'avatar.png';
-                else $members_logo[$index] == $user['logo'];
+                else $members_logo[$index] = $user['logo'];
                 $index++;
                 array_push($members_name, $user['user_name']);
             }
@@ -139,7 +139,6 @@
                     </div>
                 </div>
 
-<?php foreach (array_combine($members_logo, $members_name) as $logo => $names) echo $names.' '.$logo?>
                 <h2>Meetup description</h2>
                 <p><?= $description ?></p>
               </div>

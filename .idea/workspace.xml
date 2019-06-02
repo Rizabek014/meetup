@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c71d1440-7dfa-4f60-b0d5-a0e83fd96491" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetup_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/meetup_details.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +46,11 @@
       <file leaf-file-name="meetup_details.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/meetup_details.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="163" column="58" lean-forward="true" selection-start-line="163" selection-start-column="58" selection-end-line="163" selection-end-column="58" />
+            <state relative-caret-position="71">
+              <caret line="140" column="16" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
+              <folding>
+                <element signature="n#style#0;n#h4#0;n#b#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,14 +129,14 @@
       <find>ima</find>
       <find>delete</find>
       <find>datetime</find>
-      <find />
+      <find>&lt;a href='meetup_details.php?meetup=&quot;. $row['meetup_id'].&quot;'&gt;</find>
       <find>meetup_name</find>
       <find>logo</find>
       <find>sess</find>
       <find>meetup</find>
       <find>war</find>
       <find>date</find>
-      <find />
+      <find>list of members</find>
       <find>member</find>
       <find>members_logo</find>
     </findStrings>
@@ -377,7 +379,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268311000" />
+    <option name="totallyTimeSpent" value="268585000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -675,8 +677,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/meetup_details.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="163" column="58" lean-forward="true" selection-start-line="163" selection-start-column="58" selection-end-line="163" selection-end-column="58" />
+        <state relative-caret-position="71">
+          <caret line="140" column="16" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#b#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
