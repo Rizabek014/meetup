@@ -1,10 +1,3 @@
-/*
-  Theme Name: TheEvent
-  Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -61,7 +54,28 @@ h6 {
   height: 200px;
   border-radius: 50%;
 }
+#avatar_small{
+  vertical-align: middle;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 10px 0px 0 5px;
+}
+#hidden_button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    overflow: hidden;
+    margin-left: 100px;
+}
 
+.border-left{
+    border-left:1px solid grey;
+}
 .founders{
   vertical-align: middle;
   width: 100px;
