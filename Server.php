@@ -114,7 +114,7 @@
         //need to fix
         $sql = "UPDATE meetups 
                 SET name = '$name', description = '$description', date = '$date', time = '$time',
-                    location = '$location', address = '$address', sphere = '$sphere', organizer_id = '$organizer_id', updated_at = '$updated_at' 
+                    location = '$location', address = '$address', sphere = '$sphere', organizer_id = '$organizer_id', is_approved = false, updated_at = '$updated_at' 
                 WHERE meetup_id = $meetup_id";
         mysqli_query($db, $sql);
 
