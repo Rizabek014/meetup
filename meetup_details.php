@@ -10,6 +10,7 @@
     $members_name = array();
     $members_logo = array();
     $is_logged_in = isset($_COOKIE["type"]);
+    $flag=false;
 
     if(isset($_GET['meetup']))
     {
@@ -165,12 +166,12 @@
                     </div>
                     <div class="col-md-9">
                         <div class="list-group">
-                            <?php if (is_array($members_name)):
+                            <?php if (count($members_name)>0):
                                     foreach ( $members_name as $logo => $names){ echo "<a href='' class='list-group-item'><span class='pull-left'><img src = 'profiles/". $members_logo[$logo] ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";
-                                                                               echo 1; }
+                                                                             count($members_name);}
                             
-    elseif (empty($members_name)):
-        echo $members_name;
+    else:
+        echo "<a href='#main' class='list-group-item'><b><h3 style='margin: 35px 0px 0px 100px;color: red;'>You could be the first member of meetup. Don't loose a chance</h3></b>";
                 
 endif;?></a>
                         <a class='list-group-item'><b><h4></h4></b>
@@ -199,7 +200,8 @@ endif;?></a>
                     </div>
                 </div>
                 <div class="row">
-                    <?php while($row_img = mysqli_fetch_array($result_image)): ?>
+                    <?php 
+                        while($row_img = mysqli_fetch_array($result_image)): ?>
                         <div class="col-md-6 col-lg-4">
                             <div class="speaker">
                                 <a href="images/<?=$row_img['file_name']?>" class="venobox" data-gall="venue-gallery">
@@ -207,26 +209,13 @@ endif;?></a>
                                 </a>
                             </div>
                         </div>
-                    <?php endwhile;?>
+                    <?php $flag=true; endwhile; if ($flag===false):
+                        echo "<a href='#main' class='list-group-item'><b><h3 style='margin: 35px 0px 0px 100px;color: red;'>You could be the first member of meetup. Don't loose a chance</h3></b>";
+
+                    endif;?></a>
                 </div>
               </div>
             </section>
-              
-            <section id="gallery" class="section-with-bg wow fadeInUp">
-                <div class="container">
-                    <div class="section-header">
-                      <h2>Gallery</h2>
-                      <p>Check our gallery from the recent events</p>
-                    </div>
-                </div>
-                <div class="owl-carousel gallery-carousel">
-                    <?php while($row_img = mysqli_fetch_array($result_image)): ?>
-                    <a href="images/<?=$row_img['file_name']?>" class="venobox" data-gall="gallery-carousel">
-                        <img src ="images/<?=$row_img['file_name']?>"  class="img-fluid">
-                    </a>
-                    <?php endwhile;?>
-                </div>
-              </section>
       </div>
 
 
@@ -262,7 +251,7 @@ endif;?></a>
                                         {
                                             if($user['user_id'] == $row_comment['user_id'])
                                             {
-                                                echo "<li class='media'><span class='pull-left'><img src='profiles/avatar.png' id='avatar_small'></span><div class='media-body'><span class='text-muted pull-right'>";?><?php if($user_id == $row_comment['user_id'])
+                                                echo "<li class='media'><span class='pull-left'><img src='profiles/avatar.png' id='avatar_small'></span><div class='media-body' style='margin-left:15px;'><span class='text-muted pull-right'>";?><?php if($user_id == $row_comment['user_id'])
                                                 {
                                                     echo "<input type = 'hidden' name = 'comment_id' value = '".$row_comment['comment_id']."'>";
                                                     echo "<button type = 'submit' name = 'delete_comment' class='btn btn-danger btn-sm'>Delete comment</button>";

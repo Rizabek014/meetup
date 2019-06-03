@@ -1,4 +1,6 @@
 <?php
+    $GLOBALS['filename'] = 'profile';
+
     include ('Server.php');
     include ('Database.php');
 
