@@ -60,11 +60,11 @@
                 <p>Enter the most reliable information, so we can stay in touch.</p>
           <?php endif;?>
         </div>
-         <div class="error text-center">
-                      <?php if($is_warned) echo '<b>You are warned </b><br>' ?>
+         <div class="alert alert-warning text-center" role="alert">
+                      <?php if($is_warned) echo '<b style="color:#856404">You are warned </b><br>' ?>
          <?php
             if($is_date){
-                echo "<a href='meetup_details.php?meetup=". $today_meetup_id."'> <b>Today is meetup</b></a>";
+                echo "<a style='color:#856404;' href='meetup_details.php?meetup=". $today_meetup_id."'> <b>Today is meetup</b></a>";
             }
          ?>
          </div><br>

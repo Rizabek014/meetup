@@ -185,7 +185,7 @@ endif;?></a>
                 </div>
             </div>
         </div>
-    </div>
+      
       
           <div id = "Gallery" style="display: none" >    
             <!--==========================
@@ -199,7 +199,7 @@ endif;?></a>
                       <p>Check our gallery from the recent events</p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row text-center">
                     <?php 
                         while($row_img = mysqli_fetch_array($result_image)): ?>
                         <div class="col-md-6 col-lg-4">
@@ -210,9 +210,9 @@ endif;?></a>
                             </div>
                         </div>
                     <?php $flag=true; endwhile; if ($flag===false):
-                        echo "<a href='#main' class='list-group-item'><b><h3 style='margin: 35px 0px 0px 100px;color: red;'>You could be the first member of meetup. Don't loose a chance</h3></b>";
+                        echo "<a href='#main' class='list-group-item'><b><h3 style='color: red;'>You could be the first member of meetup. Don't loose a chance</h3></b></a>";
 
-                    endif;?></a>
+                    endif;?>
                 </div>
               </div>
             </section>
@@ -280,7 +280,7 @@ endif;?></a>
                 
               
               </div>
-          </div>
+    </div></section>
 
 </main>
 
