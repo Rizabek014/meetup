@@ -109,6 +109,5 @@ if(isset($_COOKIE["type"]))
             document.getElementById("height").style.height="500px";
             $( "p" ).text( "change" );
         }
-
     }
 </script>

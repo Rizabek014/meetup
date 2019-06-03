@@ -4,6 +4,11 @@
     include ('Server.php');
     include ('Database.php');
 
+    $twitter = '';
+    $facebook = '';
+    $google = '';
+    $instagram = '';
+
     if(isset($_COOKIE["type"]))
     {
         $user_id = $_COOKIE['type'];
@@ -26,10 +31,21 @@
         $time = $record['time'];
         $location = $record['location'];
         $address = $record['address'];
+        $social = $record['social'];
         $sphere = $record['sphere'];
         $organizer_id = $record['organizer_id'];
         $meetup_id= $record['meetup_id'];
     }
+
+    $social_array = explode(" ", $social);
+    foreach ($social_array as $socials)
+        foreach ($social_array as $socials)
+        {
+            if(strpos($socials, 'twitter')) $twitter = $socials;
+            if(strpos($socials, 'facebook')) $facebook = $socials;
+            if(strpos($socials, 'google')) $google = $socials;
+            if(strpos($socials, 'instagram')) $instagram = $socials;
+        }
 ?>
 
 <!DOCTYPE html>
@@ -100,7 +116,7 @@
 
             <div class="row" >
                 <div class="col-md-3"></div>
-                <div class="col-md-6" style="height: 865px;">
+                <div class="col-md-6" style="height: 1150px;">
                     <div class="details" >
                         <div class="social"></div>
                         <form method="post" action = "Server.php" enctype="multipart/form-data">
@@ -129,6 +145,13 @@
                             <div class="form-group">
                                 <label>Address</label>
                                 <input class="form-control" type="text" name="address" value="<?php echo $address;?>" required>
+                            </div>
+                            <div class="social">
+                                <label>Social networks:</label><br>
+                                <i class="fa fa-twitter" onclick="twitter()"></i>Twitter: <input type="url" name = "social[]" class="form-control" value="<?= $twitter?>">
+                                <i class="fa fa-facebook" onclick="facebook()"></i>acebook: <input type="url" name = "social[]" class="form-control" value="<?= $facebook?>">
+                                <i class="fa fa-google-plus" onclick="google_plus()"></i>Google Plus: <input type="url" name = "social[]" class="form-control" value="<?= $google?>">
+                                <i class="fa fa-instagram" onclick="instagram()"></i>Instagram: <input type="url" name = "social[]" class="form-control" value="<?= $instagram?>">
                             </div>
                             <div class="form-group">
                                 <label>Sphere</label>

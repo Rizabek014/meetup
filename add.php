@@ -19,7 +19,7 @@
 
         <div class="row" >
           <div class="col-md-3"></div>
-          <div class="col-md-6" style="height: 865px;">
+          <div class="col-md-6" style="height: 1150px;" >
             <div class="details" >
                 <div class="social"></div>
                 <form method="post" action = "Server.php">
@@ -65,6 +65,19 @@
                     <div class="form-group">
                         <label>Address</label>
                         <input class="form-control" type="text" name="address" required>
+                    </div>
+                    <div class="form-group">
+                    <div class="social">
+                        <label>Social networks:</label>
+                        <i class="fa fa-twitter" onclick="twitter()"></i>
+                        <i class="fa fa-facebook" onclick="facebook()"></i>
+                        <i class="fa fa-google-plus" onclick="google_plus()"></i>
+                        <i class="fa fa-instagram" onclick="instagram()"></i>
+                        <div id = "twitter" style="display: none" >Twitter: <input type="url" name = "social[]" class="form-control"></div>
+                        <div id = "facebook" style="display: none" >Facebook: <input type="url" name = "social[]" class="form-control"></div>
+                        <div id = "google_plus" style="display: none">Google Plus: <input type="url" name = "social[]" class="form-control"></div>
+                        <div id = "instagram" style="display: none" >Instagram: <input type="url" name = "social[]" class="form-control"></div>
+                    </div>
                     </div>
                     <div class="form-group">
                         <label>Sphere</label>
@@ -114,4 +127,33 @@
     $('.date').hide();
     $('.week').hide();
     $('.time').hide();
+
+    function twitter() {
+        let field = document.getElementById('twitter');
+        if (field.style.display === "none")
+            field.style.display = "block";
+        else
+            field.style.display = "none";
+    }
+    function facebook() {
+        let field = document.getElementById('facebook');
+        if (field.style.display === "none")
+            field.style.display = "block";
+        else
+            field.style.display = "none";
+    }
+    function google_plus() {
+        let field = document.getElementById('google_plus');
+        if (field.style.display === "none")
+            field.style.display = "block";
+        else
+            field.style.display = "none";
+    }
+    function instagram() {
+        let field = document.getElementById('instagram');
+        if (field.style.display === "none")
+            field.style.display = "block";
+        else
+            field.style.display = "none";
+    }
 </script>

@@ -25,6 +25,7 @@
         $time = $record['time'];
         $location = $record['location'];
         $address = $record['address'];
+        $social = $record['social'];
         $sphere = $record['sphere'];
         $organizer_id = $record['organizer_id'];
         $meetup_id = $record['meetup_id'];
@@ -69,6 +70,16 @@
         }
     }
 
+    $social_array = explode(" ", $social);
+    foreach ($social_array as $socials)
+    foreach ($social_array as $socials)
+    {
+        if(strpos($socials, 'twitter')) $twitter = $socials;
+        if(strpos($socials, 'facebook')) $facebook = $socials;
+        if(strpos($socials, 'google')) $google = $socials;
+        if(strpos($socials, 'instagram')) $instagram = $socials;
+    }
+
     if($organizer_id == $user_id) $is_organizer = true;
 ?>
   <main id="main" class="main-page">
@@ -95,12 +106,11 @@
               <div class="details text-center">
                   <h4 style="display:inline-block; margin-right:20px;"><?= $date.',  '. $time?></h4>
                   <div style="display:inline-block; position:relative;"  class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                      
-                </div>
+                    <a href="<?= $twitter ?>"><i class="fa fa-twitter"></i></a>
+                    <a href="<?= $facebook ?>"><i class="fa fa-facebook"></i></a>
+                    <a href="<?= $google ?>"><i class="fa fa-google-plus"></i></a>
+                    <a href="<?= $instagram ?>"><i class="fa fa-linkedin"></i></a>
+                  </div>
               </div>
           </div>
 
