@@ -3,7 +3,8 @@
 
     $meetup_array = array();
     $is_date = false;
-    $today_meetup_id = 0 ;
+    $today_meetup_id = 0;
+    $user_id = $_COOKIE['type'];
 
     $tz_object = new DateTimeZone('Asia/Almaty');
     $datetime = new DateTime();

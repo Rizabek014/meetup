@@ -1,8 +1,9 @@
- <?php
-    $db = mysqli_connect('localhost', 'root', '', 'meetup');
+<?php
+    include ('Database.php');
+    include ('today_is_meetup.php');
+
     $user_id = 0;
     $is_admin = false;
-    include ('today_is_meetup.php');
 
     if(isset($_COOKIE["type"]))
     {
@@ -12,7 +13,6 @@
         $user_name = $users['user_name'];
         $is_admin = $users['is_admin'];
     }
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,12 +87,7 @@
                         <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
                         <li class="buy-tickets"><a href="add.php">Create meetup</a></li>
-                        <li class="buy-tickets"><a href="user_profile.php" class="notification"><?php echo $user_name ?><span class="badge">1             <?php
-                            if($is_date){
-                                echo "1";
-                            }
-                         ?>    
-             </span></a></li>
+                        <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date):?><span class="badge">1</span><?php endif;?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
                 </ul>
