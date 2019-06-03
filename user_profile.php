@@ -131,7 +131,7 @@
                     <button type="submit" name = "user_update" class = "btn" onclick="location.href='user_edit.php?user_edit=<?php echo $user_id ?>'">Edit Profile</button>
                 </div>
                 <div style="margin: 0 0 10px 0;">
-                    <button type="submit" name = "user_delete" class = "btn btn-danger" onclick="location.href='Server.php?user_delete=<?php echo $user_id ?>'">Delete</button>
+                    <button type="submit" name = "user_delete" class = "btn btn-danger" onclick="location.href='Server.php?user_delete=<?php echo $user_id ?>'">Delete Profile</button>
                 </div>
             </div>
         </div>

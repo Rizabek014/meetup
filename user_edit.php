@@ -34,15 +34,21 @@ if(isset($_COOKIE["type"]))
                     <div class="details" >
                         <div class="social"></div>
                         <form method = "post" action = "Server.php" enctype="multipart/form-data">
-                            <?php if (isset($_SESSION['message'])): ?>
-                                <div class = "alert alert-danger">
-                                    <?php
-                                    echo $_SESSION['message'];
-                                    unset($_SESSION['message']);
-                                    ?>
-                                </div>
-                            <?php endif ?>
                             <input type = "hidden" name="user_id" value="<?= $user_id;?>">
+                            <div class="text-center">
+                                <?php
+                                if(!empty($image))
+                                {
+                                    echo "<img class='img-fluid' id='avatar' src='profiles/" . $image. "'>";
+                                    echo "<br><button type='submit' name = 'delete_img' class = 'btn-danger'>Delete Image</button>";
+                                }
+                                else
+                                    echo "<img src = 'profiles/avatar.png' id='avatar'><br>
+                                    You don't have profile photo <br> <input type = 'file' name = 'logo'>"
+                                ?>
+                            </div>
+                            <div class="form-group" style="margin-top:30px;">
+                            <input type="hidden" name = "image" value="<?= $image; ?>">
                             <div class="form-group" >
                                 <label>Username</label>
                                 <input class="form-control" type="text" name = "user_name" value="<?= $user_name; ?>">
@@ -59,9 +65,6 @@ if(isset($_COOKIE["type"]))
                                 <label>Address</label>
                                 <input class="form-control" type="text" name="address" placeholder="Enter your address" value="<?= $address; ?>">
                             </div>
-                            <label>Add Avatar</label><br>
-                            <input type = "file" name = "logo">
-                            <input type="hidden" name = "image" value="<?= $image; ?>">
                             <div class="text-center" style="margin:20px 0 10px 0;">
                                 <input type="button" class="btn" onclick="change_password()" value="Change password">
                             </div>

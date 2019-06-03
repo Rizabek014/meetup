@@ -311,5 +311,12 @@
         mysqli_query($db, "DELETE FROM newsletter WHERE newsletter_id = $newsletter_id");
         header('location: user_profile.php');
     }
+
+    if(isset($_POST['delete_img']))
+    {
+        $user_id = $_POST['user_id'];
+        mysqli_query($db, "UPDATE user SET logo = NULL WHERE user_id = $user_id");
+        header('location: user_edit.php?user_edit='.$user_id);
+    }
     mysqli_close($db);
 ?>
