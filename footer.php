@@ -19,8 +19,7 @@
               <li><i class="fa fa-angle-right"></i> <a href="index.php">Home</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="about.php">About us</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="meetup_search.php">Meetups</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="https://www.meetup.com/terms/">Terms of service</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="https://www.meetup.com/privacy/">Privacy policy</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="index.php#contact">Contact</a></li>
             </ul>
           </div>
 

@@ -25,32 +25,6 @@
 
   <main id="main">
     <!--==========================
-      About Section
-    ============================-->
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <h3>Most popular Events</h3>
-          </div>
-          <div class="col-lg-9">
-            <ul class="nav-menu nav-tabs">
-              <li class="menu-active" name = 'it'><a href="#about">#IT</a></li>
-              <li class="menu-active"><a href="#about">#hackathon</a></li>
-              <li class="menu-active"><a href="#about">#marathon</a></li>
-              <li class="menu-active"><a href="#about">#google</a></li>
-              <li class="menu-active"><a href="#about">#sport</a></li>
-              <li class="menu-active"><a href="#about">#activities</a></li>
-              <li class="menu-active"><a href="#about">#cooking</a></li>
-              <li class="menu-active"><a href="#about">#mobile</a></li>
-              <li class="menu-active"><a href="#about">#Data science</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--==========================
       Speakers Section
     ============================-->
     <section id="speakers" class="wow fadeInUp">
@@ -61,34 +35,81 @@
         </div>
 
         <div class="row">
-            <?php
-                  while ($row = mysqli_fetch_array($meetup)):
-                      if ($row['is_approved'] == 1) :
-            ?>
             <div class="col-lg-4 col-md-6">
-                <div class="speaker">
-                    <?php
-                    $check = true;
-                        foreach ($image as $images) {
-                             if ($images['meetup_id'] == $row['meetup_id'] && $check) {
-                                 $check = false;
-                                 echo "<img class='img-fluid' src='images/" . $images['file_name'] . "'>";
-                             }
-                        }
-                    ?>
-                    <div class="details">
-                        <h3 class='clickable-row' data-href="meetup_details.php?meetup=<?php echo $row['meetup_id']; ?>"><?php echo $row['name']; ?></h3>
-                        <p><?php echo $row['location']; ?></p>
+                    <div class="speaker">
+                      <img src="img/speakers/2.jpg" alt="Speaker 2" class="img-fluid">
+                      <div class="details">
+                        <h3><a href="speaker-details.html">Meetup name</a></h3>
+                        <p>Meetup Location</p>
                         <div class="social">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-google-plus"></i></a>
-                            <a href=""><i class="fa fa-instagram"></i></a>
+                          <a href=""><i class="fa fa-twitter"></i></a>
+                          <a href=""><i class="fa fa-facebook"></i></a>
+                          <a href=""><i class="fa fa-google-plus"></i></a>
+                          <a href=""><i class="fa fa-linkedin"></i></a>
                         </div>
+                      </div>
                     </div>
-                </div>
-            </div>
-            <?php endif; endwhile;?>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="speaker">
+                      <img src="img/speakers/3.jpg" alt="Speaker 3" class="img-fluid">
+                      <div class="details">
+                        <h3><a href="speaker-details.html">Meetup name</a></h3>
+                        <p>Meetup Location</p>
+                        <div class="social">
+                          <a href=""><i class="fa fa-twitter"></i></a>
+                          <a href=""><i class="fa fa-facebook"></i></a>
+                          <a href=""><i class="fa fa-google-plus"></i></a>
+                          <a href=""><i class="fa fa-linkedin"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="speaker">
+                      <img src="img/speakers/4.jpg" alt="Speaker 4" class="img-fluid">
+                      <div class="details">
+                        <h3><a href="speaker-details.html">Meetup name</a></h3>
+                        <p>Meetup Location</p>
+                        <div class="social">
+                          <a href=""><i class="fa fa-twitter"></i></a>
+                          <a href=""><i class="fa fa-facebook"></i></a>
+                          <a href=""><i class="fa fa-google-plus"></i></a>
+                          <a href=""><i class="fa fa-linkedin"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="speaker">
+                      <img src="img/speakers/5.jpg" alt="Speaker 5" class="img-fluid">
+                      <div class="details">
+                        <h3><a href="speaker-details.html">Meetup name</a></h3>
+                        <p>Meetup Location</p>
+                        <div class="social">
+                          <a href=""><i class="fa fa-twitter"></i></a>
+                          <a href=""><i class="fa fa-facebook"></i></a>
+                          <a href=""><i class="fa fa-google-plus"></i></a>
+                          <a href=""><i class="fa fa-linkedin"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="speaker">
+                      <img src="img/speakers/6.jpg" alt="Speaker 6" class="img-fluid">
+                      <div class="details">
+                        <h3><a href="speaker-details.html">Meetup name</a></h3>
+                        <p>Meetup Location</p>
+                        <div class="social">
+                          <a href=""><i class="fa fa-twitter"></i></a>
+                          <a href=""><i class="fa fa-facebook"></i></a>
+                          <a href=""><i class="fa fa-google-plus"></i></a>
+                          <a href=""><i class="fa fa-linkedin"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
         </div>
       </div>
     </section>
