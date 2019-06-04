@@ -64,7 +64,7 @@
                 foreach ($image as $images) {
                     if ($images['meetup_id'] == $row['meetup_id'] && $check) {
                         $check = false;
-                        echo "<td><img style='width:150px;height:128px;' src='images/" . $images['file_name'] . "'></td>";
+                        echo "<td><img style='width:150px;height:128px;' src='../images/" . $images['file_name'] . "'></td>";
                     }
                 }
                 ?>
@@ -80,7 +80,7 @@
                 <?php
                 foreach ($image as $images) {
                     if ($images['meetup_id'] == $row['meetup_id']) {
-                        echo "<td><img style='width:150px;height:128px;' src='images/" . $images['file_name'] . "'></td>";
+                        echo "<td><img style='width:150px;height:128px;' src='../images/" . $images['file_name'] . "'></td>";
                     }
                 }
                 ?>

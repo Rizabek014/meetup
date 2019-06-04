@@ -84,6 +84,7 @@
                   </div>
               </div>
           </div>
+          <form method="post" action="meetup_search.php"><button name="find" class="btn ">Показать все Meetups</button></form>
         </div>
       </div>
     </section>

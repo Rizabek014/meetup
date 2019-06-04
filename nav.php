@@ -61,7 +61,7 @@
           <h1><a href="index.php">Meet<span>up</span></a></h1>
         <!-- <a href="#intro" class="scrollto"><img src="img/logo1.png" alt="" title=""></a>-->
       </div>
-    <?php      
+    <?php
     if(($GLOBALS['filename'] == 'index') || ($GLOBALS['filename'] == 'meetup_search')){ ?>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
@@ -90,6 +90,12 @@
                         <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
+                    <li class="parent"><a href="#">Language</a>
+                        <ul class="child">
+                                <li><a href="index.php" class="language" rel="en-US">English</a></li>
+                                <li><a href="ru/index.php" class="language" rel="ru-RU">Russian</a></li>
+                        </ul>
+                    </li>
                 </ul>
               </nav><!-- #nav-menu-container -->
           <?php } 
@@ -116,6 +122,12 @@
                         <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                   <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
+                    <li class="parent"><a href="#">Language</a>
+                        <ul class="child">
+                            <li><a href="index.php" class="language" rel="en-US">English</a></li>
+                            <li><a href="ru/index.php" class="language" rel="ru-RU">Russian</a></li>
+                        </ul>
+                    </li>
                 </ul>
               </nav><!-- #nav-menu-container -->
           <?php } 
@@ -142,6 +154,12 @@
                         <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                     <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
+                    <li class="parent"><a href="#">Language</a>
+                        <ul class="child">
+                            <li><a href="index.php" class="language" rel="en-US">English</a></li>
+                            <li><a href="ru/index.php" class="language" rel="ru-RU">Russian</a></li>
+                        </ul>
+                    </li>
                 </ul>
               </nav><!-- #nav-menu-container -->
           <?php } 
@@ -167,6 +185,12 @@
                         <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                   <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
+                    <li class="parent"><a href="#">Language</a>
+                        <ul class="child">
+                            <li><a href="index.php" class="language" rel="en-US">English</a></li>
+                            <li><a href="ru/index.php" class="language" rel="ru-RU">Russian</a></li>
+                        </ul>
+                    </li>
                 </ul>
               </nav><!-- #nav-menu-container -->
           <?php } 
@@ -196,6 +220,12 @@
                         <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
+                    <li class="parent"><a href="#">Language</a>
+                        <ul class="child">
+                            <li><a href="index.php" class="language" rel="en-US">English</a></li>
+                            <li><a href="ru/index.php" class="language" rel="ru-RU">Russian</a></li>
+                        </ul>
+                    </li>
                 </ul>
               </nav><!-- #nav-menu-container -->
           <?php } ?>

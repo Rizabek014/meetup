@@ -61,7 +61,7 @@
                                         if ($images['meetup_id'] == $tuple['meetup_id'] && $check)
                                         {
                                             $check = false;
-                                            echo "<img class='img-fluid' src='images/" . $images['file_name'] . "'>";
+                                            echo "<img class='img-fluid' src='../images/" . $images['file_name'] . "'>";
                                         }
                                     }
                                     ?>

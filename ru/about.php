@@ -15,7 +15,7 @@
                       <div class="col-md-1"></div>
 
           <div class="col-md-5">
-            <img src="img/team/1.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid founders">
+            <img src="../img/team/1.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid founders">
           </div>
 
         <div class="col-md-6">
@@ -40,7 +40,7 @@
         <div class="row">
             <div class="col-md-1"></div>
           <div class="col-md-5">
-            <img src="img/team/2.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid founders">
+            <img src="../img/team/2.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid founders">
           </div>
 
             <div class="col-md-6">
@@ -66,7 +66,7 @@
                   <div class="row">
                       <div class="col-md-1"></div>
           <div class="col-md-5">
-            <img src="img/team/3.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid founders">
+            <img src="../img/team/3.jpg" style="width: 300px; height:300px;" alt="Speaker 1" class="img-fluid founders">
           </div>
 
           

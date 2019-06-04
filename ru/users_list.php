@@ -64,9 +64,9 @@
                 <?php while ($row = mysqli_fetch_array($users)): ?>
                     <tr>
                         <?php if(empty($row['logo'])): ?>
-                        <td><img style='width:150px;height:128px;' src='profiles/avatar.png'></td>
+                        <td><img style='width:150px;height:128px;' src='../profiles/avatar.png'></td>
                         <?php else:?>
-                        <td><img style='width:150px;height:128px;' src='profiles/<?= $row['logo']?>'></td>
+                        <td><img style='width:150px;height:128px;' src='../profiles/<?= $row['logo']?>'></td>
                         <?php endif;?>
                         <td><?= $row['user_name'] ?></td>
                         <td><?= $row['email'] ?></td>

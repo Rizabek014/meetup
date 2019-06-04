@@ -66,7 +66,6 @@ if(isset($_COOKIE["type"]))
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="index.php">Главная</a></li>
-                    <li><a href="#about">Meetups</a></li>
                     <li><a href="#gallery">Галерея</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Контакты</a></li>
@@ -86,10 +85,16 @@ if(isset($_COOKIE["type"]))
                         <li class="buy-tickets"><a href="sign_in.php">Войти</a></li>
                         <li class="buy-tickets"><a href="sign_up.php">Зарегистрироваться</a></li>
                     <?php else:?>
-                        <li class="buy-tickets"><a href="add.php">Созадть Meetup</a></li>
+                        <li class="buy-tickets"><a href="add.php">Создать Meetup</a></li>
                         <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Выйти</a></li>
                     <?php endif ?>
+                    <li class="parent"><a href="#">Язык</a>
+                        <ul class="child">
+                            <li><a href="../index.php" class="language" rel="en-US">Английский</a></li>
+                            <li><a href="index.php" class="language" rel="ru-RU">Русский</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         <?php }
@@ -116,6 +121,12 @@ if(isset($_COOKIE["type"]))
                         <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Выйти</a></li>
                     <?php endif ?>
+                    <li class="parent"><a href="#">Язык</a>
+                        <ul class="child">
+                            <li><a href="../index.php" class="language" rel="en-US">Английский</a></li>
+                            <li><a href="index.php" class="language" rel="ru-RU">Русский</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         <?php }
@@ -142,6 +153,12 @@ if(isset($_COOKIE["type"]))
                         <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Выйти</a></li>
                     <?php endif ?>
+                    <li class="parent"><a href="#">Язык</a>
+                        <ul class="child">
+                            <li><a href="../index.php" class="language" rel="en-US">Английский</a></li>
+                            <li><a href="index.php" class="language" rel="ru-RU">Русский</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         <?php }
@@ -167,6 +184,12 @@ if(isset($_COOKIE["type"]))
                         <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Выйти</a></li>
                     <?php endif ?>
+                    <li class="parent"><a href="#">Язык</a>
+                        <ul class="child">
+                            <li><a href="../index.php" class="language" rel="en-US">Английский</a></li>
+                            <li><a href="index.php" class="language" rel="ru-RU">Русский</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         <?php }
@@ -196,6 +219,12 @@ if(isset($_COOKIE["type"]))
                         <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Выйти</a></li>
                     <?php endif ?>
+                    <li class="parent"><a href="#">Язык</a>
+                        <ul class="child">
+                            <li><a href="../index.php" class="language" rel="en-US">Английский</a></li>
+                            <li><a href="index.php" class="language" rel="ru-RU">Русский</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         <?php } ?>
