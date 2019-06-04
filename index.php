@@ -81,6 +81,7 @@
                     </div>
                   </div>
         </div>
+          <form method="post" action="meetup_search.php"><button name="find" class="btn ">Show all meetups</button></form>
       </div>
     </section>
 
