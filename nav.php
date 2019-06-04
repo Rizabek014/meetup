@@ -87,7 +87,7 @@
                         <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
                         <li class="buy-tickets"><a href="add.php">Create meetup</a></li>
-                        <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date):?><span class="badge">1</span><?php endif;?></a></li>
+                        <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
                 </ul>
@@ -113,7 +113,7 @@
                     <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
                     <li class="buy-tickets"><a href="add.php">Create meetup</a></li>
-                  <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
+                        <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                   <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
                 </ul>
@@ -139,7 +139,7 @@
                     <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
                     <li class="buy-tickets"><a href="add.php">Create meetup</a></li>
-                    <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
+                        <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                     <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
                 </ul>
@@ -164,7 +164,7 @@
                      <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
                     <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
-                  <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
+                        <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                   <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
                 </ul>
@@ -193,7 +193,7 @@
                         <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
                         <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
                     <?php else:?>
-                        <li class="buy-tickets"><a href="user_profile.php"><?php echo $user_name ?></a></li>
+                        <li class="buy-tickets"><a href="user_profile.php" class="notification"><?= $user_name; if($is_date && !$is_coming):?><span class="badge">1</span><?php endif;?></a></li>
                         <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
                     <?php endif ?>
                 </ul>

@@ -177,8 +177,10 @@
                     <div class="col-md-9">
                         <div class="list-group">
                             <?php if (count($members_name)>0):
-                                    foreach ( $members_name as $logo => $names){ echo "<a href='' class='list-group-item'><span class='pull-left'><img src = 'profiles/". $members_logo[$logo] ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";
-                                                                             count($members_name);}
+                                    foreach ( $members_name as $logo => $names){ echo "<a class='list-group-item'><span class='pull-left'><img src = 'profiles/". $members_logo[$logo] ."' class='img-fluid' id='avatar_small'></span><b><h4 style='margin: 35px 0px 0px 100px;'>"." ".$names."</h4></b>";
+                                        if($is_coming == '1') echo "<b><span class='pull-right' style='margin-top: -29px;'>will come</span></b>";
+                                        if($is_coming == '2') echo "<b><span class='pull-right' style='margin-top: -29px;'>will not come</span></b>";
+                                        count($members_name);}
                             
     else:
         echo "<a href='#main' class='list-group-item'><b><h3 style='margin: 35px 0px 0px 100px;color: red;'>You could be the first member of meetup. Don't loose a chance</h3></b>";
@@ -220,7 +222,7 @@ endif;?></a>
                             </div>
                         </div>
                     <?php $flag=true; endwhile; if ($flag===false):
-                        echo "<a href='#main' class='list-group-item'><b><h3 style='color: red;'>You could be the first member of meetup. Don't loose a chance</h3></b></a>";
+                        echo "<a class='list-group-item'><b><h3 style='color: red;'>You could be the first member of meetup. Don't loose a chance</h3></b></a>";
 
                     endif;?>
                 </div>

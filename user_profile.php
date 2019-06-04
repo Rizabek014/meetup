@@ -60,14 +60,16 @@
                 <p>Enter the most reliable information, so we can stay in touch.</p>
           <?php endif;?>
         </div>
-         <div class="alert alert-warning text-center" role="alert">
-                      <?php if($is_warned) echo '<b style="color:#856404">You are warned </b><br>' ?>
-         <?php
-            if($is_date){
-                echo "<a style='color:#856404;' href='meetup_details.php?meetup=". $today_meetup_id."'> <b>Today is meetup</b></a>";
+        <?php if($is_warned) echo '<div class="alert alert-warning text-center" role="alert"><b style="color:#856404">You are warned </b><br></div>';
+            if($is_date && !$is_coming){
+                echo "<form method='post' action='Server.php'> <input type='hidden' name = 'member_id' value='".$member_id."'>";
+                echo '<div class="text-center" role="alert">';
+                echo "<b>Today is meetup:</b><a  href='meetup_details.php?meetup=". $today_meetup_id."'> $today_meetup_name</a><br>";
+                echo "<button type='submit' name = 'today_approve' class='btn-sm btn-success'>Approve</button>";
+                echo "    <button type='submit' name = 'today_reject' class='btn-sm btn-danger'>Reject</button></div></form>";
             }
          ?>
-         </div><br>
+         <br>
 
         <div class="row" >
             <div class="col-md-5">

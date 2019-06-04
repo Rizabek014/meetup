@@ -324,5 +324,20 @@
         mysqli_query($db, "UPDATE user SET logo = NULL WHERE user_id = $user_id");
         header('location: user_edit.php?user_edit='.$user_id);
     }
+
+    if(isset($_POST['today_approve']))
+    {
+        $member_id = $_POST['member_id'];
+        mysqli_query($db, "UPDATE member SET is_coming = 1 WHERE member_id = $member_id");
+        header('location: user_profile.php');
+    }
+
+    if(isset($_POST['today_reject']))
+    {
+        $member_id = $_POST['member_id'];
+        mysqli_query($db, "UPDATE member SET is_coming = 2 WHERE member_id = $member_id");
+        header('location: user_profile.php');
+    }
+
     mysqli_close($db);
 ?>
