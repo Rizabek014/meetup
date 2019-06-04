@@ -1,26 +1,10 @@
-<?php
-    include ('Server.php');
-    include ('Database.php');
-
-    if(isset($_COOKIE["type"]))
-    {
-        $user_id = $_COOKIE['type'];
-        $user = mysqli_query($db, "SELECT * FROM user WHERE user_id = '$user_id'");
-        $users = mysqli_fetch_array($user);
-        $user_name = $users['user_name'];
-        $is_admin = $users['is_admin'];
-    }
-    if(isset($_GET['next']))
-        {
-            $meetup_id = $_GET['next'];
-        }
-?>
+<?php include ('login_registration.php');?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Create Meetup</title>
+  <title>Login</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -61,14 +45,13 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
-          <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
+          <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
+          <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
 
-        <input type="hidden" name="organizer_id" value="<?php echo $user_id?>">
   <main id="main" class="main-page">
 
     <!--==========================
@@ -77,25 +60,43 @@
     <section id="speakers-details" class="wow fadeIn">
       <div class="container">
         <div class="section-header">
-          <h2>Add new meetup</h2>
-          <p>Create own awesome community.</p>
+          <h2>Sign Up</h2>
+          <p>Join our awesome community.</p>
         </div>
 
         <div class="row" >
           <div class="col-md-3"></div>
-          <div class="col-md-6" style="height: 400px;">
+          <div class="col-md-6" style="height: 600px;">
             <div class="details" >
                 <div class="social"></div>
-                <form method="post" action = "Server.php" enctype="multipart/form-data">
-                    <input type = "hidden" name = "meetup_id" value="<?php echo $meetup_id ?>">
-                    <input type = "hidden" name = "user_id" value="<?php echo $user_id ?>">
+                <form method="post" action="sign_up.php">
+                    <?php include('Errors.php'); ?>
                     <div class="form-group" >
-                        <label>Image</label>
-                        <input class="form-control" type="file" name="files[]" multiple>
-                    </div>                    
-                    <div class="text-center" style="margin:20px 0 10px 0;">
-                        <button type="submit" class="btn" name="save">Save</button>
+                        <label>Username</label>
+                        <input class="form-control" type="text" name="user_name" value="<?php echo $user_name; ?>">
                     </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" type="email" name="email" value="<?php echo $email; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="form-control" type="password" name="password_1">
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm password</label>
+                        <input class="form-control" type="password" name="password_2">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone number</label>
+                        <input class="form-control" type="text" name="phone">
+                    </div>
+                    <div class="text-center" style="margin:20px 0 10px 0;">
+                        <button type="submit" class="btn" name="reg_user">Register</button>
+                    </div>
+                    <p class="text-center">
+                        Already a member? <a href="sign_in.php">Sign in</a>
+                    </p>
                 </form>                
             </div>
               
@@ -110,7 +111,7 @@
     </section>
 
   </main>
+    
 <?php include ('footer.php'); ?>
 </body>
-
 </html>

@@ -95,7 +95,7 @@
         <nav id="nav-menu-container">
             <ul class="nav-menu">
                 <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
-                <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
+                <li class="buy-tickets"><a href="Logout.php">Выйти</a></li>
             </ul>
         </nav><!-- #nav-menu-container -->
     </div>
@@ -110,8 +110,8 @@
     <section id="speakers-details" class="wow fadeIn">
         <div class="container">
             <div class="section-header">
-                <h2>Edit Meetup</h2>
-                <p>Create own awesome community.</p>
+                <h2>Редактировать Meetup</h2>
+                <p>Создайте собственное удивительное сообщество.</p>
             </div>
 
             <div class="row" >
@@ -123,48 +123,48 @@
                             <input type="hidden" name="meetup_id" value="<?php echo $meetup_id;?>">
                             <input type="hidden" name="organizer_id" value="<?php echo $organizer_id;?>">
                             <div class="form-group" >
-                                <label>Name</label>
+                                <label>Название</label>
                                 <input class="form-control" type="text" name="name" value="<?php echo $name;?>" required>
                             </div>
                             <div class="form-group">
-                                <label>Description</label>
+                                <label>Описание</label>
                                 <textarea class="form-control" rows="5" cols="50" name="description" required ><?php echo $description;?></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Date</label>
+                                <label>Дата</label>
                                 <input class="form-control" type="date" name="date" value="<?php echo $date;?>" required>
                             </div>
                             <div class="form-group">
-                                <label>Time</label>
+                                <label>Время</label>
                                 <input class="form-control" type="time" name="time" value="<?php echo $time;?>" required>
                             </div>
                             <div class="form-group">
-                                <label>Location</label>
+                                <label>Город</label>
                                 <input class="form-control" type="text" name="location" value="<?php echo $location;?>" required>
                             </div>
                             <div class="form-group">
-                                <label>Address</label>
+                                <label>Адресс</label>
                                 <input class="form-control" type="text" name="address" value="<?php echo $address;?>" required>
                             </div>
                             <div class="social">
-                                <label>Social networks:</label><br>
+                                <label>Социальные сети:</label><br>
                                 <i class="fa fa-twitter" onclick="twitter()"></i>Twitter: <input type="url" name = "social[]" class="form-control" value="<?= $twitter?>">
                                 <i class="fa fa-facebook" onclick="facebook()"></i>acebook: <input type="url" name = "social[]" class="form-control" value="<?= $facebook?>">
                                 <i class="fa fa-google-plus" onclick="google_plus()"></i>Google Plus: <input type="url" name = "social[]" class="form-control" value="<?= $google?>">
                                 <i class="fa fa-instagram" onclick="instagram()"></i>Instagram: <input type="url" name = "social[]" class="form-control" value="<?= $instagram?>">
                             </div>
                             <div class="form-group">
-                                <label>Sphere</label>
+                                <label>Сфера</label>
                                 <input class="form-control" type="text" name="sphere" value="<?php echo $sphere;?>" required>
                             </div>
 
                             <div class="form-group" >
-                                <label>Image</label>
+                                <label>Изображение</label>
                                 <input class="form-control" type="file" name="image">
                             </div>
 
                             <div class="text-center" style="margin:20px 0 10px 0;">
-                                <button type="submit" name = "update" class = "btn">Save</button>
+                                <button type="submit" name = "update" class = "btn">Сохранить</button>
                             </div>
                         </form>
                     </div>

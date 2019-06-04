@@ -20,7 +20,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Create Meetup</title>
+  <title>Создать Meetup</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -62,7 +62,7 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="buy-tickets"><a href="user_details.php"><?php echo $user_name ?></a></li>
-          <li class="buy-tickets"><a href="Logout.php">Log out</a></li>
+          <li class="buy-tickets"><a href="sign_up.php">Выйти</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -77,8 +77,8 @@
     <section id="speakers-details" class="wow fadeIn">
       <div class="container">
         <div class="section-header">
-          <h2>Add new meetup</h2>
-          <p>Create own awesome community.</p>
+          <h2>Создать Meetup</h2>
+          <p>Создай собственное удивительное сообщество.</p>
         </div>
 
         <div class="row" >
@@ -90,11 +90,11 @@
                     <input type = "hidden" name = "meetup_id" value="<?php echo $meetup_id ?>">
                     <input type = "hidden" name = "user_id" value="<?php echo $user_id ?>">
                     <div class="form-group" >
-                        <label>Image</label>
+                        <label>Изображение</label>
                         <input class="form-control" type="file" name="files[]" multiple>
                     </div>                    
                     <div class="text-center" style="margin:20px 0 10px 0;">
-                        <button type="submit" class="btn" name="save">Save</button>
+                        <button type="submit" class="btn" name="save">Сохранить</button>
                     </div>
                 </form>                
             </div>
