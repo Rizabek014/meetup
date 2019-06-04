@@ -41,12 +41,6 @@
                       <div class="details">
                         <h3><a href="speaker-details.html">Meetup name</a></h3>
                         <p>Meetup Location</p>
-                        <div class="social">
-                          <a href=""><i class="fa fa-twitter"></i></a>
-                          <a href=""><i class="fa fa-facebook"></i></a>
-                          <a href=""><i class="fa fa-google-plus"></i></a>
-                          <a href=""><i class="fa fa-linkedin"></i></a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -56,12 +50,6 @@
                       <div class="details">
                         <h3><a href="speaker-details.html">Meetup name</a></h3>
                         <p>Meetup Location</p>
-                        <div class="social">
-                          <a href=""><i class="fa fa-twitter"></i></a>
-                          <a href=""><i class="fa fa-facebook"></i></a>
-                          <a href=""><i class="fa fa-google-plus"></i></a>
-                          <a href=""><i class="fa fa-linkedin"></i></a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -71,12 +59,6 @@
                       <div class="details">
                         <h3><a href="speaker-details.html">Meetup name</a></h3>
                         <p>Meetup Location</p>
-                        <div class="social">
-                          <a href=""><i class="fa fa-twitter"></i></a>
-                          <a href=""><i class="fa fa-facebook"></i></a>
-                          <a href=""><i class="fa fa-google-plus"></i></a>
-                          <a href=""><i class="fa fa-linkedin"></i></a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -86,12 +68,6 @@
                       <div class="details">
                         <h3><a href="speaker-details.html">Meetup name</a></h3>
                         <p>Meetup Location</p>
-                        <div class="social">
-                          <a href=""><i class="fa fa-twitter"></i></a>
-                          <a href=""><i class="fa fa-facebook"></i></a>
-                          <a href=""><i class="fa fa-google-plus"></i></a>
-                          <a href=""><i class="fa fa-linkedin"></i></a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -101,12 +77,6 @@
                       <div class="details">
                         <h3><a href="speaker-details.html">Meetup name</a></h3>
                         <p>Meetup Location</p>
-                        <div class="social">
-                          <a href=""><i class="fa fa-twitter"></i></a>
-                          <a href=""><i class="fa fa-facebook"></i></a>
-                          <a href=""><i class="fa fa-google-plus"></i></a>
-                          <a href=""><i class="fa fa-linkedin"></i></a>
-                        </div>
                       </div>
                     </div>
                   </div>

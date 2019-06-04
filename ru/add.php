@@ -71,11 +71,11 @@
                         <label>Социальные сети:</label>
                         <i class="fa fa-twitter" onclick="twitter()"></i>
                         <i class="fa fa-facebook" onclick="facebook()"></i>
-                        <i class="fa fa-google-plus" onclick="google_plus()"></i>
+                        <i class="fa fa-vk" onclick="google_plus()"></i>
                         <i class="fa fa-instagram" onclick="instagram()"></i>
                         <div id = "twitter" style="display: none" >Twitter: <input type="url" name = "social[]" class="form-control"></div>
                         <div id = "facebook" style="display: none" >Facebook: <input type="url" name = "social[]" class="form-control"></div>
-                        <div id = "google_plus" style="display: none">Google Plus: <input type="url" name = "social[]" class="form-control"></div>
+                        <div id = "google_plus" style="display: none">VK: <input type="url" name = "social[]" class="form-control"></div>
                         <div id = "instagram" style="display: none" >Instagram: <input type="url" name = "social[]" class="form-control"></div>
                     </div>
                     </div>

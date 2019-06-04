@@ -108,7 +108,7 @@ if($organizer_id == $user_id) $is_organizer = true;
                             <div style="display:inline-block; position:relative;"  class="social">
                                 <a href="<?= $twitter ?>"><i class="fa fa-twitter"></i></a>
                                 <a href="<?= $facebook ?>"><i class="fa fa-facebook"></i></a>
-                                <a href="<?= $google ?>"><i class="fa fa-google-plus"></i></a>
+                                <a href="<?= $google ?>"><i class="fa fa-vk"></i></a>
                                 <a href="<?= $instagram ?>"><i class="fa fa-linkedin"></i></a>
                             </div>
                         </div>

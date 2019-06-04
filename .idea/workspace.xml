@@ -3,23 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c71d1440-7dfa-4f60-b0d5-a0e83fd96491" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetup_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/meetup_details.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/Server.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/Server.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetup_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/meetup_search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/meetup_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/meetup_details.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/meetup_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/meetup_list.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/meetup_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/meetup_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/sign_in.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/sign_in.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/sign_up.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/sign_up.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/today_is_meetup.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/today_is_meetup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/user_edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/user_edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/user_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/ru/user_profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,29 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="today_is_meetup.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ru/today_is_meetup.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="333" lean-forward="true" selection-end-line="342" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="meetup_details.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meetup_details.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="223" column="67" selection-start-line="223" selection-start-column="67" selection-end-line="223" selection-end-column="67" />
+            <state relative-caret-position="18">
+              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#h4#0;n#b#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#b#0;n#!!top" expanded="true" />
@@ -64,45 +35,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Server.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ru/Server.php">
+      <file leaf-file-name="meetup_search.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meetup_search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="342" column="2" selection-start-line="342" selection-start-column="2" selection-end-line="342" selection-end-column="2" />
+            <state relative-caret-position="71">
+              <caret line="69" column="80" selection-start-line="69" selection-start-column="80" selection-end-line="69" selection-end-column="80" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_profile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ru/user_profile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="79" column="49" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
-              <folding>
-                <element signature="n#style#0;n#b#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ru/users_list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="meetup_details.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="meetup_details.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ru/meetup_details.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="245" column="61" selection-start-line="245" selection-start-column="48" selection-end-line="245" selection-end-column="61" />
+            <state relative-caret-position="107">
+              <caret line="110" column="75" selection-start-line="110" selection-start-column="75" selection-end-line="110" selection-end-column="75" />
               <folding>
                 <element signature="n#style#0;n#h4#0;n#b#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#b#0;n#!!top" expanded="true" />
@@ -111,6 +57,24 @@
                 <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ru/about.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="26" column="109" selection-start-line="26" selection-start-column="109" selection-end-line="26" selection-end-column="109" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="meetup_search.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ru/meetup_search.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="69" column="80" selection-start-line="69" selection-start-column="80" selection-end-line="69" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -124,11 +88,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="add.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/add.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="71" column="43" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ru/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="302" column="39" selection-start-line="302" selection-start-column="39" selection-end-line="302" selection-end-column="39" />
+            <state relative-caret-position="134">
+              <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -146,17 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rejec</find>
-      <find>member_id</find>
-      <find>user_pofile</find>
-      <find>user_profile</find>
-      <find>bu</find>
-      <find>if(isset($_COOKIE[&quot;type&quot;]))</find>
-      <find>list</find>
-      <find>span</find>
-      <find>$user_name</find>
-      <find>today</find>
-      <find>href</find>
       <find>will</find>
       <find>im</find>
       <find>row</find>
@@ -176,6 +147,17 @@
       <find>вы мож</find>
       <find>gal</find>
       <find>you</find>
+      <find>src =</find>
+      <find>google-plus</find>
+      <find>goo</find>
+      <find>google</find>
+      <find>vk</find>
+      <find>twitter</find>
+      <find>google-</find>
+      <find>google-p</find>
+      <find>twi</find>
+      <find>google-pl</find>
+      <find>profi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -213,21 +195,17 @@
         <option value="$PROJECT_DIR$/users_list.php" />
         <option value="$PROJECT_DIR$/sign_in.php" />
         <option value="$PROJECT_DIR$/AdminPage.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/user_edit.php" />
-        <option value="$PROJECT_DIR$/add.php" />
         <option value="$PROJECT_DIR$/add_image.php" />
         <option value="$PROJECT_DIR$/ru/add_image.php" />
         <option value="$PROJECT_DIR$/ru/edit.php" />
         <option value="$PROJECT_DIR$/edit.php" />
-        <option value="$PROJECT_DIR$/meetup_search.php" />
         <option value="$PROJECT_DIR$/Server.php" />
         <option value="$PROJECT_DIR$/today_is_meetup.php" />
         <option value="$PROJECT_DIR$/user_profile.php" />
         <option value="$PROJECT_DIR$/ru/about.php" />
         <option value="$PROJECT_DIR$/nav.php" />
         <option value="$PROJECT_DIR$/ru/add.php" />
-        <option value="$PROJECT_DIR$/ru/meetup_search.php" />
         <option value="$PROJECT_DIR$/ru/meetup_list.php" />
         <option value="$PROJECT_DIR$/ru/sign_in.php" />
         <option value="$PROJECT_DIR$/ru/sign_up.php" />
@@ -235,10 +213,14 @@
         <option value="$PROJECT_DIR$/ru/today_is_meetup.php" />
         <option value="$PROJECT_DIR$/ru/Server.php" />
         <option value="$PROJECT_DIR$/ru/user_profile.php" />
-        <option value="$PROJECT_DIR$/ru/index.php" />
         <option value="$PROJECT_DIR$/ru/footer.php" />
         <option value="$PROJECT_DIR$/ru/nav.php" />
         <option value="$PROJECT_DIR$/meetup_details.php" />
+        <option value="$PROJECT_DIR$/meetup_search.php" />
+        <option value="$PROJECT_DIR$/ru/meetup_search.php" />
+        <option value="$PROJECT_DIR$/add.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/ru/index.php" />
         <option value="$PROJECT_DIR$/ru/meetup_details.php" />
       </list>
     </option>
@@ -432,12 +414,12 @@
       <workItem from="1559055661679" duration="9412000" />
       <workItem from="1559379615599" duration="14698000" />
       <workItem from="1559578155225" duration="3996000" />
-      <workItem from="1559649379160" duration="17147000" />
+      <workItem from="1559649379160" duration="18428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296633000" />
+    <option name="totallyTimeSpent" value="297914000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -456,9 +438,9 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32994923" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50075644" side_tool="true" weight="0.32994923" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" visible="true" weight="0.32994923" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32994923" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.32994923" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" visible="true" weight="0.32994923" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34795764" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="8" />
@@ -573,13 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="130" column="4" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/add_image.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -591,13 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="166" column="88" selection-start-line="166" selection-start-column="88" selection-end-line="166" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meetup_search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -615,13 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="77" column="40" lean-forward="true" selection-end-line="79" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ru/about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -662,13 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1626">
-          <caret line="112" column="14" selection-start-line="36" selection-start-column="8" selection-end-line="112" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -706,13 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="93" column="33" lean-forward="true" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ru/meetup_search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -813,13 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ru/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="302" column="39" selection-start-line="302" selection-start-column="39" selection-end-line="302" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ru/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -836,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/meetup_details.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="223" column="67" selection-start-line="223" selection-start-column="67" selection-end-line="223" selection-end-column="67" />
+        <state relative-caret-position="18">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#h4#0;n#b#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#b#0;n#!!top" expanded="true" />
@@ -848,10 +788,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/meetup_search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="69" column="80" selection-start-line="69" selection-start-column="80" selection-end-line="69" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/meetup_search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="69" column="80" selection-start-line="69" selection-start-column="80" selection-end-line="69" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="71" column="43" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ru/meetup_details.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="245" column="61" selection-start-line="245" selection-start-column="48" selection-end-line="245" selection-end-column="61" />
+        <state relative-caret-position="107">
+          <caret line="110" column="75" selection-start-line="110" selection-start-column="75" selection-end-line="110" selection-end-column="75" />
           <folding>
             <element signature="n#style#0;n#h4#0;n#b#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#b#0;n#!!top" expanded="true" />
@@ -860,6 +835,13 @@
             <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/about.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="26" column="109" selection-start-line="26" selection-start-column="109" selection-end-line="26" selection-end-column="109" />
         </state>
       </provider>
     </entry>

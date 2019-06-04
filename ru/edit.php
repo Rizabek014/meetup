@@ -150,7 +150,7 @@
                                 <label>Социальные сети:</label><br>
                                 <i class="fa fa-twitter" onclick="twitter()"></i>Twitter: <input type="url" name = "social[]" class="form-control" value="<?= $twitter?>">
                                 <i class="fa fa-facebook" onclick="facebook()"></i>acebook: <input type="url" name = "social[]" class="form-control" value="<?= $facebook?>">
-                                <i class="fa fa-google-plus" onclick="google_plus()"></i>Google Plus: <input type="url" name = "social[]" class="form-control" value="<?= $google?>">
+                                <i class="fa fa-vk" onclick="google_plus()"></i>VK: <input type="url" name = "social[]" class="form-control" value="<?= $google?>">
                                 <i class="fa fa-instagram" onclick="instagram()"></i>Instagram: <input type="url" name = "social[]" class="form-control" value="<?= $instagram?>">
                             </div>
                             <div class="form-group">

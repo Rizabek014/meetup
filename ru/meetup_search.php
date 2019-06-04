@@ -68,12 +68,6 @@
                                     <div class="details">
                                         <h3 class='clickable-row' data-href="meetup_details.php?meetup=<?php echo $tuple['meetup_id']; ?>"><?php echo $tuple['name']; ?></h3>
                                         <p><?php echo $tuple['location']; ?></p>
-                                        <div class="social">
-                                            <a href=""><i class="fa fa-twitter"></i></a>
-                                            <a href=""><i class="fa fa-facebook"></i></a>
-                                            <a href=""><i class="fa fa-google-plus"></i></a>
-                                            <a href=""><i class="fa fa-linkedin"></i></a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
