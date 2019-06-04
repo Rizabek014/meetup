@@ -24,8 +24,8 @@ if(isset($_COOKIE["type"]))
     <section id="speakers-details" class="wow fadeIn">
         <div class="container">
             <div class="section-header">
-                <h2>User profile</h2>
-                <p>Enter the most reliable information, so we can stay in touch.</p>
+                <h2>Редактировать Профиль</h2>
+                <p>Укажите наиболее достоверную информацию, чтобы мы могли оставаться на связи.</p>
             </div>
 
             <div class="row" >
@@ -39,51 +39,51 @@ if(isset($_COOKIE["type"]))
                                 <?php
                                 if(!empty($image))
                                 {
-                                    echo "<img class='img-fluid' id='avatar' src='profiles/" . $image. "'>";
-                                    echo "<br><button type='submit' name = 'delete_img' class = 'btn-danger'>Delete Image</button>";
+                                    echo "<img class='img-fluid' id='avatar' src='../profiles/" . $image. "'>";
+                                    echo "<br><button type='submit' name = 'delete_img' class = 'btn-danger'>Удалить фотографию</button>";
                                 }
                                 else
                                     echo "<img src = 'profiles/avatar.png' id='avatar'><br>
-                                    You don't have profile photo <br> <input type = 'file' name = 'logo'>"
+                                    У вас нет фотографии профиля<br> <input type = 'file' name = 'logo'>"
                                 ?>
                             </div>
                             <div class="form-group" style="margin-top:30px;">
                             <input type="hidden" name = "image" value="<?= $image; ?>">
                             <div class="form-group" >
-                                <label>Username</label>
+                                <label>Имя пользователя</label>
                                 <input class="form-control" type="text" name = "user_name" value="<?= $user_name; ?>">
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
+                                <label>Электронная почта</label>
                                 <input class="form-control" type="email" name = "email" value="<?= $email; ?>">
                             </div>
                             <div class="form-group">
-                                <label>Phone number</label>
+                                <label>Номер телефона</label>
                                 <input class="form-control" type="text" name="phone" value="<?= $phone; ?>">
                             </div>
                             <div class="form-group">
-                                <label>Address</label>
-                                <input class="form-control" type="text" name="address" placeholder="Enter your address" value="<?= $address; ?>">
+                                <label>Адресс</label>
+                                <input class="form-control" type="text" name="address" value="<?= $address; ?>">
                             </div>
                             <div class="text-center" style="margin:20px 0 10px 0;">
-                                <input type="button" class="btn" onclick="change_password()" value="Change password">
+                                <input type="button" class="btn" onclick="change_password()" value="Изменить пароль">
                             </div>
                             <div id = "password_field" style="display: none">
                                 <div class="form-group">
-                                    <label>Current Password</label>
+                                    <label>Текущий пароль</label>
                                     <input class="form-control" type="password" name="current_password">
                                 </div>
                                 <div class="form-group">
-                                    <label>New password</label>
+                                    <label>Новый пароль</label>
                                     <input class="form-control" type="password" name="new_password1">
                                 </div>
                                 <div class="form-group">
-                                    <label>Confirm new password</label>
+                                    <label>Введите повторно пароль</label>
                                     <input class="form-control" type="password" name="new_password2">
                                 </div>
                             </div>
                             <div class="text-center" style="margin:20px 0 10px 0;">
-                                <button type="submit" name = "user_update" class = "btn">Save</button>
+                                <button type="submit" name = "user_update" class = "btn">Сохранить</button>
                             </div>
                         </form>
                     </div>

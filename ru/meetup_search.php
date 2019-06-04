@@ -26,25 +26,25 @@
     <section id="speakers" class="wow fadeInUp">
         <div class="container">
             <div class="section-header">
-                <h2>Search Results</h2>
+                <h2>Результат Поиска</h2>
             </div>
             <form action="meetup_search.php" method="post">
                 <div class="form-group">
-                    <label>Sphere</label>
+                    <label>Сферы</label>
                     <select class="form-control" name = "sphere">
-                        <option value="" selected disabled hidden>Choose here</option>
+                        <option value="" selected disabled hidden>Выбрать здесь</option>
                         <option value="it">IT</option>
-                        <option value="hackaton">Hackaton</option>
-                        <option value="marathon">Marathon</option>
-                        <option value="sport">Sport</option>
-                        <option value="mobile">Mobile</option>
+                        <option value="hackaton">Хакатон</option>
+                        <option value="marathon">Марафон</option>
+                        <option value="sport">Спорт</option>
+                        <option value="mobile">Мобильные данные</option>
                         <option value="data science">Data Science</option>
-                        <option value="activities">Activities</option>
-                        <option value="other">Other</option>
+                        <option value="activities">Мероприятия</option>
+                        <option value="other">Другое</option>
                     </select>
                 </div>
                 <div class="text-center" style="margin:20px 0 10px 0;">
-                    <button type="submit" class="btn" name="sphere_search">Search</button>
+                    <button type="submit" class="btn" name="sphere_search">Искать</button>
                 </div>
             </form>
             <div class="row">

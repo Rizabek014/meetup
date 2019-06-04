@@ -95,7 +95,7 @@
                     </div>
 
                     <div class="text-center" style="margin:20px 0 10px 0;">
-                        <button type="submit" class="btn" name="next">Далее</button>
+                        <button type="submit" class="btn" name="next">Next</button>
                     </div>
                 </form>                
             </div>

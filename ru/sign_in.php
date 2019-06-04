@@ -4,30 +4,30 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Login</title>
+  <title>Войти</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/favicon1.png" rel="icon">
-  <link href="img/apple-touch-icon1.png" rel="apple-touch-icon">
+  <link href="../img/favicon1.png" rel="icon">
+  <link href="../img/apple-touch-icon1.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/venobox/venobox.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../lib/venobox/venobox.css" rel="stylesheet">
+  <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/sign.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/sign.css" rel="stylesheet">
 
 </head>
 
@@ -45,8 +45,8 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="buy-tickets"><a href="sign_in.php">Sign in</a></li>
-          <li class="buy-tickets"><a href="sign_up.php">Sign up</a></li>
+          <li class="buy-tickets"><a href="sign_in.php">Войти</a></li>
+          <li class="buy-tickets"><a href="sign_up.php">Зарегистрироваться</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -60,8 +60,8 @@
     <section id="speakers-details" class="wow fadeIn">
       <div class="container">
         <div class="section-header">
-          <h2>Sign in</h2>
-          <p>Get access to all of our wonderfull functionality.</p>
+          <h2>Войти</h2>
+          <p>Получите доступ ко всем нашим замечательным функционалом.</p>
         </div>
 
         <div class="row" >
@@ -175,25 +175,25 @@
                         <div class="col-auto">
                             <div class="inputGroup inputGroup1">
                                 <div class="form-group">
-                                    <label for="loginEmail" id="loginEmailLabel">Username</label>
+                                    <label for="loginEmail" id="loginEmailLabel">Имя пользователя:</label>
                                   <input type="text" class="form-control" id="loginEmail"  maxlength="254" name="user_name" placeholder="">
                                 </div>
 
                             </div>
                             <div class="inputGroup inputGroup2">
                                 <div class="form-group">
-                                    <label for="loginPassword" id="loginPasswordLabel">Password</label>
+                                    <label for="loginPassword" id="loginPasswordLabel">Пароль</label>
                                     <input type="password" id="loginPassword" name="password" class="form-control"/>
-                                    <label id="showPasswordToggle" for="showPasswordCheck">Show
+                                    <label id="showPasswordToggle" for="showPasswordCheck">Показать
                                         <input id="showPasswordCheck" type="checkbox"/>
                                         <div class="indicator"></div>
                                     </label>
                                 </div>
                             </div>
                             <div class="inputGroup inputGroup3">
-                                <div class="text-center form-group"><button name="login_user" type="submit" class="btn" >Sign in</button></div>
+                                <div class="text-center form-group"><button name="login_user" type="submit" class="btn" >Войти</button></div>
                                 
-                                <div class="text-center">Not yet a member? <a href="sign_up.php">Sign up</a></div>
+                                <div class="text-center">Вы еще не зарегистрированы? <a href="sign_up.php">Зарегистрироваться</a></div>
                             </div>
                         </div>
                     </form>

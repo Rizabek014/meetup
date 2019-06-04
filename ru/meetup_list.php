@@ -18,9 +18,9 @@
     <section id="speakers" class="wow fadeInUp">
         <div class="container">
             <div class="section-header">
-                <h2>My Meetups</h2>
+                <h2>Мои Meetup'ы</h2>
             </div>
-            <h2>Approved</h2>
+            <h2>Подтвержденные </h2>
             <div class="row">
                 <?php
                     while ($tuple = mysqli_fetch_array($result)):
@@ -34,7 +34,7 @@
                                     if ($images['meetup_id'] == $tuple['meetup_id'] && $check)
                                     {
                                         $check = false;
-                                        echo "<img class='img-fluid' src='images/" . $images['file_name'] . "'>";
+                                        echo "<img class='img-fluid' src='../images/" . $images['file_name'] . "'>";
                                     }
                                 }
                             ?>
@@ -55,7 +55,7 @@
                     endwhile;
                 ?>
             </div>
-            <h2>Waiting for approvement</h2>
+            <h2>Ждут Подтверждения </h2>
             <div class="row">
                 <?php
                 while ($tuple = mysqli_fetch_array($results)):
@@ -69,7 +69,7 @@
                                     if ($images['meetup_id'] == $tuple['meetup_id'] && $check)
                                     {
                                         $check = false;
-                                        echo "<img class='img-fluid' src='images/" . $images['file_name'] . "'>";
+                                        echo "<img class='img-fluid' src='../images/" . $images['file_name'] . "'>";
                                     }
                                 }
                                 ?>

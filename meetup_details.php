@@ -222,7 +222,6 @@ endif;?></a>
                             </div>
                         </div>
                     <?php $flag=true; endwhile; if ($flag===false):
-                        echo "<a class='list-group-item'><b><h3 style='color: red;'>You could be the first member of meetup. Don't loose a chance</h3></b></a>";
 
                     endif;?>
                 </div>
